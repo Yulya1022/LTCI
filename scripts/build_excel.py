@@ -44,6 +44,46 @@ NATIONAL_SUFFIX = ('.nhsa.gov.cn', '.mohrss.gov.cn', '.mca.gov.cn', '.nhc.gov.cn
 # 试点城市清单之外、但语料中出现的地区域名
 REGION_HINT = {'ks.gov.cn': '昆山', 'sz.gov.cn': '深圳', 'snj.gov.cn': '神农架'}
 
+ORG_TAIL = r'(?:人民政府|政府办公厅|人民政府办公室|医疗保障局|医保局|财政局|民政局|卫生健康委员会|卫生和计划生育委员会|人力资源和社会保障局|人社局|发展改革委员会|发展和改革委员会|残疾人联合会|市场监督管理局|委员会|办公室|政府|中心|厅|局|部|处|科|办|室|所|队)'
+
+LABEL_WORDS = ('成文日期', '发文日期', '发布日期', '生成日期', '发布时间', '公开日期', '索引号',
+               '主题分类', '有效性', '来源', '作者', '编辑', '责任编辑', '浏览次数', '字号')
+NOISE_SUFFIX = re.compile(r'(?:微信公众号|微信|公众号|官网|官方网站|门户网站|人民政府网|政府网|网站|网)$')
+
+def norm_issuer(s):
+    """规范主体值：去标签词、去网站后缀、去尾部数字"""
+    if not isinstance(s, str):
+        return ''
+    s = s.strip().strip(' \t:：,，;；|、-—【】[]()（）《》')
+    s = re.sub(r'[,\s]*版权所有.*$', '', s)
+    s = re.sub(r'\d+$', '', s)
+    s = NOISE_SUFFIX.sub('', s).strip()
+    if s in LABEL_WORDS or len(s) < 2:
+        return ''
+    return s
+
+def valid_issuer(s):
+    """校验主体值：必须是机构名，排除整句正文被误抓的情况"""
+    s = norm_issuer(s)
+    if not s or len(s) > 80:
+        return False
+    if re.search(r'[？。！；，,：:]', s):  # 含句读标点，说明抓到了正文
+        return False
+    return bool(re.search(ORG_TAIL + r'$', s))
+
+def joint_issuer(title):
+    """从标题识别多部门联合发文（如“A局 B局 C委关于印发…的通知”）"""
+    if not title:
+        return ''
+    t = re.sub(r'[\s　]+', ' ', title).strip().lstrip('《〈（(【[')
+    head = re.split(r'(?:关于|转发|印发|制定)', t)[0].strip()
+    parts = [p for p in re.split(r'[ 　、]+', head) if p]
+    if len(parts) < 2:
+        return ''
+    if not all(re.search(ORG_TAIL + '$', p) for p in parts):
+        return ''
+    return ' '.join(parts)
+
 def guess_region(rec):
     """从发现层单位或域名推断所属地区"""
     unit = rec.get('discover_unit', '')
@@ -138,7 +178,7 @@ def main():
             '政策标题': title,
             '文号': d.get('doc_no') or '',
             '发表时间': d.get('pub_date') or '',
-            '发表主体': d.get('issuer') or '',
+            '发表主体': max([norm_issuer(x) for x in (d.get('issuer') or '', joint_issuer(title)) if valid_issuer(x)] or [''], key=len),
             '来源链接': d['url'],
             '政策原文': body,
             '文件层级': lvl,
