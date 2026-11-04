@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Server: *****
+Date: Tue, 03 Nov 2026 14:24:27 GMT
+Content-Type: application/pdf
+Content-Length: 4396828
+Connection: keep-alive
+Last-Modified: Fri, 18 Sep 2026 09:22:15 GMT
+ETag: "6aad02c7-43171c"
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: manifest-src 'self';
+X-Xss-Protection: 1;mode=block
+Set-Cookie: Path=/; HttpOnly; Secure
+Referrer-Policy: origin
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Accept-Ranges: bytes
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: manifest-src 'self';
+X-Xss-Protection: 1;mode=block
+Set-Cookie: Path=/; HttpOnly; Secure
+Referrer-Policy: origin
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+

@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 03 Nov 2026 14:20:13 GMT
+Content-Type: application/pdf
+Content-Length: 176043
+Connection: keep-alive
+Last-Modified: Mon, 26 Oct 2026 03:02:18 GMT
+ETag: "6adec2ba-2afab"
+Expires: Tue, 03 Nov 2026 14:17:36 GMT
+Cache-Control: max-age=300
+Accept-Ranges: bytes
+

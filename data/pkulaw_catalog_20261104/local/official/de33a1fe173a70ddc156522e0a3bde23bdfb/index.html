@@ -1,0 +1,778 @@
+ 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>南宁市长期护理保险护理服务人员管理暂行办法 南医保规〔2021〕4号-养老信息网</title>
+<meta name="description" content="第一条为规范南宁市长期护理保险（以下简称长护险）护理服务人员管理，保障长护险重度失能人员基本护理需求，推动我市长期护理服务体系建设和发展，根据《国家医保局财政部关于扩大长期护理保险制度试点的指导意见》,南宁市长期护理保险护理服务人员管理暂行办法 南医保规〔2021〕4号,文章来源：南宁市医疗保障局,作者：,发布日期：2021-11-29 15:54:53,养老政策"/>
+<meta name="keywords" content=",养老政策"/>
+<meta name="thumbnailimg" content="https://www.yanglaocn.com/images/upload/img/2021/11_29/d8d71ff877a60b7c3bc8111f0b6048f5.png"/>
+<Link Rel="SHORTCUT ICON" href="https://www.yanglaocn.com/images/yanglaoxxcom.ico" title="养老信息网" />
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/css/style_20210416.css?v=20211026"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/css/Login_20210416.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/artDialog/skins/default.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/jnotify/jquery/jNotify.jquery.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/css/thickbox.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/poshytipsrc/css/tip-style.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/css/jquery.fancybox.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/css/selectcss.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/css/yl_20210416.css">
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/js/layui/css/layui.css">
+<link rel="stylesheet" type="text/css" href="https://www.yanglaocn.com/js/element/element.min.css">
+<script type="text/javascript" src="https://www.yanglaocn.com/js/jquery-1.4.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/jquery.cookie.js"></script>
+<script type="text/javascript">var shop_url ="https://www.yanglaocn.com/";</script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/pageajax.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/poshytipsrc/jquery.poshytip.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/poshytipFun.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/jnotify/jquery/jNotify.jquery.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/followajax.js"></script><script type="text/javascript" src="https://www.yanglaocn.com/js/bbs_isshowedit.js"></script>
+</head>
+<body>
+<input type="hidden" id="articleid" name="articleid" value="129247" />
+<input type="hidden" id="yid" name="yid" value="0" />
+<!--头部文件-->
+
+<!--IE6下让PNG图片透明度-->
+<!--[if IE 6]>
+<script src="https://www.yanglaocn.com/js/DD_belatedPNG.js"></script>
+<script>
+    DD_belatedPNG.fix('.webheadermain img');
+    DD_belatedPNG.fix('.logo img');
+    DD_belatedPNG.fix('.ylyquery5 img');
+</script>
+<![endif]-->
+<div class="webheadertop"></div>
+<div class="webheader" id="webheader">
+    <div class="main_wide_nobg">
+        <div class="webheadermain">
+            <div class="webheadermainscdiv" id="webheadermainscdiv">
+                <a href="https://www.yanglaocn.com/" class="web_top_home">首页<i class="el-icon-s-home el-icon--right"></i></a>
+                <el-popover
+                        placement="top-start"
+                        width="1092"
+                        trigger="hover"
+                        v-model="NavigationVisible">
+                    <div class='Navigation' id="Navigation_ID" style="display: none" v-html="NavigationHtml"></div>
+                    <strong class="web_top_home" slot="reference">导航<i class="el-icon-s-grid el-icon--right"></i></strong>
+                </el-popover>
+                <el-popover
+                        placement="top-start"
+                        width="500"
+                        trigger="hover"
+                        v-model="QRcodeVisible">
+                    <div class="QRcode" id="QRcode_ID" style="display: none;">
+                        <span><img src="https://www.yanglaocn.com/images/yanglaoweixin.jpg" /> </span>
+                        <div class="Navigation_Close" @click="QRcodeVisible = false"><i class="el-icon-close"></i></div>
+                    </div>
+                    <strong class="web_top_home" slot="reference">移动端<i class="el-icon-mobile-phone el-icon--right"></i></strong>
+                </el-popover>
+                <el-popover
+                    placement="top-start"
+                    width="910"
+                    v-model="TopCityMenuModel"
+                    ref="TopCityMenuRef">
+                    <div class="TopCityMenu" @mouseover = "TopCityMenuShow()" @mouseleave="TopCityMenuHide()" id="TopCityMenuID" style="display: none;">
+                        <div class="TopCityMenuSear">
+                            <div class="TopCityMenuSear_L">
+                                <el-cascader
+                                        placeholder="下拉选择或输入城市名检索..."
+                                        :props="{ expandTrigger: 'hover' }"
+                                        :options="TopCityMenuSearOptions"
+                                        :show-all-levels="false"
+                                        @visible-change="TopCityMenuVchange"
+                                        @change="TopCityMenuHandleChange"
+                                        filterable
+                                        clearable
+                                        style="width:300px;"></el-cascader>
+                            </div>
+                            <div class="TopCityMenuSear_R" v-html="Hot_City_List_Html"></div>
+                            <div v-html="TopCityMenuHtml"></div>
+                        </div>
+                    </div>
+                    <strong id="TopCityMenuMyset20211025" class="web_top_home" slot="reference" @mouseover = "TopCityButtonShow()" @mouseleave="TopCityButtonHide()"><span id="user_set_city">...</span><i class="el-icon-location el-icon--right"></i></strong>
+                </el-popover>
+            </div>
+            <div class="webheadermainscdiv" id="webheader_right" style="float:right;">
+                <a href="https://www.yanglaocn.com/yanglaoyuan/"  title="养老院" class="web_top_home_dd set_yly_index_htmlurl"><label class="overall_cityname"></label>养老院<i class="el-icon-link el-icon--right"></i></a>
+                <a href="https://www.yanglaocn.com/bbs/"  title="养老社区" class="web_top_home_dd">养老社区<i class="el-icon-link el-icon--right"></i></a>
+                <a href="https://www.yanglaocn.com/insurance/"  title="保险查询" class="web_top_home_dd set_insu_index_htmlurl">保险查询<i class="el-icon-link el-icon--right"></i></a>
+                <a href="javascript:void(0);" class="web_top_home_dd useradmin_btu_id" rel="nofollow">用户中心<i class="el-icon-link el-icon--right"></i></a>
+                <el-dropdown placement="bottom-end" show-timeout="0">
+                    <a href="javascript:void(0);" class="userlogo useradmin_btu_id" id="UserLogo"><i></i></a>
+                    <el-dropdown-menu slot="dropdown" style="display: none;">
+                        <el-dropdown-item disabled>{{webheader_username}}</el-dropdown-item>
+                        <a v-for="value in webheaderData.menu" :href="value.url" :title="value.name"><el-dropdown-item>{{value.name}}</el-dropdown-item></a>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </div>
+        </div>
+    </div>
+</div>
+<!--标题+搜索框-->
+<div class="main_whole_white main_whole_top" id="header_h1_search_vue">
+    <div class="main_wide">
+        <div class="header">
+            <div class="logo_n"><a href="https://www.yanglaocn.com/" title="养老信息网LOGO"><img src="https://www.yanglaocn.com/images/logo_n.png" title="养老信息网LOGO" alt="养老信息网LOGO" width="112" height="80" /></a></div>
+            <div class="logocontext"><h2>养老政策</h2></div>
+            <div class="logocontext_wide">
+                <div class="search_inputdaohang">
+                    <el-autocomplete
+                            placeholder="搜索资讯 / 养老院 / 主题 / 专题 / 政策 / 社保"
+                            v-model="H1_Search"
+                            :fetch-suggestions="H1_Search_Query"
+                            @select="H1_Search_Query_Xiala_Select"
+                            clearable
+                            maxlength="30"
+                            @keyup.enter.native="H1_Search_Query_Select"
+                            :trigger-on-focus="false"
+                            class="header_h1_css">
+                    </el-autocomplete>
+                    <el-button type="primary" :icon="H1_Search_Query_ICON" :disabled="H1_Search_Query_disabled" @click="H1_Search_Query_Select"></el-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="main_whole_white main_whole_top">
+    <div class="main_wide">
+        <div class="clear"></div>
+        <div class="menu_ylzx_wide" id="index_menu" style="display: none;">
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/ylzx/" title="资讯" class="ameth14">资讯</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/ylzx/" title="综合" ><el-dropdown-item>查看全部</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/ylzx/yanglaodongtai/" title="养老动态" ><el-dropdown-item>养老动态</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jianxun/" title="养老简讯" ><el-dropdown-item>养老简讯</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/zhengcefagui/" title="养老政策" ><el-dropdown-item>养老政策</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/ylzx/yanglaojin/" title="养老金" ><el-dropdown-item>养老金</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/ylzx/chanyeguancha/" title="产业观察" ><el-dropdown-item>产业观察</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jjyl" title="居家养老" ><el-dropdown-item>居家养老</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/ylzx/laolinghua/" title="老龄化" ><el-dropdown-item>老龄化</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/ylzx/qitamoshi/" title="养老模式" ><el-dropdown-item>养老模式</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/ylzx/yanglaochanye/" title="养老产业" ><el-dropdown-item>养老产业</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jjyl/laoniandaxue/" title="老年大学" ><el-dropdown-item>老年大学</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/jigoudongtai/" title="机构动态" ><el-dropdown-item>机构动态</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jjyl/hangyezixun/" title="行业资讯" ><el-dropdown-item>行业资讯</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/ylzx/yanglaozhanhui/" title="养老展会" ><el-dropdown-item>养老展会</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/ylynew/" title="最新动态" ><el-dropdown-item>最新动态</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/policy/" title="最新政策" ><el-dropdown-item>最新政策</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/jianxun/" class="ameth14"  title="简讯">简讯</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/jianxun/" title="简讯" ><el-dropdown-item>查看全部</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jianxun/yl/" title="养老简讯" ><el-dropdown-item>养老简讯</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jianxun/yly/" title="机构简讯" ><el-dropdown-item>机构简讯</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jianxun/insu/" title="社保简讯" ><el-dropdown-item>社保简讯</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/yanglaoyuan/" class="ameth14 set_yly_index_htmlurl"  title="养老院"  >养老院</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/" class="set_yly_index_htmlurl" title="北京养老院"><el-dropdown-item><label class="overall_cityname"></label>养老院</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/yly/" title="养老院查询"><el-dropdown-item>养老院查询</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/zhengcefagui/" title="机构政策"><el-dropdown-item>机构政策</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/hangyexinwen/" title="行业新闻"><el-dropdown-item>行业新闻</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/yanglaofuwu/" title="养老服务"><el-dropdown-item>养老服务</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/guanhuzhishi/" title="管护知识"><el-dropdown-item>管护知识</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/guanlizhidu/" title="管理制度"> <el-dropdown-item>管理制度</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/jigoushenban/" title="机构申办"><el-dropdown-item>机构申办</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/biaozhunguihuan/" title="标准规范"><el-dropdown-item>标准规范</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/changjianwenti/" title="常见问题"><el-dropdown-item>常见问题</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/yanglaoyuan/jigoudongtai/" title="机构动态"><el-dropdown-item>机构动态</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/wxys/" class="ameth14"  title="文学"  >文学</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/wxys/wenxuechuangzuo/" target="_blank" title="文学创作"><el-dropdown-item>文学创作</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/wxys/youyouwangshi/" target="_blank" title="悠悠往事"><el-dropdown-item>悠悠往事</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/wxys/suibiyouji/" target="_blank" title="随笔游记"><el-dropdown-item>随笔游记</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/jkys/" class="ameth14"  title="健康">健康</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/jkys/yangsheng/" target="_blank" title="养生"><el-dropdown-item>养生</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jkys/yinshi/" target="_blank" title="饮食"><el-dropdown-item>饮食</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jkys/jibing/" target="_blank" title="疾病"><el-dropdown-item>疾病</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/jkys/xinli/" target="_blank" title="心理"><el-dropdown-item>心理</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/life/" class="ameth14" title="生活">生活</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/txsh/gongyihedong/" target="_blank" title="公益活动"><el-dropdown-item>公益活动</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/txsh/tuixiuyihou/" target="_blank" title="退休以后"><el-dropdown-item>退休以后</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/txsh/laonianshenghuo/" target="_blank" title="老年生活"><el-dropdown-item>老年生活</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/wxys/laonianwenhua/" target="_blank" title="老年文化"><el-dropdown-item>老年文化</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/xxah/" target="_blank" title="休闲爱好"><el-dropdown-item>休闲爱好</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/bbs/" class="ameth14"  title="养老社区">养老社区</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/bbs/?tid=28" target="_blank" title="养老院"><el-dropdown-item>养老院</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/bbs/?tid=2" target="_blank" title="社保"><el-dropdown-item>社保</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/bbs/?tid=19" target="_blank" title="生活"><el-dropdown-item>生活</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/bbs/?tid=12" target="_blank" title="文学"><el-dropdown-item>文学</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/insu/" class="ameth14 set_insu_index_htmlurl"  title="社保">社保</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/insu/" title="社保查询" class="set_insu_index_htmlurl"><el-dropdown-item>社保查询</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/insurance/insuinfozx/" title="社保资讯" ><el-dropdown-item>社保资讯</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/insurance/insuinfozc/" title="社保政策" ><el-dropdown-item>社保政策</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/insurance/insuinfozn/" title="办事指南" > <el-dropdown-item>办事指南</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/insurance/insuinfowt/" title="常见问题" ><el-dropdown-item>常见问题</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <el-dropdown placement="bottom">
+  <span class="el-dropdown-link">
+<a href="https://www.yanglaocn.com/yanglaoyuan/" class="ameth14" title="用户服务">用户服务</a><i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+                <el-dropdown-menu slot="dropdown" style="display: none;">
+                    <a href="https://www.yanglaocn.com/useradmin/" title="用户中心" rel="nofollow"><el-dropdown-item>用户中心</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/login/" title="用户登陆" rel="nofollow"><el-dropdown-item>用户登陆</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/register/" title="用户注册" rel="nofollow"><el-dropdown-item>用户注册</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/useradmin/edit_institutionalmanagement.php" title="养老机构入驻" ><el-dropdown-item>养老机构入驻</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/useradmin/institutionalmanagement.php" title="养老机构管理" ><el-dropdown-item>养老机构管理</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/useradmin/myarticel/?add" title="在线投稿"><el-dropdown-item>在线投稿</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/aboutus/" title="关于我们" rel="nofollow"> <el-dropdown-item>关于我们</el-dropdown-item></a>
+                    <a href="https://www.yanglaocn.com/contactus/" title="联系我们" rel="nofollow"> <el-dropdown-item>联系我们</el-dropdown-item></a>
+                </el-dropdown-menu>
+            </el-dropdown>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/headerAjax.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/jquery.raty.js"></script><!--面包屑导航-->
+<div class="clear"></div>
+<div class="main_whole">
+    <div class="main_wide">
+        <div class="PageNavigation2">当前位置：<span><a href='https://www.yanglaocn.com/' class='ameth13'>首页</a> > </span><span><a href='https://www.yanglaocn.com/zhengcefagui/' class='ameth13'>养老政策</a> > </span><label>正文</label></div>
+    </div>
+</div>
+<!--中部内容-->
+<div class="clear"></div>
+ <!--广告图--编号：D_14_1-->
+<div class="main">
+    <div class="YLCNGG_class YLCNGG_Style margin_top_10" id="D_14_1"></div>
+</div>
+<div class="clear"></div>
+<div class="main">
+<div class="clear"></div>
+    <div id="wrap">
+    	<div id="center">
+        	<div class="newslistdiv bg_white newsliseting">
+<h1>南宁市长期护理保险护理服务人员管理暂行办法</h1>
+<h2> 南医保规〔2021〕4号</h2>
+<div class="PageDetailsDate"><span>文章来源：南宁市医疗保障局</span>
+<span>发布日期：2021-11-29 15:54:53</span></div>
+                    <div class="PageDetailsDate"><span>浏览次数：<span id="thisnumbers"><img src="https://www.yanglaocn.com/images/Running.gif" width="16" height="16" border="0" title="正在加载次数..." alt="正在加载次数" /></span>次</span><span><a href="javascript:void(0)" onclick="javascript:PageLocation('usermessagenewdetails',40,0)" onfocus="javascript:this.blur();" class="ameth40">网友评论： <strong>0</strong> 条</a></span></div>
+<div class="PageDetailsContext"><p align="center"><img height="546" src="https://www.yanglaocn.com/images/upload/img/2021/11_29/4ff7314dc3a4ce9ea5f12fda106f798c.png" width="699" /></p><p style="text-indent:2em"><strong>第一条</strong>为规范南宁市长期护理保险（以下简称长护险）护理服务人员管理，保障长护险重度失能人员基本护理需求，推动我市长期护理服务体系建设和发展，根据《国家医保局&nbsp;财政部<a href="https://www.yanglaocn.com/shtml/20200924/1600909983124978.html" target="_blank" title="关于扩大长期护理保险制度试点的指导意见">关于扩大长期护理保险制度试点的指导意见</a>》（医保发〔2020〕37号）和《南宁市人民政府关于南宁市长期护理保险制度试点的实施意见》（南府规〔2021〕3号）精神，制定本办法。</p><p style="text-indent:2em"><strong>第二条</strong>本办法适用于经我市医疗保障经办机构（以下简称医保经办机构）、长期护理保险承办机构（以下简称长护险承办机构）记录备案，并与我市长护险协议定点护理服务机构（以下简称定点护理机构）签订相关管理合同，为享受长护险待遇人员提供南宁市长护险基础护理服务项目和服务内容的人员（统称为长护险护理服务人员）。</p><p style="text-indent:2em"><strong>第三条</strong>准入范围</p><p style="text-indent:2em"><strong>（一）</strong>在我市定点护理机构提供入住机构护理和机构上门护理服务工作，并与其所在机构签订有劳动、劳务等相关隶属管理合同的人员（以下称为社会护理员）。</p><p style="text-indent:2em"><strong>（二）</strong>由重度失能人员或其委托代理人指定，具有提供全日制居家（或上门）长期护理服务能力并与定点护理机构签订定向护理劳务合同的人员（包括但不限于重度失能人员之亲属、朋友、护工、保姆等，以下统称为专属护理员）。</p><p style="text-indent:2em"><strong>第四条</strong>准入条件</p><p style="text-indent:2em">长护险护理服务人员应当同时具备如下条件：</p><p style="text-indent:2em"><strong>（一）</strong>获得相关技能等级证书或专项职业能力证书。社会护理员及专属护理员应当获得养老护理员、家政服务员、病患陪护、老人照料等护理服务相关技能等级证书或专项职业能力证书。</p><p style="text-indent:2em">已取得护士执业资格证并经过护士执业注册的护理专业技术人员，按规定从事护理工作。</p><p style="text-indent:2em">不具备前述条件的，应当参加我市医保经办机构、长护险承办机构统一组织的长护险护理服务人员上岗培训，通过考核获取相应服务资格，具体规定由市医保经办机构另行确定。</p><p style="text-indent:2em"><strong>（二）</strong>获得技能培训合格证明。社会护理员及专属护理员应当获得定点护理机构颁发的技能培训合格证明。</p><p style="text-indent:2em"><strong>（三）</strong>年龄在65岁（含）以下，身体健康，无传染性疾病。</p><p style="text-indent:2em"><strong>第五条</strong>首次申请从事长护险护理服务、更换定点护理机构或暂停服务1年以上再次申请从事长护险护理服务的人员，需向所在定点护理机构提出长期护理服务的申请,并提交以下资料：</p><p style="text-indent:2em"><strong>（一）</strong>南宁市长期护理保险护理服务人员申请表；</p><p style="text-indent:2em"><strong>（二）</strong>身份证复印件；</p><p style="text-indent:2em"><strong>（三）</strong>疾控中心或医疗机构出具的健康证明；</p><p style="text-indent:2em"><strong>（四）</strong>护理服务相关技能等级证书或专项职业能力证书和定点护理机构颁发的技能培训合格证明；</p><p style="text-indent:2em"><strong>（五）</strong>护理服务人员承诺书。</p><p style="text-indent:2em">定点护理机构负责受理申请对象的资格审查，符合条件的按规定报送长护险承办机构备案。</p><p style="text-indent:2em"><strong>第六条</strong>医保经办机构负责建立统一的长护险护理服务人员信息库，定点护理机构负责将资格审查通过的长护险护理服务人员基本信息如实录入信息库，未纳入信息库的人员不得从事长护险护理服务。</p><p style="text-indent:2em"><strong>第七条</strong>有下列情形之一的，不予受理申请:</p><p style="text-indent:2em"><strong>（一）</strong>因健康原因不能或不宜执行护理服务的；</p><p style="text-indent:2em"><strong>（二）</strong>因违反本办法被终止或取消相关资格的；</p><p style="text-indent:2em"><strong>（三）</strong>在定点护理机构工作期间发生重大不良事件的；</p><p style="text-indent:2em"><strong>（四）</strong>其他不宜从事长护险护理服务工作的。</p><p style="text-indent:2em"><strong>第八条</strong>每1名长护险护理服务人员只能与1家定点护理机构建立护理劳动或劳务合同关系，在定点护理机构的综合管理下开展护理服务活动。</p><p style="text-indent:2em"><strong>第九条</strong>长护险护理服务人员应当遵守长护险相关制度和政策规定，并接受监督检查，严禁长护险护理服务人员从事不符合规定的护理技术性操作、医疗护理活动。</p><p style="text-indent:2em">定点护理机构应当加强对专属护理员护理服务行为的监督管理，在相关护理劳务合同中明确服务对象、权利义务及违反合同应当承担的责任，约定服务范围、服务项目和结算方式等内容后实行合同管理，保证其护理服务水平与社会化评价一致。</p><p style="text-indent:2em"><strong>第十条</strong>长护险护理服务人员发生不能继续从事相关护理服务的情形时，其所在的定点护理机构应当在三日内将退出情况报长护险承办机构，终止其长护险护理服务资格，并及时在长护险管理系统中进行长护险护理服务人员注销操作。</p><p style="text-indent:2em"><strong>第十一条</strong>定点护理机构负责机构内长护险护理服务人员的统筹调配，合理分派任务，准确记录服务日志。长护险护理服务人员因主观原因中断或不能继续提供护理服务时，由所在定点护理机构负责为其办理相关服务中断或终止手续，主动协调其他长护险护理服务人员继续为失能人员提供护理服务。</p><p style="text-indent:2em">长护险护理服务人员应当积极配合所在定点护理机构做好服务失能人员的接续工作，未经批准不得擅自离岗。因擅自中断服务遭到定点护理机构、失能人员及其委托代理人投诉的，一经核实，除按照相关合同、协议约定处理外，医保经办机构取消其长护险护理服务从业资格，三年内不得纳入我市长护险护理服务人员范围。</p><p style="text-indent:2em"><strong>第十二条</strong>定点护理机构应当建立长护险护理服务人员<a href="https://www.yanglaocn.com/yanglaoyuan/guanlizhidu/" target="_blank" title="管理制度">管理制度</a>，明确岗位职责、工作任务和具体要求，规范护理服务人员的服务行为。</p><p style="text-indent:2em"><strong>第十三条</strong>长护险护理服务人员应当按照重度失能人员或其委托代理人所选择的服务项目、服务内容、服务频次、服务时长执行服务。</p><p style="text-indent:2em"><strong>第十四条</strong>对重度失能人员提供机构上门护理的，定点护理机构、长护险承办机构应当通过上门、电话调查等多种方式对长护险护理服务人员的护理服务行为进行跟踪管理。</p><p style="text-indent:2em"><strong>第十五条</strong>由定点护理机构派出的上门护理服务人员，应当在失能人员身体状况发生变化时，及时告知其监护人或家属。</p><p style="text-indent:2em"><strong>第十六条</strong>长护险护理服务人员在护理服务中得悉重度失能人员的隐私，不得泄露，但法律另有规定的除外。</p><p style="text-indent:2em"><strong>第十七条</strong>长护险护理服务人员应当与定点护理机构共同做好重度失能人员的护理服务工作。医保经办机构与长护险承办机构对失能人员护理服务情况进行调查和稽核时，长护险护理服务人员应当予以配合，并有义务提供相关资料，不得弄虚作假。</p><p style="text-indent:2em"><strong>第十八条</strong>专属护理员应当服从所在定点护理机构的工作安排，明确定向护理服务对象后，不得从事入住机构护理和其他机构上门护理工作。专属护理员因主观原因中断或不能继续提供护理服务时，应当提前与失能人员或其委托代理人进行充分沟通，相关规定按照本办法第十一条处理。</p><p style="text-indent:2em"><strong>第十九条</strong>重度失能人员因康复、住院、死亡等原因暂停或终止长护险待遇享受资格的，其长护险护理服务人员应当立即如实告知定点护理机构，定点护理机构应当及时在系统中进行重度失能人员的待遇暂停或人员注销的操作。</p><p style="text-indent:2em"><strong>第二十条</strong>定点护理机构对失能人员建立护理服务档案，包括但不限于护理服务计划、服务记录执行情况和服务满意度情况等；长护险护理服务人员应当如实、详细记录护理服务内容，不得伪造护理服务记录，不得变相增加重度失能人员的个人经济负担。</p><p style="text-indent:2em"><strong>第二十一条</strong>医保经办机构及长护险承办机构应当定期举办针对长护险护理服务人员护理服务技能、职业道德和相关政策法规的培训，将人员的培训情况纳入对所在定点护理机构的考核。适时建立长护险定点培训机构制度，推动长护险护理服务人员岗前培训、继续教育的体系化建设。</p><p style="text-indent:2em"><strong>第二十二条</strong>定点护理机构按规定组织参加医保经办机构、长护险承办机构统一组织的长护险护理服务人员护理服务技能培训。负责拟定本机构护理职业技能培训内容及相关考核内容，报长护险承办机构备案后定期举办长护险护理服务人员的培训，建立培训档案。</p><p style="text-indent:2em">长护险护理服务人员应当按规定参加定点护理机构组织的职业道德和业务培训，每年培训时长不低于20课时(每小时为1个课时)，增强服务意识，不断提高业务技能水平，确保为服务对象提供优质的护理服务。</p><p style="text-indent:2em"><strong>第二十三条</strong>长护险护理服务人员应当接受其所在定点护理机构的日常考核及医保经办机构、长护险承办机构的定期考核与监督,对考核不合格的人员责令其立即整改，拒不改正或不服从管理的，取消其长护险护理服务从业资格，三年内不得纳入我市长护险护理服务人员范围。</p><p style="text-indent:2em"><strong>第二十四条</strong>医保经办机构、长护险承办机构应当将护理服务人员考核纳入长护险定点护理机构管理协议，明确定点护理机构对长护险护理服务人员的管理责任，并将考核结果与保证金以及定点护理机构评定挂钩。</p><p style="text-indent:2em"><strong>第二十五条</strong>医保经办机构对长护险护理服务人员违规产生的护理服务费用不予支付；造成基金损失的，由其所在的定点护理机构负责追回损失；情节严重的，按规定追究责任；涉嫌违法犯罪的，移交司法机关进行处理。</p><p style="text-indent:2em"><strong>第二十六条</strong>医保经办机构通过设立意见箱、监督投诉电话或网站、发放调查问卷等监督措施，及时掌握长护险护理服务人员为失能人员服务的情况；定点护理机构应当将本机构长护险护理服务人员的个人信息和服务规范在显要位置公布，公开监督电话，接受社会监督。</p><p style="text-indent:2em"><strong>第二十七条</strong>本办法由市医疗保障局负责解释。</p><p style="text-indent:2em"><strong>第二十八条</strong>本办法自2022年1月1日起施行,有效期两年。本办法出台前已经纳入管理而未取得有关证书的长护险护理服务人员，应当在本办法施行之日起三个月内参加相关培训并获得有关证书。到期未取得有关证书的，取消纳入长护险护理服务人员范围。</p></div>
+<div class="fenxiang">
+                    <p><strong>本文地址：</strong><a href="https://www.yanglaocn.com/shtml/20211129/1638172493129247.html" target="_blank" onfocus="javascript:this.blur()" class="ameth6" title="南宁市长期护理保险护理服务人员管理暂行办法 南医保规〔2021〕4号">南宁市长期护理保险护理服务人员管理暂行办法 南医保规〔2021〕4号</a></p>
+                </div>
+<div class="clear"></div>
+                <div class="fenxiang_new">
+                    <h6>评论</h6><h5>分享</h5>
+                    <label id="fxweibo"><i></i><b>新浪微博</b></label>
+                    <span id="fxsina"><i></i><b>QQ空间</b></span>
+                    <strong id="fxweixin_qrcode"><i></i><b>微信/手机浏览器</b></strong>
+                    <dd><i></i><b id="comment_number" onclick="javascript:PageLocation('usermessagenewdetails',40,0)">查看/参与评论</b></dd>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="newslistYS margin_top_10">
+</div>
+<div class="yanshengyuedu_title margin_top_20"><strong>南宁市养老院导航</strong></div>
+            <div class="juhe_kjbu margin_top_10 margin_bottom_10">
+                <a href="https://www.yanglaocn.com/yanglaoyuan/nn" target="_blank" title="南宁市养老院"><img src="https://www.yanglaocn.com/images/index_yanglaoyuan.png"><strong>进入南宁市养老院首页&nbsp;&nbsp;<i class="el-icon-link"></i></strong><span>南宁市养老院推荐、资讯、政策、专题、标准规范；</span></a> 
+                <a href="https://www.yanglaocn.com/yanglaoyuan/yly/?RgSelect=077101" target="_blank" style="margin-right: 0px;" title="南宁市养老院一览表"><img src="https://www.yanglaocn.com/images/index_yanglaoyuan_search.png"><strong>南宁市养老院一览表&nbsp;&nbsp;<i class="el-icon-link"></i></strong><span>南宁市养老院、养老机构、老年公寓、敬老院、收费价格、收费标准、一览表；</span></a>
+            </div>
+<!--广告图--编号：D_14_8-->
+            <div class="YLCNGG_Style margin_top_0">
+                <div class="YLCNGG_class" id="D_14_8"></div>
+            </div>
+            <div class="yanshengyuedu_title margin_top_20"><strong>延伸阅读</strong></div>
+            <div class="newslistYS margin_top_10">
+                <div class="PageDetailsNextTougao">
+<div class="yanshengyuedu_list">
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20210121/1611198049126235.html" target="_blank" title="图解《南宁市人民政府关于南宁市长期护理保险制度试点的实施意见》" >图解《南宁市人民政府关于南宁市长期护理保险制度试点的实施意见》</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20210121/1611196754126234.html" target="_blank" title="南宁市医疗保障局等7部门关于印发《南宁市长期护理保险制度试点实施办法》的通知" >南宁市医疗保障局等7部门关于印发《南宁市长期护理保险制度试点实施办法》的通知</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20191017/1571279944121186.html" target="_blank" title="南宁市人民政府 关于印发南宁市新建住宅小区配套社区居家养老服务用房管理办法（试行）的通知 南府规〔2019〕24号" >南宁市人民政府 关于印发南宁市新建住宅小区配套社区居家养老服务用房管理办法（试行）的通知 南府规〔2019〕24号</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20191024/1571887087121256.html" target="_blank" title="南宁市民政局 南宁市财政局 南宁市市场监督管理局 关于开展南宁市老年人助餐配餐服务试点的通知 南民政发〔2019〕42号" >南宁市民政局 南宁市财政局 南宁市市场监督管理局 关于开展南宁市老年人助餐配餐服务试点的通知 南民政发〔2019〕42号</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20140918/141100653631620.html" target="_blank" title="南宁市：工伤保险待遇服务指南" >南宁市：工伤保险待遇服务指南</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20191017/1571280096121187.html" target="_blank" title="《南宁市新建住宅小区配套社区居家养老服务用房管理办法（试行）》政策解读" >《南宁市新建住宅小区配套社区居家养老服务用房管理办法（试行）》政策解读</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20180307/1520408351114200.html" target="_blank" title="倾注真情，提升服务老人水平 ——南宁市金太阳护理员阮美莲荣获南宁市首届养老护理员之星" >倾注真情，提升服务老人水平 ——南宁市金太阳护理员阮美莲荣获南宁市首届养老护理员之星</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20191024/1571887256121257.html" target="_blank" title="《南宁市民政局 南宁市财政局 南宁市市场监督管理局关于开展南宁市老年人助餐配餐服务试点的通知》政策解读" >《南宁市民政局 南宁市财政局 南宁市市场监督管理局关于开展南宁市老年人助餐配餐服务试点的通知》政策解读</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20220218/1645146697130676.html" target="_blank" title="南宁市促进养老托育健康服务发展实施方案 南府办函〔2021〕205号" >南宁市促进养老托育健康服务发展实施方案 南府办函〔2021〕205号</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20161212/1481535414104728.html" target="_blank" title="南宁市人民政府关于印发南宁市政府购买居家养老服务实施意见的通知（南府规[2016]27号）" >南宁市人民政府关于印发南宁市政府购买居家养老服务实施意见的通知（南府规[2016]27号）</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20190821/1566368986120502.html" target="_blank" title="南宁市人民政府关于印发南宁市进一步打造全国养老服务业综合改革试点城市实施方案的通知 南府发〔2019〕11号" >南宁市人民政府关于印发南宁市进一步打造全国养老服务业综合改革试点城市实施方案的通知 南府发〔2019〕11号</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20150717/143710197647551.html" target="_blank" title="关于贯彻落实《南宁市人民政府办公厅关于印发南宁市加快发展养老服务业实施意见的通知》（南民政发[2015]82号）" >关于贯彻落实《南宁市人民政府办公厅关于印发南宁市加快发展养老服务业实施意见的通知》（南民政发[2015]82号）</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20151014/144480231459211.html" target="_blank" title="南宁市社会福利院接受南宁养老服务协会的授牌" >南宁市社会福利院接受南宁养老服务协会的授牌</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20161010/1476051197101788.html" target="_blank" title="南宁市：关于加强住房公积金提取管理的通知" >南宁市：关于加强住房公积金提取管理的通知</a></span>
+<span><i class="el-icon-connection"></i> <a href="https://www.yanglaocn.com/shtml/20220418/1650252534132122.html" target="_blank" title="南宁市瑞生养老院 （医养结合、护理型机构）" >南宁市瑞生养老院 （医养结合、护理型机构）</a></span>
+</div>
+<div class="clear"></div>
+                </div>
+            </div>
+            <!--广告图--编号：D_14_6-->
+            <div class="YLCNGG_Style margin_top_20">
+                <div class="YLCNGG_class" id="D_14_6"></div>
+            </div>
+<div class="yanshengyuedu_title margin_top_20"><strong>相关标签</strong></div>
+            <div class="newslistYS margin_top_10">
+                <div class="PageDetailsNextTougao">                    
+                    <div class="arjuhelabel_list">
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh7087.html" target="_blank" title="海福祥养老护理院名单一览表" >海福祥养老护理院名单一览表</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh6933.html" target="_blank" title="养老机构护理型床位" >养老机构护理型床位</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh6993.html" target="_blank" title="养老服务发展规划" >养老服务发展规划</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh6536.html" target="_blank" title="养老院护理员培训" >养老院护理员培训</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh6532.html" target="_blank" title="养老机构运营管理" >养老机构运营管理</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh6947.html" target="_blank" title="2021年养老保险缴费基数" >2021年养老保险缴费基数</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh7086.html" target="_blank" title="海福祥养老护理院收费标准" >海福祥养老护理院收费标准</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh6533.html" target="_blank" title="养老院运营管理" >养老院运营管理</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh6513.html" target="_blank" title="养老服务需求" >养老服务需求</a></span>
+<span><i class="el-icon-price-tag"></i> <a href="https://www.yanglaocn.com/shtml/juhe/jh6514.html" target="_blank" title="医养结合服务" >医养结合服务</a></span>
+</div>                   
+                    <div class="clear"></div>
+                </div>
+            </div>
+<!--广告图--编号：D_14_7-->
+            <div class="YLCNGG_Style margin_top_20">
+                <div class="YLCNGG_class" id="D_14_7"></div>
+            </div>            
+            <div class="clear"></div>
+<div class="PageDetailsNext">
+                <div class="PageDetailsUpDown"><label>上一篇：</label>
+<a href="https://www.yanglaocn.com/shtml/20211130/1638234122129249.html" class="ameth26" title="查看上一篇">江西省养老服务条例</a>
+</div>
+                <div class="PageDetailsUpDown"><label>下一篇：</label>
+<a href="https://www.yanglaocn.com/shtml/20211129/1638165837129242.html" class="ameth26" title="查看下一篇">《广州市老年人照护需求综合评估管理办法（试行）》【图文政策解读】</a>
+</a></div>
+            </div>
+<div class="clear"></div>
+        </div>
+
+<div class="fen_right" id="topic_right_vue">
+<div class="fen_index_hot">
+        <div class="topic_news_right_ti topic_news_hot"><strong>☷ 热点</strong></div>
+        <div class="main_right_list bg_white">
+<span><a href="https://www.yanglaocn.com/shtml/20220806/1659798819134602.html" title="西安市社区居家养老服务建设和运营补助管理办法"
+                     target="_blank">西安市社区居家养老服务建设和运营补助管理办法</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220727/1658906214134297.html" title="关于提高最低生活保障标准的通知"
+                     target="_blank">关于提高最低生活保障标准的通知</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220630/1656552335133642.html" title="关于明确社区食堂补贴发放流程的通知（试行）"
+                     target="_blank">关于明确社区食堂补贴发放流程的通知（试行）</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220616/1655339490133353.html" title="关于进一步抓紧抓实养老服务领域疫情防控工作的通知"
+                     target="_blank">关于进一步抓紧抓实养老服务领域疫情防控工作的通知</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220509/1652057896132488.html" title="山西省人民政府办公厅关于支持康养产业发展的意见"
+                     target="_blank">山西省人民政府办公厅关于支持康养产业发展的意见</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220418/1650245065132114.html" title="关于调整政府购买居家养老服务和老年人家庭适老化改造补贴标准的通知"
+                     target="_blank">关于调整政府购买居家养老服务和老年人家庭适老化改造补贴标准的通知</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220402/1648863865131601.html" title="湖北省养老服务体系建设“十四五”规划"
+                     target="_blank">湖北省养老服务体系建设“十四五”规划</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220330/1648610609131491.html" title="江苏省城市街道综合性养老服务中心建设及运营规范"
+                     target="_blank">江苏省城市街道综合性养老服务中心建设及运营规范</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220307/1646619538130983.html" title="江苏省家庭养老照护床位建设和服务基本规范"
+                     target="_blank">江苏省家庭养老照护床位建设和服务基本规范</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220304/1646354945130949.html" title="济南市老年人高龄津贴发放管理实施细则"
+                     target="_blank">济南市老年人高龄津贴发放管理实施细则</a></span>
+</div>
+    </div>
+<!--广告图--编号：L_14_5 / D_14_5-->
+<div class="YLCNGG_class YLCNGG_Style margin_top_10" id="D_14_5"></div>
+<div class="fen_index_hot">
+        <div class="topic_news_right_ti"><strong>☷ 推荐</strong></div>
+        <div class="main_right_list bg_white">
+<p class="margin_bottom_10">
+                <a href="https://www.yanglaocn.com/shtml/20230306/1678064881140244.html" target="_blank" title="长春市新建住宅小区社区居家养老服务用房配建移交管理办法">
+                    <label><img src="https://www.yanglaocn.com/images/upload/img/2023/03_06/aa89c6f98375e4420a453fac95c1496c.png"></label>
+                    <strong>长春市新建住宅小区社区居家养老服务用房配建移交管理办法</strong>
+                    <b>2023-03-06</b>
+                </a>
+            </p>
+<p class="margin_bottom_10">
+                <a href="https://www.yanglaocn.com/shtml/20230306/1678063521140241.html" target="_blank" title="关于调整全市高龄老人生活津贴发放标准的通知">
+                    <label><img src="https://www.yanglaocn.com/images/upload/img/2023/03_06/9f405b4fc7c2a924c5a14cf9d80effce.png"></label>
+                    <strong>关于调整全市高龄老人生活津贴发放标准的通知</strong>
+                    <b>2023-03-06</b>
+                </a>
+            </p>
+<p class="margin_bottom_10">
+                <a href="https://www.yanglaocn.com/shtml/20230306/1678063370140240.html" target="_blank" title="吉林省社区居家养老服务改革试点工作方案">
+                    <label><img src="https://www.yanglaocn.com/images/upload/img/2023/03_06/b9935b06499ab935fa184fa30f2b753d.png"></label>
+                    <strong>吉林省社区居家养老服务改革试点工作方案</strong>
+                    <b>2023-03-06</b>
+                </a>
+            </p>
+<p class="margin_bottom_10">
+                <a href="https://www.yanglaocn.com/shtml/20230220/1676853119139463.html" target="_blank" title="养老和家政服务标准化专项行动方案">
+                    <label><img src="https://www.yanglaocn.com/images/upload/img/2023/02_20/31ea2037c27c55c8c536fc5db83ef7ae.png"></label>
+                    <strong>养老和家政服务标准化专项行动方案</strong>
+                    <b>2023-02-20</b>
+                </a>
+            </p>
+<p class="margin_bottom_10">
+                <a href="https://www.yanglaocn.com/shtml/20230214/1676384352139319.html" target="_blank" title="泰州市推进养老服务高质量发展行动方案（2023—2025年）">
+                    <label><img src="https://www.yanglaocn.com/images/upload/img/2023/02_14/92726e31bb5a06158da4b69f771b2b83.png"></label>
+                    <strong>泰州市推进养老服务高质量发展行动方案（2023—2025年）</strong>
+                    <b>2023-02-14</b>
+                </a>
+            </p>
+</div>
+    </div>
+<!--广告图--编号：L_14_3 / D_14_3-->
+<div class="YLCNGG_class YLCNGG_Style margin_top_10" id="D_14_3"></div>
+<div class="fen_index_hot">
+        <div class="topic_news_right_ti"><strong>☷ 最新评论</strong></div>
+        <div class="main_right_list bg_white">
+<span><a href="https://www.yanglaocn.com/shtml/20220225/1645750606130809.html" title="全面推进养老服务事业产业协同发展 《河南省“十四五”养老服务体系和康养产业发展规划》解读"
+                     target="_blank">全面推进养老服务事业产业协同发展 《河南省“十四五”养老服务体系和康养产业发展规划》解读</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20201105/1604550421125412.html" title="关于印发《温州市新建住宅小区配建居家养老服务设施管理办法（试行）》的通知 温民养〔2020〕73号"
+                     target="_blank">关于印发《温州市新建住宅小区配建居家养老服务设施管理办法（试行）》的通知 温民养〔2020〕73号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20220120/1642649681130273.html" title="关于全面加强老年健康服务工作的通知 国卫老龄发〔2021〕45号"
+                     target="_blank">关于全面加强老年健康服务工作的通知 国卫老龄发〔2021〕45号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20180115/1516023804113719.html" title="关于进一步加强和改善老年人残疾人出行服务的实施意见（交运发〔2018〕8号）"
+                     target="_blank">关于进一步加强和改善老年人残疾人出行服务的实施意见（交运发〔2018〕8号）</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20210713/1626162097127206.html" title="关于印发《黑龙江省高龄老人津贴发放管理办法》的通知 黑民规〔2021〕6号"
+                     target="_blank">关于印发《黑龙江省高龄老人津贴发放管理办法》的通知 黑民规〔2021〕6号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20210809/1628493069127475.html" title="山东省人民政府办公厅 关于印发山东省“十四五”养老服务体系规划的通知 鲁政办字〔2021〕86号"
+                     target="_blank">山东省人民政府办公厅 关于印发山东省“十四五”养老服务体系规划的通知 鲁政办字〔2021〕86号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20111225/132480800726786.html" title="攀枝花市优待老年人规定"
+                     target="_blank">攀枝花市优待老年人规定</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20180507/1525698783114686.html" title="关于开展2018年度营口市企业离退休（遗属）人员养老金领取资格认证工作的通知（营人社〔2018〕31号）"
+                     target="_blank">关于开展2018年度营口市企业离退休（遗属）人员养老金领取资格认证工作的通知（营人社〔2018〕31号）</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20131227/138811398629455.html" title="天津市民政局天津市财政局关于对我市困难老年人增加居家养老护理补贴的意见"
+                     target="_blank">天津市民政局天津市财政局关于对我市困难老年人增加居家养老护理补贴的意见</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20210418/1618723945126564.html" title="天津市医疗保障局 关于公布长期护理保险阶段性失能评定机构名单的通知"
+                     target="_blank">天津市医疗保障局 关于公布长期护理保险阶段性失能评定机构名单的通知</a></span>
+</div>
+    </div>
+<!--广告图--编号：L_14_4 / D_14_4-->
+<div class="YLCNGG_class YLCNGG_Style margin_top_10" id="D_14_4"></div>
+<div class="fen_index_hot" id="newsleft_piaofu_id">
+        <div class="topic_news_right_ti"><strong>☷ 最新发布</strong></div>
+        <div class="main_right_list bg_white">
+<span><a href="https://www.yanglaocn.com/shtml/20230306/1678064881140244.html" title="长春市新建住宅小区社区居家养老服务用房配建移交管理办法 长民规〔2023〕1号"
+                     target="_blank">长春市新建住宅小区社区居家养老服务用房配建移交管理办法 长民规〔2023〕1号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20230306/1678063521140241.html" title="杭州市民政局 杭州市财政局 关于调整全市高龄老人生活津贴发放标准的通知 杭民发〔2023〕24号"
+                     target="_blank">杭州市民政局 杭州市财政局 关于调整全市高龄老人生活津贴发放标准的通知 杭民发〔2023〕24号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20230306/1678063370140240.html" title="吉林省社区居家养老服务改革试点工作方案 吉民发〔2023〕9号"
+                     target="_blank">吉林省社区居家养老服务改革试点工作方案 吉民发〔2023〕9号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20230220/1676853119139463.html" title="养老和家政服务标准化专项行动方案"
+                     target="_blank">养老和家政服务标准化专项行动方案</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20230214/1676384352139319.html" title="泰州市推进养老服务高质量发展行动方案（2023—2025年） 泰政办发〔2023〕6号"
+                     target="_blank">泰州市推进养老服务高质量发展行动方案（2023—2025年） 泰政办发〔2023〕6号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20230208/1675819420139188.html" title="杭州市基本养老保障办法 杭政〔2013〕104号"
+                     target="_blank">杭州市基本养老保障办法 杭政〔2013〕104号</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20230207/1675729288139131.html" title="陕西省养老服务条例"
+                     target="_blank">陕西省养老服务条例</a></span>
+<span><a href="https://www.yanglaocn.com/shtml/20230128/1674869352138943.html" title="上海市卫生健康委员会 上海市民政局 关于做好老年照护统一需求评估机构行业管理有关事项的通知 沪卫老龄〔2023〕2号	"
+                     target="_blank">上海市卫生健康委员会 上海市民政局 关于做好老年照护统一需求评估机构行业管理有关事项的通知 沪卫老龄〔2023〕2号	</a></span>
+</div>
+    </div>
+</div></div>
+</div>
+<!--评论回复--start-->
+<div class="clear"></div>
+<div class="main">
+<div class="bbsnewsrowstitlemgintop" id="usermessagenewdetails">
+    <div class="bbsnewsrowatitlename">网友评论 <span></span></div><div class="bbsnewsrowsmokmore"><strong id="show_number"></strong>人参与 | <strong id="commentary_number"></strong>人评论</div>
+</div>
+<input type="hidden" id="newscommentarypo_uid" name="newscommentarypo_uid" value="129247" />
+<input type="hidden" id="newscommentarypo_cid" name="newscommentarypo_cid" value="14" />
+<div class="newdetailshuifuhtmledit" id="newspinglunhtml">
+<div class="newsmessage newsmessagenologin"><span>发布评论需要您先登录， 立即 <a href="javascript:void(0);" onfocus="javascript:this.blur();" class="username" title="会员登录" onclick="javascript:ShowUserLoginAlert();">登录</a> | <a href="https://www.yanglaocn.com/register/" onfocus="javascript:this.blur();" class="username" title="会员注册" target="_blank">注册</a> 。</span></div>
+</div>
+
+<div id="Commentarypo_Reply_List_Html"
+style="display:none"
+>
+<div class="bbsnewsrowstitle" >
+    <div class="bbsnewsrowatitlename">最新评论</div><div class="bbsnewsrowsmokmore"></div>
+</div>
+<div class="newscommentarypo_div">
+    <div id="ReplyHtmlVuListDiv"></div>
+</div>
+<div class="bbsnewsrowstitlenotop" >
+    <div class="bbsnewsrowatitlename"><a href="javascript:void(0);"  class="ameth10"  onclick="javascript:PageLocation('usermessagenewdetails',80,0)">发表评论</a></div><div class="bbsnewsrowsmokmore">欢迎您的精彩评论。</div>
+</div>
+</div>
+</div>
+<!--评论回复--end-->
+<div class="clear"></div>
+<div class="main">
+    <!--广告图--编号：D_14_2-->
+  <div class="YLCNGG_class YLCNGG_Style" id="D_14_2"></div>
+</div>
+<div class="clear"></div>
+
+<div class="main_wide">
+<div id="footer">
+       <ul>
+        	<li><a href="https://www.yanglaocn.com/" title="养老信息网" onFocus="this.blur()">网站首页</a></li>
+            <li><a href="https://www.yanglaocn.com/aboutus/" title="关于我们" rel="nofollow">关于我们</a></li>           
+            <li><a href="https://www.yanglaocn.com/bbs/" title="养老社区" onFocus="this.blur()">养老社区</a></li>
+            <li><a href="https://www.yanglaocn.com/yanglaoyuan/" title="养老院查询" onFocus="this.blur()">养老院查询</a></li>
+            <li><a href="https://www.yanglaocn.com/webmap/" title="网站地图"  rel="nofollow">网站地图</a></li>
+            <li><a href="https://www.yanglaocn.com/contactus/" title="联系我们"  rel="nofollow">联系我们</a></li>
+            <li><a href="https://www.yanglaocn.com/disclaimer/" title="免责声明"  rel="nofollow">免责声明</a></li>
+        </ul>
+    	<ul>
+        	<li>版权所有：<a href="https://www.yanglaocn.com" target="_blank" onFocus="this.blur()">养老信息网</a></li>
+            <li>备案号:<a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow">京ICP备13014276号-1</a></li>
+        </ul>
+        <ul><li>声明：本网站部分信息及图片来源于网络，如侵犯了您的权益或版权，请及时告知我们予以删除！</li></ul>      
+        <ul>
+        	<li>E-mail:yanglaocn@yanglaocn.com  /  yanglaocn@163.com</li>
+            <li>QQ:159220868&nbsp;/&nbsp;248411521</li>
+            <!--<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=159220868&site=qq&menu=yes" onFocus="this.blur()"><img border="0" src="http://wpa.qq.com/pa?p=2:159220868:41 &r=0.7478782087742928" alt="养老信息网(www.yanglaocn.com)欢迎您！" title="养老信息网(www.yanglaocn.com)欢迎您" align="absbottom"></a></li>
+            <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=248411521&site=qq&menu=yes" onFocus="this.blur()"><img border="0" src="http://wpa.qq.com/pa?p=2:248411521:41" alt="养老信息网(www.yanglaocn.com)欢迎您！" title="养老信息网(www.yanglaocn.com)欢迎您！" align="absbottom"></a></li>-->
+        </ul>
+    </div>
+</div>
+<!-- 右侧飘浮代码 开始 -->
+<div id="service">
+    <a href="javascript:void(0)" class="elderlyregistration" id="elderlyregistration_tip">长者入住登记</a>
+    <a href="javascript:void(0)" class="weixin" id="weixin_tip" onclick="javascript:PtipWeiXinShow();">公众微信</a>
+    <a href="javascript:void(0)" class="srvLog" onclick="javascript:ShowFeedback();">意见或建议</a>
+<a class="goTop" id="goTop" title="返回顶部" style="display:none">返回顶部</a>
+</div>
+<!-- 代码 结束 -->
+<script type="text/javascript" src="https://www.yanglaocn.com/js/function.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/jquery.media.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/artDialog/artDialog.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/artDialogFun.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/index.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/newsleft.js" ></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/layui/layui.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/vue.min.js" ></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/element/element.min.js" ></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/index_vue.js?v=20211026"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script type="text/javascript" language="javascript">
+/*设置微信分享*/
+$(document).ready(function() {
+    var originUrl = window.location.href;
+    //console.log(originUrl);
+    $.ajax({
+        url: shop_url+"headerAjax.php?ajaxtype=signpackage&originUrl="+encodeURIComponent(originUrl)+"&rand="+Math.random(),
+        dataType: 'html',
+        type: 'GET',
+        timeout: 30000,
+        success: function(result)
+        {
+            //console.log(result);
+            var signPackage= JSON.parse(result);
+            //console.log(signPackage);
+            var baseUrl = "https://www.yanglaocn.com/";
+            var descVu = $("meta[name='description']").attr("content");
+            if(descVu.length>0){
+                descVu = "——"+descVu;
+            }else{
+                descVu = "——养老信息网，让我们共同关注老年人！";
+            }
+var imgUrlVu = baseUrl + 'images/wxfenxiang.jpg';
+if($(".ylyxx_base_avimg img").length>0){
+imgUrlVu = $(".ylyxx_base_avimg img").attr("src");//养老机构正文的机构LOGO
+}else if($("meta[name='thumbnailimg']").length>0){
+                imgUrlVu = $("meta[name='thumbnailimg']").attr("content");//文章正文缩略图
+            }
+            var wxData = {
+                "imgUrl" : imgUrlVu,
+                "link"   : originUrl,
+                "title"  : $(document).attr('title'),
+                "desc"   : descVu
+            };
+            wx.config({
+                debug: false,
+                appId: signPackage.appId,
+                timestamp: parseInt(signPackage.timestamp),
+                nonceStr: signPackage.nonceStr,
+                signature: signPackage.signature,
+                jsApiList: [
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage'
+                ]
+            });
+            wx.ready(function () {
+                wx.onMenuShareTimeline({
+                    title: wxData.title,
+                    link: wxData.link,
+                    imgUrl: wxData.imgUrl,
+                    success: function () {
+                        //console.log('OK');
+                    }
+                });
+                wx.onMenuShareAppMessage({
+                    title: wxData.title,
+                    desc: wxData.desc,
+                    link: wxData.link,
+                    imgUrl: wxData.imgUrl,
+                    type: 'link',
+                    dataUrl: '',
+                    success: function () {
+                        //console.log('OK');
+                    }
+                });
+            });
+        }
+})
+});
+//右下角滑动通知
+var intervalProcess;
+GetInstantMessage();
+
+intervalProcess = window.setInterval(function(){ 
+GetInstantMessage();
+},20000); 
+
+window.onfocus = function() {//当前窗口被激活
+GetInstantMessage();
+intervalProcess = window.setInterval(function(){ 
+GetInstantMessage();
+},20000); 
+}
+window.onblur = function() {//当前窗口没有激活
+    clearInterval(intervalProcess);
+}
+function AddFavorite(sURL, sTitle) { 
+    try { 
+        window.external.addFavorite(sURL, sTitle); 
+    } catch (e) { 
+        try { 
+            window.sidebar.addPanel(sTitle, sURL, ""); 
+        } catch (e) { 
+            alert("加入收藏失败,请手动添加."); 
+        } 
+    } 
+} 
+function setHomepage(pageURL) { 
+    if (document.all) { 
+        document.body.style.behavior='url(#default#homepage)'; 
+        document.body.setHomePage(pageURL); 
+    } 
+    else if (window.sidebar) { 
+        if(window.netscape) { 
+            try { 
+                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect"); 
+            } 
+            catch (e) { 
+                alert( "该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项signed.applets.codebase_principal_support 值该为true" ); 
+            } 
+        } 
+        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch); 
+        prefs.setCharPref('browser.startup.homepage',pageURL); 
+    } 
+}
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6168556b0a921e8d0375330e702bc0fe' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/scrolltopcontrol.js"></script><!--回复的弹出框-->
+<div class="ReleasemessageRight"  id="myOnNewsPageContent" style="display:none">
+     <div id="ShowLoginHTMLSPE" style="display:none;"></div>
+     <input type="hidden" name="uid" id="uid" value="129247" />
+ <input type="hidden" name="rquid" id="rquid" /><!--回复帖子的id-->
+     <input type="hidden" name="rqtype" id="rqtype" /><!--回复帖子的类型，"回复"或"引用"-->
+     <input type="hidden" name="rid" id="rid" />
+     <input type="hidden" name="replyshow" id="replyshow" />
+     <div class="myOnPageContentTitle"><span id="myOnPageContentTitleRQ"></span></div>
+     <div class="clear"></div>
+     <div id="rmessageTshowspan"><textarea id="newscommentarypo_rmessage" name="newscommentarypo_rmessage" cols="4" rows="6" class="newsmessage"></textarea></div>
+     <input type="button" name="submitrmessageT" id="submitrmessageT" class="zatansubmit" title="发表回复" value="发表回复" onfocus="javascript:this.blur();" onclick="javascript:SetNewsReplyTextarea(this);" />
+</div>
+</body>
+<script type="text/javascript">
+SetArticleNumber('https://www.yanglaocn.com/','newdetails.php');//加载浏览次数
+SetNnewCommentary_Number('129247');//评论加载浏览次数和评论数
+SetHmtlNEWSCommentary();//养老机构加载回复功能
+</script>
+<!--图片播放处理-->
+<script type="text/javascript" src="https://www.yanglaocn.com/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/poshytipsrc/jquery.poshytip.js"></script>
+<script type="text/javascript">
+$("#fxweixin_qrcode").click(function(event){
+PtipHide("fxweixin_qrcode");
+event=event||window.event;
+    event.stopPropagation();
+PtipSelectQRcodeShow("fxweixin_qrcode","https://www.yanglaocn.com/crcode/?url=http://m.yanglaocn.com/shtml/20211129/1638172493129247.html&size=4");
+});
+$(document).click(function(e){
+    PtipHide("fxweixin_qrcode");
+});
+$(document).ready(function() {
+ $(".PageDetailsContext img").each(function(){
+ $(this).attr
+    var strA = '<a href="'+ this.src+'" rel="bbsdetailsgallery" class="bbsdetailsfancybox" target="_blank"></a>';
+    $(this).wrapAll(strA);
+  });
+});
+$(".bbsdetailsfancybox").fancybox({
+openEffect	: 'none',
+closeEffect	: 'none'
+});
+</script>
+<!--视频播放处理-->
+<script type="text/javascript" src="https://www.yanglaocn.com/js/vide/js/html5media.min.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/vide/js/video.min.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/vide/js/zh-CN.js"></script>
+<script type="text/javascript" src="https://www.yanglaocn.com/js/audiojs/audio.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+//内容视频处理
+if($(".PageDetailsContext param[name='movie']").length){
+    var video_url;
+$("head").append('<link href="'+shop_url+'js/vide/css/video-js.min.css" rel="stylesheet" type="text/css" />');
+$(".PageDetailsContext param[name='movie']").each(function(){
+video_url = $(this).attr("value");
+$(this).parent().wrap('<video  class="video-js vjs-big-play-centered" data-setup="{}" controls preload="auto" width="700"><source src="'+video_url+'" type="video/mp4"><source src="'+video_url+'" type="video/webm"><source src="'+video_url+'" type="video/ogg"><p class="vjs-no-js"></p></video>');
+});
+}
+//内容音频处理
+if($(".PageDetailsContext iframe").length){
+$(".PageDetailsContext iframe").each(function(){
+var audio_url = $(this).attr("src");
+var point = audio_url.lastIndexOf(".");
+var type = audio_url.substr(point);
+ if(type==".mp3"|| type==".cda"|| type==".wav"){
+$(this).wrap('<audio src="'+audio_url+'"></audio>');
+ }
+});
+audiojs.events.ready(function() {
+  var as = audiojs.createAll();
+});
+}
+});
+
+</script>
+</html>

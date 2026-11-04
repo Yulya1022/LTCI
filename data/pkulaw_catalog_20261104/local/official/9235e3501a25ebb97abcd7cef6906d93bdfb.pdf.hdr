@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 03 Nov 2026 14:36:16 GMT
+Content-Type: application/pdf
+Content-Length: 412712
+Last-Modified: Thu, 27 Aug 2026 03:53:53 GMT
+Connection: keep-alive
+ETag: "6a8fb4d1-64c28"
+Expires: Tue, 03 Nov 2026 14:41:16 GMT
+Cache-Control: max-age=300
+name: ucapweb2
+Accept-Ranges: bytes
+

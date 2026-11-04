@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 03 Nov 2026 14:36:13 GMT
+Content-Type: application/pdf
+Content-Length: 427085
+Last-Modified: Thu, 27 Aug 2026 03:53:53 GMT
+Connection: keep-alive
+ETag: "6a8fb4d1-6844d"
+Expires: Tue, 03 Nov 2026 14:41:13 GMT
+Cache-Control: max-age=300
+name: 172-24-27-0030.novalocal
+Accept-Ranges: bytes
+

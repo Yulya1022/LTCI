@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic Page Needs =============================================================================== -->
+    <meta charset="utf-8" />
+    
+
+    <!-- Mobile Specific Metas ========================================================================== -->
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/basic.css" />
+    <!--<link rel="stylesheet" type="text/css" href="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/inside.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/mobile_inside.css" />-->
+    <script src="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/jquery.min.js"></script>
+    <style type="text/css">
+      #zoom p {
+        line-height: 28px;
+      }
+
+      .main table {
+        width: 100% !important;
+      }
+      /*当前位置样式控制*/
+      div.local > a {
+        float: left;
+      }
+
+      div.local table {
+        float: left !important;
+        width: auto !important;
+      }
+      /*政府图片样式*/
+      #govBottom img {
+        float: none;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function search() {
+        window.open("https://search.zj.gov.cn/api-gateway/jpaas-jsearch-web-server/search?websiteid=330400000000&serviceId=YcTOd1ftgC5dxzJ8RhCBN&webId=3212&q=" + $("#key").val());
+      }
+      //获取url参数
+      function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+      }
+      //set cur time at top
+      function setCurTime() {
+        //当前日期
+        var a = new Array("日", "一", "二", "三", "四", "五", "六");
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth();
+        var day = now.getDate();
+        var week = now.getDay();
+        var str = "星期" + a[week];
+        $("#show").html("" + year + "年" + (month + 1) + "月" + day + "日 " + str + "");
+        $("#show_old").html("" + year + "年" + (month + 1) + "月" + day + "日 " + str + "");
+      }
+      //enter old
+      function enterOld() {
+        aria.oldFixedStart();
+        window.localStorage.setItem("OldmanFlag", "1");
+        $("#p_enterOld").css("display", "none");
+        $("#p_exitOld").css("display", "");
+        setTimeout(function () {
+          $("body").addClass("useOldFixed");
+          $("div.about p").css("font-size", "30px");
+          $("div.about p span").css("font-size", "30px");
+        }, 500);
+      }
+      function enterOldFromMobile() {
+        aria.oldFixedStart();
+        window.localStorage.setItem("OldmanFlag", "1");
+        $("body").addClass("useInMobile");
+      }
+      //enter relax
+      function enterRelax() {
+        aria.start();
+        $("#p_relax").addClass("none");
+      }
+      //exit old
+      function exitOld() {
+        aria.end();
+        window.localStorage.removeItem("OldmanFlag");
+        $("#p_enterOld").css("display", "");
+        $("#p_exitOld").css("display", "none");
+        $("body").removeClass("useOldFixed");
+        $("div.about p").css("font-size", "14px");
+        $("div.about p span").css("font-size", "14px");
+      }
+      //nav style change
+      function navStyleChange() {
+        //导航当前栏目样式添加hover
+        var path = window.location.pathname;
+        //新闻动态
+        if (path.indexOf("col1647694") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#xw").addClass("hover");
+          $("#xw_old").addClass("hover");
+        }
+        //党务公开
+        else if (path.indexOf("col1229107014") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#dwgk").addClass("hover");
+          $("#dwgk_old").addClass("hover");
+        }
+        //政策文件
+        else if (path.indexOf("col1648130") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#zw").addClass("hover");
+          $("#zw_old").addClass("hover");
+        }
+        //办事大厅
+        else if (path.indexOf("col1229125995") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#zc").addClass("hover");
+          $("#zc_old").addClass("hover");
+        }
+        //活动专题
+        else if (path.indexOf("col1229604305") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#hdzt").addClass("hover");
+          $("#hdzt_old").addClass("hover");
+        }
+      }
+      // add zfxxgk menu click
+      function addZfxxgkMenuClick() {
+        var ul_zdgk = $("#ul_zdgk");
+        $("div[class=leftBar] dl dd").each(function () {
+          var _this = $(this);
+          _this.on("click", function () {
+            if (_this.children(":first").text() == "法定主动公开内容") {
+              if (ul_zdgk.css("display") == "none") {
+                ul_zdgk.css("display", "");
+                _this.append(ul_zdgk);
+                _this.children("a").removeAttr("href");
+              } else ul_zdgk.css("display", "none");
+            }
+          });
+        });
+      }
+    </script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script src="/cms_files/default/script/jslib/jquery.js"></script>
+ <script src="/cms_files/default/script/jslib/jquery.cookie.js"></script>
+ <script src="/cms_files/default/script/layui/layui.all.js"></script>
+ <script src="/cms_files/default/script/layui/layer/layer.js"></script>
+ <script src="/script/webglobal.js"></script>
+ <script src="/plugins/libs/require.js"></script>
+ <script src="/plugins/libs/load.js"></script>
+ <script src="/script/webgray.js"></script>
+ <script src="/script/webgray_1229562038_2343703.js"></script>
+ <link rel="stylesheet" href="/cms_files/default/css/iconfont.css" />
+<link rel="stylesheet" href="/cms_files/default/script/layui/css/layui.css" />
+<title>嘉医保〔2019〕76号关于印发《嘉兴市长期护理保险护理服务监管办法（试行）》的通知</title>
+<meta name="ColId" content="1229562038">
+<meta name="SiteName" content="嘉兴市医疗保障局">
+<meta name="SiteDomain" content="ybj.jiaxing.gov.cn">
+<meta name="SiteIDCode" content="3304000061">
+<meta name="ColumnName" content="行政规范性文件">
+<meta name="ColumnType" content="行政规范性文件">
+<meta name="ArticleTitle" content="嘉医保〔2019〕76号关于印发《嘉兴市长期护理保险护理服务监管办法（试行）》的通知">
+<meta name="PubDate" content="2021-08-31 17:18">
+<meta name="ContentSource" content="市医保局">
+<meta name="Keywords" content="">
+<meta name="Author" content="">
+<meta name="Description" content="">
+<meta name="Url" content="/art/2021/8/31/art_1229562038_2343703.html">
+<meta name="server" content="/art/2021/8/31/art_1229562038_2343703.html">
+<meta name="extend1" content="1590">
+<meta id="pagetype" content="1">
+</head>
+
+  <body class="indx-body"><div id='barrierfree_container' pageTimestamp= '1793253813409'>
+    <!-- header ============================================================================================= -->
+    <div class="header">
+      <div class="topBox" aria-region="true" aria-regiontype="1" aria-label="顶部工具栏">
+        <div class="inner">
+          <em>欢迎访问嘉兴市医疗保障局！</em>
+          <div class="time">今天是：<span id="show"></span></div>
+          <p id="p_relax"><a href="javascript:void(0)" onclick="enterRelax()" aria-label="无障碍阅读,按ctrl+alt+i进入,ctrl+alt+e退出" tabindex="1">无障碍阅读</a></p>
+          <p id="p_enterOld"><a href="javascript:void(0)" onclick="enterOld()" aria-label="进入关怀版,按ctrl +alt+g进入">进入关怀版</a></p>
+          <p style="display: none" id="p_exitOld"><a href="javascript:void(0)" onclick="exitOld()" aria-label="退出关怀版">退出关怀版</a></p>
+        </div>
+      </div>
+      <div class="headBox">
+        <div class="logo">
+          <a href="javascript:void(0)" onclick="enterOld()" class="oldgh" title="关怀版">关怀版</a>
+          <a href="/" aria-label="图片链接，嘉兴市医疗保障局logo，链接到首页">
+            <img title="logo.png" src="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/logo.png" />
+          </a>
+        </div>
+        <div class="searchBox" aria-region="true" aria-regiontype="3" aria-label="全文搜索">
+          <input type="text" name="" id="key" value="" placeholder="全文搜索" class="input-text" />
+          
+          <input type="button" name="" id="" value="" class="input-btn" onclick="javascript: window.location.href = 'https://search.zj.gov.cn/api-gateway/jpaas-jsearch-web-server/search?websiteid=330400000000&serviceId=YcTOd1ftgC5dxzJ8RhCBN&webId=3212&q=' + $('#key').val()" />
+        </div>
+      </div>
+    </div>
+
+    <!-- nav ============================================================================================= -->
+    <div class="nav" id="nav" aria-region="true" aria-regiontype="2" aria-label="一级栏目导航">
+      <a id="sy" href="/index.html">首 页</a>
+      <a id="xw" href="/col/col1647694/index.html">新闻动态</a>
+      <a id="dwgk" href="/col/col1229107014/index.html?key">党务公开</a>
+      <a id="xx" href="/col/col1229113712/index.html">政府信息公开</a>
+      <a id="zw" href="/col/col1229562038/index.html">政策文件</a>
+      <a id="zc" href="/col/col1229125995/index.html">办事大厅</a>
+      <a id="hdzt" href="/col/col1229495620/index.html">活动专题</a>
+    </div>
+
+    <!-- container ============================================================================================= -->
+    <div class="container">
+      <div class="main">
+        <div id="local" class="local" aria-region="true" aria-regiontype="4" aria-label="当前位置">
+          <span style="float: left" tabindex="0" aria-label="当前位置">当前位置：</span>
+<a href="/index.html" class="bt_link">首页</a>
+ >> <a href="/col/col1229107017/index.html" class="bt_link">政府信息公开</a>
+ >> <a href="/col/col1229264148/index.html" class="bt_link">法定主动公开内容</a>
+ >> <a href="/col/col1229561581/index.html" class="bt_link">政策文件</a>
+ >> <a href="/col/col1229562038/index.html" class="bt_link">行政规范性文件</a>
+        </div>
+        <div id="articleContent" aria-region="true" aria-regiontype="6" aria-label="文章正文">
+<table border="0" cellpadding="0" cellspacing="1" class="file">
+  <tr>
+    <td width="14%">索引号：</td>
+    <td width="36%">11330400MB180369XU/2019-00004</td>
+    <td width="14%">文号：</td>
+    <td width="36%">嘉医保[2019]76号</td>
+  </tr>
+  <tr>
+    <td>发布机构：</td>
+    <td>市医保局</td>
+    <td>发文日期：</td>
+    <td>2021-08-31</td>
+  </tr>
+  <tr>
+    <td>统一编号：</td>
+    <td>ZJFC73-2019-0005</td>
+    <td>有效性：</td>
+    <td>有效</td>
+  </tr>
+</table>
+
+<div class="title">
+  <h3>嘉医保〔2019〕76号关于印发《嘉兴市长期护理保险护理服务监管办法（试行）》的通知</h3>
+
+  <div class="time">
+    <span>浏览次数：<lable id="artcount"></lable></span>
+    <span>信息来源：市医保局</span>
+    <link rel="stylesheet" href="/cms_files/jcms1/web2778/site/images/29440/share.min.css" />
+<div id="share-2" style="float: right;margin-right:15px;padding-left:35px;"></div>
+<script>
+  $('#share-2').share({sites: ['weibo', 'wechat', 'qzone']});
+</script>
+  </div>
+</div>
+
+<div class="about"><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">各县（市、区）医疗保障局（分局），各长护险定点服务机构：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">为加强长期护理保险护理服务监管，特制定《嘉兴市长期护理保险护理服务监管办法（试行）》，现印发给你们，请遵照执行。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0px; text-align: right; font-family: Calibri; font-size: 14px; white-space: normal; line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">                               <span style="font-family:仿宋_GB2312">嘉兴市医疗保障局</span></span></p><p style="margin: 0px; text-align: right; font-family: Calibri; font-size: 14px; white-space: normal; line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">                               <span style="font-family:仿宋_GB2312">2019年12月31日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="line-height: 37px; white-space: normal; text-align: justify; font-family: Calibri; font-size: 14px;"><a href="http://ybj.jiaxing.gov.cn/art/2021/8/31/art_1229562191_2344366.html" target="_self">《嘉兴市长期护理保险护理服务监管办法（试行）》的政策解读</a></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"></span><br /></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 方正小标宋简体;font-size: 29px;"><span style="font-family:方正小标宋简体">嘉兴市长期护理保险护理服务监管办法</span></span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 楷体_GB2312;font-size: 21px;"><span style="font-family:楷体_GB2312">（试行）</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">为加强全市长期护理保险（以下简称</span><span style="font-family:仿宋_GB2312">“长护险”）护理服务的指导、管理和监督，根据《嘉兴市人民政府关于印发<嘉兴市长期护理保险暂行办法>的通知》（嘉政发〔2017〕20号）及相关配套制度，制定本办法。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第一条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">各级医疗保障局（分局）（以下简称</span><span style="font-family:仿宋_GB2312">“医保局”）及其医疗保险服务中心（分中心）（以下简称“医保中心”）、受其委托的商业保险机构（以下简称“长护险协办机构”）、镇（街道）社会保险服务机构、村（社区）等长护险工作责任主体按照本办法对长护险护理服务进行监督和管理。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第二条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">各级医保局及其医保中心负责对本辖区内长护险协办机构、镇（街道）社会保险服务机构和村（社区）以及定点服务机构等相关单位的长护险服务实施情况进行监督和管理。主要内容包括：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）长护险协办机构履行服务协议情况，包括制度建设、组织管理、经办服务、信息系统和风险防控等；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）镇（街道）社会保险服务机构和村（社区）负责长护险业务受理、失能状况初筛、协助评定和回访、近亲属及机构实际服务指导与监督、实地检查情况反馈及政策宣传等；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）采取</span><span style="font-family:仿宋_GB2312">“双随机、一公开”方式，对定点服务机构履行服务协议情况进行检查，包括基础设施及人员配备、护理服务管理、费用结算、财务管理、信息管理、护理人员培训、政策宣传等。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第三条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">长护险协办机构负责对定点服务机构护理服务以及近亲属护理管理。主要内容包括：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）定点服务机构履行服务协议情况，包括基础设施及人员配备、护理服务管理、费用结算、财务管理、信息管理、护理人员培训、政策宣传等；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）近亲属护理协议履行情况，包括服务项目、服务频次、服务质量等；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）全面及时掌握长期失能人员失能状况、健康状况、生活质量的变化和改善情况。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第四条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">镇（街道）社会保险服务机构和村（社区）负责属地定点服务机构护理服务和近亲属护理管理。主要内容包括：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）组织党员志愿者和社区工作者对居家失能人员进行走访慰问和必要时的陪护，对居家护理情况全面及时的了解并反馈；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）了解掌握属地定点服务机构、近亲属履行服务协议情况；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）全面及时掌握属地长期失能人员失能状况、健康状况、生活质量的变化和改善情况。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第五条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">各级医保局及其医保中心加强对长护险协办机构的日常监督和管理，对长护险协办机构履行服务协议情况进行年度考核。对未按协议履行的，可采取约谈、考核扣分、暂停协议、取消协议等措施；发现违法行为的，依法给予行政处罚</span><span style="font-family:仿宋_GB2312">;对涉嫌犯罪的，依法移送司法机关处理。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第六条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">长护险协办机构负责定点服务机构、近亲属护理人员的日常动态监管，通过现场巡查、在线监测、上门核查、电话回访、满意度测评等方式，对定点服务机构及近亲属护理人员的日常管理服务情况和协议履行情况进行管理：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）现场巡查。对定点服务机构每月组织不少于</span><span style="font-family:仿宋_GB2312">1次的现场巡查，重点核查协议履行情况；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）在线监测。通过长护险信息系统和居家护理子系统，在线监测定点服务机构和近亲属护理人员的护理信息，及时发现护理服务中存在的疑点问题，必要时进行上门核查；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）上门核查。对享受护理待遇的长期失能人员进行上门回访，重点掌握长期失能人员健康状况、生活质量等情况，每月核查人数不少于护理类型人数的</span><span style="font-family:仿宋_GB2312">20%；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（四）电话回访。每月对享受居家近亲属护理的长期失能人员进行不少于</span><span style="font-family:仿宋_GB2312">1次电话回访，重点掌握长期失能人员生存状况和相关服务协议履行情况；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（五）满意度调查。每年组织对定点服务机构和护理人员满意度调查不少于</span><span style="font-family:仿宋_GB2312">2次，动态掌握定点服务机构及其护理人员以及近亲属护理人员的护理质量等情况。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第七条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">长护险协办机构发现定点服务机构、近亲属护理人员违反协议的情况，根据协议约定，采取约谈、责令整改、追回基金等措施，对需要暂停、取消协议或涉嫌犯罪行为的，提交医保中心处理。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第八条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">镇（街道）社会保险服务机构可以采取结对互助、上门走访和网格化管理等方式，对属地定点服务机构的日常管理和近亲属护理人员协议履行情况进行管理。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）网格管理。指导村（社区）对近亲属护理人员实行网格化管理，同时发动基层党组织通过党员与居家失能人员结对等形式，配合开展居家护理服务的指导、管理和监督工作；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）上门走访。对享受居家护理的长期失能人员每月进行不少于</span><span style="font-family:仿宋_GB2312">1次的上门走访，重点掌握护理机构上门护理质量和长期失能人员健康状况、生活质量等方面的情况；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）情况反馈。每月</span><span style="font-family:仿宋_GB2312">10日前，收集党员志愿者、社区工作者上月上门情况并反馈至医保中心作为服务监管及基金支付的依据。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第九条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">定点服务机构有下列行为之一，未造成长护险基金损失的，给予约谈、限期整改等处理；造成长护险基金损失的，对发生的违规费用不予支付或予以追回，并依照协议对违规费用进行处理：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）未按协议要求落实管理措施的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）无故拒收、推诿参保人员的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）未经参保人员本人或其家属同意擅自提供自费服务项目的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（四）未及时处理参保人员投诉和社会监督反映问题造成不良影响的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（五）其他违反长护险相关政策规定的行为。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">定点服务机构有下列行为之一的，对发生的违规费用不予支付或予以追回，并取消定点服务资格；情节严重的，予以行政处罚，同时向社会通报；涉嫌犯罪的，依法移送司法机关处理：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）参保人员转出（死亡）后未按规定及时办理结算，继续空传费用的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）以伪造护理计划、财务票据或凭证、虚构护理服务、虚列材料费用等手段，骗取长护险基金的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）将非长护险支付项目费用替换成长护险支付项目费用，骗取长护险基金的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（四）其他违反长护险相关政策规定的行为，存在主现故意造成长护险基金不合理支出的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（五）对医保局及其医保中心和长护险协办机构的相关检查不予配合。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十一条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">近亲属护理人员有下列情形，未造成长护险基金损失的，给予约谈并责令立即改正：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）未按要求落实基础护理或基础护理不达标的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）护理质量较差、态度生冷粗暴的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）护理对象生活质量持续恶化的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（四）未按照护理对象护理需求合理使用护理账户的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（五）其他违反长护险相关政策规定的行为。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十二条</span> </span><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">近亲属护理人员有下列行为之一的，发生的违规费用予以追回，取消其护理资格，并予以通报；涉嫌犯罪的，依法移送司法机关处理：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一）隐瞒护理对象死亡，不主动申报或伪造材料继续骗取长护险基金的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（二）丧失基本护理服务能力，指使他人冒名顶替的方式获得长护险基金的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（三）隐瞒护理对象真实健康情况、伪造或改变病史的方式获得长护险基金的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（四）对责令立即改正的违规违约行为不及时整改或整改不彻底的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（五）违规刷卡套现或支付限定历月账户支付的项目费用的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（六）与定点服务机构串通骗取长护险基金的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（七）受到约谈</span><span style="font-family:仿宋_GB2312">3次（含）以上的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（八）发生虐待、遗弃护理对象的；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（九）其他违反长护险相关政策规定的行为，存在主现故意造成长护险基金不合理支出的。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十三条</span> </span><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">限期整改时间最长不超过</span><span style="font-family:仿宋_GB2312">1个月，暂停协议时间最长不超过6个月。限期整改或暂停协议期间期满，通过整改验收的可继续履行协议。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十四条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">定点服务机构暂停协议期间，应在长护险协办机构的指导下，协助护理对象与其他定点服务机构签约选择护理方式，如因原定点服务机构未进行有效对接而造成参保人不能及时享受相关待遇的，期间发生的符合长护险项目的费用由原定点服务机构承担。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十五条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">各级医保局及其医保中心应加强监督检查，加强行风和诚信制度建设，不断提升定点服务机构管理水平和护理人员综合素质。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十六条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">医保局及其医保中心工作人员违反党风廉政建设和长护险规定，发生违纪违法行为的，按有关规定处理。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十七条</span> </span><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">任何单位和个人有权对违反长护险制度、侵占长护险基金、损害参保人员权益的行为进行投诉和举报。对查实的违法违规行为，相关行政部门和医保局应按法律法规和政策的相关规定予以处理，并按相关规定给予投诉和举报者奖励。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十八条</span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"> <span style="font-family:仿宋_GB2312">本办法由嘉兴市医疗保障局负责解释。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">第十九条</span> </span><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">本办法自</span><span style="font-family:仿宋_GB2312">2020年1月1日起试行，以前规定与本办法不一致的，以本办法为准。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">    </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">附件：</span><span style="font-family:仿宋_GB2312">1.嘉兴市长期护理保险核查通知书</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">          <span style="font-family:仿宋_GB2312">2.嘉兴市长期护理保险核查约谈通知书</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">          <span style="font-family:仿宋_GB2312">3.嘉兴市长期护理保险核查意见书</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">          <span style="font-family:仿宋_GB2312">4.嘉兴市长期护理保险核查结果告知书</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><br /></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">附件</span><span style="font-family:黑体">1</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 40px;"><span style="font-family: 方正小标宋简体;font-size: 29px;"><span style="font-family:方正小标宋简体">嘉兴市长期护理保险核查通知书</span></span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 40px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">嘉长护核通〔</span><span style="font-family:仿宋_GB2312">20××〕×号</span></span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">××定点服务机构：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">根据《嘉兴市长期护理保险暂行办法》（嘉政发〔</span><span style="font-family:仿宋_GB2312">2017〕20号）及相关配套政策，决定于x年x月x日对你单位有关方面实施核查。请予协助配合，并按要求提供如下资料：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">    <span style="font-family:仿宋_GB2312">1.</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 42px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">2.</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 42px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 42px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">                    <span style="font-family:仿宋_GB2312">××长期护理保险业务管理中心</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">                               <span style="font-family:仿宋_GB2312">年</span>  <span style="font-family:仿宋_GB2312">月</span>  <span style="font-family:仿宋_GB2312">日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">送达人：</span>                     <span style="font-family:仿宋_GB2312">接收人：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">电</span>  <span style="font-family:仿宋_GB2312">话：　　　</span>               <span style="font-family:仿宋_GB2312">电</span>  <span style="font-family:仿宋_GB2312">话：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 85px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">年</span>   <span style="font-family:仿宋_GB2312">月</span>   <span style="font-family:仿宋_GB2312">日</span>                  <span style="font-family:仿宋_GB2312">年</span>   <span style="font-family:仿宋_GB2312">月</span>   <span style="font-family:仿宋_GB2312">日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">附件</span><span style="font-family:黑体">2</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"> </span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 40px;"><span style="font-family: 方正小标宋简体;font-size: 29px;"><span style="font-family:方正小标宋简体">嘉兴市长期护理保险核查约谈通知书</span></span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 40px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">嘉长护谈通〔</span><span style="font-family:仿宋_GB2312">20××〕×号</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="text-decoration:underline;"><span style="font-family: 仿宋_GB2312;font-size: 21px;">           </span></span><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">:</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">根据《嘉兴市长期护理保险暂行办法》（嘉政发〔</span><span style="font-family:仿宋_GB2312">2017〕20号）及相关配套政策有关规定，请你（单位）于  年  月  日到××就有关涉及长期护理保险××事宜进行约谈。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">联系人：</span>        <span style="font-family:仿宋_GB2312">，联系电话：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 213px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">××长期护理保险业务管理中心</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 331px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">年</span>   <span style="font-family:仿宋_GB2312">月</span>   <span style="font-family:仿宋_GB2312">日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">送达人：</span>                      <span style="font-family:仿宋_GB2312">接收人：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">电</span>  <span style="font-family:仿宋_GB2312">话：　　　</span>                <span style="font-family:仿宋_GB2312">电</span>  <span style="font-family:仿宋_GB2312">话：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 85px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">年</span>   <span style="font-family:仿宋_GB2312">月</span>   <span style="font-family:仿宋_GB2312">日</span>                   <span style="font-family:仿宋_GB2312">年</span>   <span style="font-family:仿宋_GB2312">月</span>   <span style="font-family:仿宋_GB2312">日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">附件</span><span style="font-family:黑体">3</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 40px;"><span style="font-family: 方正小标宋简体;font-size: 29px;"><span style="font-family:方正小标宋简体">嘉兴市长期护理保险核查意见书</span></span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 40px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">嘉长护核意〔</span><span style="font-family:仿宋_GB2312">20××〕×号</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">××定点服务机构：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">通过对你（单位）的核查，发现存在</span><span style="font-family:仿宋_GB2312">……等问题，现将有关情况予以反馈，请在x天内完成整改：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">一、被核查（单位）的基本情况：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">二、调查取证过程及违规违协事实：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">三、整改依据及建议：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">四、告知事项：在限定的时间内拒不改正的，我中心将报请</span><span style="font-family:仿宋_GB2312">××医疗保险服务中心依协对你（单位）进行处理。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 224px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">××长期护理保险业务管理中心</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 341px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">年</span>   <span style="font-family:仿宋_GB2312">月</span>   <span style="font-family:仿宋_GB2312">日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 288px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">接收人：　　　　　　</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 341px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">年</span> <span style="font-family:仿宋_GB2312">　月　</span> <span style="font-family:仿宋_GB2312">日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一式二联：第一联业管中心留存，第二联交被核查单位）</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"><span style="font-family:黑体">附件</span><span style="font-family:黑体">4</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 黑体;font-size: 21px;"> </span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 40px;"><span style="font-family: 方正小标宋简体;font-size: 29px;"><span style="font-family:方正小标宋简体">嘉兴市长期护理保险核查结果告知书</span></span></p><p style="text-align:center;margin: 0 0 0;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 40px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">嘉长护核告〔</span><span style="font-family:仿宋_GB2312">20××〕×号</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">××定点服务机构：</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">鉴于</span><span style="font-family:仿宋_GB2312">……；</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">根据</span><span style="font-family:仿宋_GB2312">……规定，予以你单位……的处理。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">特此告知。</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 235px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">××长期护理保险业务管理中心</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 352px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">年</span>   <span style="font-family:仿宋_GB2312">月</span>   <span style="font-family:仿宋_GB2312">日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 309px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">接收人：　　　　　　</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 352px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">年　</span> <span style="font-family:仿宋_GB2312">月　</span> <span style="font-family:仿宋_GB2312">日</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"> </span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;text-indent: 43px;line-height: 37px;"><span style="font-family: 仿宋_GB2312;font-size: 21px;"><span style="font-family:仿宋_GB2312">（一式三联：第一联医保中心留存，第二联业管中心留存，第三联交被核查单位）</span></span></p><p style="margin: 0 0 0;text-align: justify;font-family: Calibri;font-size: 14px;white-space: normal;line-height: 37px;"><br /></p><p><br /><br /><br /><br /><br /><br /></p></div>
+
+<style>
+  .logo .oldgh {
+    display: none;
+  }
+  #local a {
+    float:none;
+  }
+  .title h3 {
+    font-weight:bold;
+    text-align: center;
+    padding: 20px 0 15px 0;
+    line-height: 32px;
+    font-size: 24px;
+    color: #444444;
+  }
+</style>        </div>
+      </div>
+    </div>
+
+    <!-- footer ============================================================================================= -->
+    <div class="footer" aria-region="true" aria-regiontype="4" aria-label="关于我们">
+      <div class="navBox">
+        <ul>
+          <li>
+            <a id="about" href="/col/col1649585/index.html?key">关于我们</a>
+          </li>
+          <li>
+            <a id="link" href="/col/col1649586/index.html?key">联系方式</a>
+          </li>
+          <li id="flink">
+            <a href="/col/col1649587/index.html?key">友情链接</a>
+          </li>
+          <li id="yearport">
+            <a href="/col/col1229486080/index.html?key">政府网站工作年度报表</a>
+          </li>
+        </ul>
+      </div>
+      <div class="copyrightBox">
+        <ul>
+          <li>
+            <a id="map" href="/col/col1229515262/index.html">网站地图</a>
+            <span tabindex="0">嘉兴市医疗保障局主办</span>
+            <span>备案证编号：<a href="http://beian.miit.gov.cn" target="_blank">浙ICP备2022007020号</a></span>
+            <span tabindex="0">网站标识码：3304000061</span>
+          </li>
+          <li>
+            <span tabindex="0">地址：嘉兴市中环南路1469号中南大厦10楼</span>
+            <span tabindex="0">电话：0573-83370706</span>
+            <span tabindex="0">传真：0573-82050010</span>
+          </li>
+
+          <li>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33040202000463">
+              <img src="/cms_files/jcms1/web3212/site/images/30534/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png" />
+              浙公网安备 33040202000463号
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--政府图标、纠错-->
+    <div id="govBottom" style="margin: 0 auto; text-align: center; overflow: hidden">
+      <!--党政机关logo-->
+      <script type="text/javascript">
+        document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='https://dcs.conac.cn/js/12/190/0000/60939331/CA121900000609393310001.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <!--网站纠错-->
+      <script id="_jiucuo_" sitecode="3304000061" src="https://zfwzgl.www.gov.cn/exposure/jiucuo.js"></script>
+    </div>
+
+    <script type="text/javascript">
+      // PC/移动浏览器判断:
+      //<![CDATA[
+      try {
+        var urlhash = window.location.hash;
+        if (!urlhash.match("fromapp")) {
+          if (navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i)) {
+            //加载手机端样式
+            document.write("<link rel='stylesheet' href='/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/mobile_inside.css' />");
+            $("#sy").attr("href", "/col/col1229600278/index.html");
+            $("#xw").attr("href", "/col/col1229600933/index.html");
+            $("#dwgk").attr("href", "/col/col1229601683/index.html");
+            $("#xx").attr("href", "/col/col1229602064/index.html");
+            $("#zw").attr("href", "/col/col1229603279/index.html");
+            $("#zc").attr("href", "/col/col1229601691/index.html");
+            $("#hdzt").attr("href", "/col/col1229604305/index.html");
+            $("#about").attr("href", "/col/col1229604306/index.html");
+            $("#link").attr("href", "/col/col1229604307/index.html");
+            //
+            $("#local").css("display", "none");
+            $("#yearport").css("display", "none");
+            $("#flink").css("display", "none");
+            $("#map").css("display", "none");
+          } else {
+            document.write("<link rel='stylesheet' href='/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/inside.css' />");
+          }
+        } else {
+          document.write("<link rel='stylesheet' href='/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/inside.css' />");
+        }
+      } catch (err) {
+        document.write("<link rel='stylesheet' href='/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/inside.css' />");
+      }
+      $(document).ready(function () {
+        if (window.localStorage.getItem("OldmanFlag") == "1") {
+          enterOld();
+        }
+        //set the cur time at top
+        setCurTime();
+        //nav style change
+        navStyleChange();
+        //add zfxxgk menu click
+        addZfxxgkMenuClick();
+        //key events
+        document.onkeydown = function (e) {
+          var keycode = e.keyCode;
+          console.log(keycode);
+          //进入无障碍 ctrl + alt + i
+          if (e.ctrlKey == true && e.altKey == true && keycode == 73) {
+            enterRelax();
+          }
+          //进入老年模式 ctrl + alt + g
+          if (e.ctrlKey == true && e.altKey == true && keycode == 71) {
+            enterOld();
+          }
+        };
+
+        $("#key").on("keydown", function (event) {
+          if (event.keyCode == 13) {
+            search();
+          }
+        });
+
+        //gov img remark
+        $("span#_span_jiucuo img").attr("title", "图片外链，链接到政府网站纠错");
+        $("img#imgConac").attr("aria-label", "图片外链，链接到党政机关事业单位管理服务平台");
+      });
+      
+      //]]>
+    </script>
+
+    <script defer="defer" async="async" type="text/javascript" src="//wza.zj.gov.cn/dist/aria.js?appid=4eef759b9f1e5308e70aa076191cfca0" charset="utf-8"></script>
+  <script src="/cms_files/filemanager/1568960/script/juba/jubascript.js?v=4.5.12.1-ZJSJYH-U52"></script>
+ </div></body>
+</html>

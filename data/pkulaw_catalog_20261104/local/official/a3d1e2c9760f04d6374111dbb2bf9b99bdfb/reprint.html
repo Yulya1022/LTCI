@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>浙医保办发[2026]15号 浙江省医疗保障局办公室关于印发《浙江省长期护理保险省内异地经办规程(试行)》的通知-陕西焦点财税咨询有限公司</title>
+    <meta name="description" content="焦点专家团队深耕财税管理十二年，携数千家企业咨询经验，致力于为企业财务人员提供微课程实操学习、日常疑难高品质咨询和热点知识库分享三方面精准服务。" />
+    <meta name="keywords" content="浙医保办发[2026]15号 浙江省医疗保障局办公室关于印发《浙江省长期护理保险省内异地经办规程(试行)》的通知-陕西焦点财税咨询有限公司" />
+    <link rel="stylesheet" href="/Public/home/CSS/tong.css">
+    <link rel="stylesheet" href="/Public/home/CSS/style.css">
+    <script src="/Public/home/JS/jquery-3.2.1.min.js"></script>
+</head>
+
+<body class="article_body">
+
+    <!--公共头部-->
+    <div class="header search_all search_all_tit" id="header">
+    <div class="w">
+        <div class="m_main" id="width100">
+            <div class="m_search" id="pl_feedtop_top">
+                <div class="logo"><a href="http://www.focustax.cn" class="logo_img"></a></div>
+                <div class="searchbox" node-type="searchBar">
+                    <div class="search_input_s">
+                        <input autocomplete="off" oninput="check_input_search(this.value);" class="search_k" id="search"
+                            name="search" value="" placeholder="请输入关键词">
+                        <div class="search_select_k">
+                                                    </div>
+                    </div>
+                    <button class="s_btn_b" onclick="searching()">搜索</button>
+                    <a href="https://chat.focustax.cn/chat"><button class="s_btn_ai"><img
+                                src="/Public/home/images/chat2min.gif" style="width: 26px;"
+                                alt="">点击开启深度思考</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="fr login_over">
+            <!-- <a href="/home/index/weChat_sq_san"><img src="/Public/home/images/timg.jpg" alt=""
+                        class="avatar_pic __avatar">
+                    <div class="text_all">
+                        <div class="go_login">
+                            微信一键登录
+                        </div>
+                    </div>
+                </a>
+                 -->
+        </div>
+    </div>
+</div>
+<div class="search_cg"></div>
+<style>
+    .s_btn_ai {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        min-width: 100px;
+        height: 46px;
+        line-height: 46px;
+        background: #1b0cbb;
+        color: #fefefe;
+        margin-left: 10px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    #width100 {
+        width: 100%;
+    }
+
+</style>
+<script>
+    function check_input_search($search) {
+        $('.search_select_k').show();
+        $(".nav_ul>li").each(function ($key) {
+            $k = $key + 1;
+            $href = '/home/index/search.html?search=' + $search + '&types=' + $k;
+            $(this).find('a').attr('href', $href);
+        });
+        $.ajax({
+            url: "/home/index/get_search_list?search=" + $search + "&types=1",
+            dataType: "json",
+            success: function ($list) {
+                $html = '';
+                if ($list) {
+                    $($list).each(function ($key, $val) {
+                        $html += '<div class="search_select_n" onclick="click_search_select_n(this);">' + $val + '</div>';
+                    });
+                }
+                $(".search_select_k").html($html);
+            }
+        });
+    }
+    function click_search_select_n($dom) {
+        $val = $($dom).text();
+        $("#search").val($val);
+        $(".s_btn_b").click();
+    }
+
+    $("#search").focus(function () {
+        $(".search_select_k").show();
+    });
+    $(document).click(function ($e) {
+        //#search失焦 && 点击不是.search_select_n元素
+        $e_target = $($e.target).attr("class");
+        if ($e_target != 'search_k' && $e_target != 'search_select_n') {
+            $(".search_select_k").hide();
+        }
+    });
+    function searching() {
+        $search = $("#search").val();
+        window.location.href = "/home/index/search?search=" + $search + "&types=1";
+    }
+    //收藏
+    function collectTap($c_id, $c_types) {
+        $u_id = '';
+
+        if ($u_id) {
+            $.ajax({
+                type: "POST",
+                url: "/home/index/zsk_collect",
+                data: {
+                    c_id: $c_id,
+                    c_types: $c_types,
+                    u_id: $u_id ? $u_id : null
+                },
+                dataType: "json",
+                success: function (res) {
+                    if (res.status == 200) {
+                        $('#collection_' + $c_id).text(res.str);
+                        if (res.str == "已收藏") {
+                            $img_s = 'i';
+                        } else {
+                            $img_s = 'n';
+                        }
+                        $('#collection_img_' + $c_id).attr("src", "/Public/home/images/collection_" + $img_s + ".png");
+                    };
+
+                }
+            });
+        } else {
+            if (confirm("请先登录!")) {
+                window.location.href = "/home/index/weChat_sq_san";
+            }
+        }
+    }
+
+
+    function playMp3($dom, $id, $types) {
+        browse($id, $types); //浏览记录
+        $audio = $($dom).siblings('audio')[0];
+        $audio.play();
+        $($dom).siblings('.f2').css("display", 'block');
+        $($dom).hide();
+        $($dom).siblings('.album-art').children("img").addClass("active");
+
+    }
+    function pauseMp3($dom) {
+        $audio = $($dom).siblings('audio')[0];
+        $audio.pause();
+        $($dom).siblings('.f1').css("display", 'block');
+        $($dom).hide();
+        $($dom).siblings('.album-art').children("img").removeClass("active");
+    }
+    function play_video($id, $types) {
+        browse($id, $types); //浏览记录
+        $("#video_play" + $id).hide();
+        $('#video_' + $id).trigger("play");
+    }
+    function browse($c_id, $types) //浏览记录
+    {
+        $u_id = '';
+        if ($u_id) {
+            $.ajax({
+                type: "POST",
+                url: "/home/index/zsk_browse",
+                data: {
+                    c_id: $c_id,
+                    c_types: $types,
+                    u_id: $u_id ? $u_id : null
+                }
+            });
+        }
+    }
+
+    $(function () {
+        $article = 'Array';
+        $(document).keypress(function (e) {
+            if (e.keyCode == 13 && !$article) {
+                searching()
+                //执行你想执行的方法，keyCode代表不同的按键
+
+            }
+        })
+    });
+
+    $(".personal_me").mouseover(function () {
+        $(".personal_l").show();
+    }).mouseout(function () {
+        $(".personal_l").hide();
+    });
+</script>
+<script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1278172386&web_id=1278172386"></script>
+
+    <!--公共头部-->
+
+    <div class="web_main p_news  p_main">
+        <div class="wrapper clearfix">
+            <ul class="crumb">
+                <li class="item">
+                    <i class="ico"></i>
+                    <a href="/Home/Index/index.html" rel="nofollow">首页</a>
+                </li>
+                <li class="item">></li>
+                <li class="item"><a href="/home/index/search?search=&types=1">搜索</a></li>
+                <li class="item">></li>
+                <li class="item">文章详情</li>
+            </ul>
+            <div class="wrapper_l fl">
+                <div class="news_main">
+                    <div class="news_tit">
+                        浙医保办发[2026]15号 浙江省医疗保障局办公室关于印发《浙江省长期护理保险省内异地经办规程(试行)》的通知                    </div>
+                </div>
+                <div class="news_text clearfix">
+                    <div class="time">
+                        发文时间：<span>2026-3-31</span>
+                    </div>
+                    
+                    <div class="source">
+                        文号：<span>浙医保办发[2026]15号 </span>                    </div>
+                    <div class="source">
+                            时效性：<span>全文有效</span>                        </div>
+                                        <div class="collection news_collection" onclick="collectTap('25964','1')">
+                        <img class="collection_img" id="collection_img_25964"
+                            src="/Public/home/images/collection_n.png">
+                        <span class="collection_txt"
+                            id="collection_25964">收藏</span>
+                    </div>
+                    <div class="popularity_rq">
+                        <img src="/Public/home/images/wechat_look.png">
+                        984                    </div>
+                </div>
+                <div class="content2">
+                    <div class="coneten_img">
+                        <p style="line-height: 1.5em; text-align: center;">浙江省医疗保障局办公室关于印发《浙江省长期护理保险省内异地经办规程(试行)》的通知</p><p style="line-height: 1.5em; text-align: center;">浙医保办发〔2026〕15号&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2026-03-31</p><p style="line-height: 1.5em;">各市医保局：</p><p style="line-height: 1.5em;">　　为规范长期护理保险经办工作，提高经办管理服务效能，保障参保人合法权益，根据《浙江省长期护理保险经办规程(试行)》(浙医保联发〔2025〕5号)、《长期护理保险省内异地服务直接结算试行办法》(浙医保联发〔2025〕12号)文件规定，制定《浙江省长期护理保险省内异地经办规程(试行)》。现印发给你们，请结合实际遵照执行。</p><p style="line-height: 1.5em; text-align: right;">浙江省医疗保障局办公室</p><p style="line-height: 1.5em; text-align: right;">2026年3月31日</p><p style="line-height: 1.5em; text-align: center;">浙江省长期护理保险省内异地经办规程(试行)</p><p style="line-height: 1.5em;">　<strong>　第一章 总则</strong></p><p style="line-height: 1.5em;">　　第一条 为规范长期护理保险(以下简称“长护险”)异地经办工作，提高经办服务管理效能，根据《浙江省长期护理保险经办规程(试行)》(浙医保联发〔2025〕5号)、《长期护理保险省内异地服务直接结算试行办法》(浙医保联发〔2025〕12号)文件要求，结合我省实际，制定本规程。</p><p style="line-height: 1.5em;">　　第二条 本规程适用于我省参加长护险、在省内跨统筹区异地居住且符合长护险待遇享受条件、有异地照护需求的失能人员(以下简称“异地照护人员”)，各级医疗保障经办机构(以下简称“经办机构”)，定点长护服务机构、定点评估机构或评估专家和第三方社会力量。</p><p style="line-height: 1.5em;">　　第三条 严格按照我省长护险政策规定，确保长护险异地经办全流程有序合规，保障参保人合法权益;明确参保地与服务地经办机构职责，建立数据共享、业务协同联动机制，形成经办合力;依托“浙里长护在线”平台，简化备案、申请、评估、结算等业务流程，为参保人提供线上线下一体化服务;参保人异地享受长护险待遇的标准，按照“服务地待遇，参保地支付”原则执行。与民政、残联等部门的待遇衔接，按有关要求执行。</p><p style="line-height: 1.5em;">　　第四条 省级经办机构负责指导各统筹地区做好长护险异地经办管理服务工作;省内异地长护结算费用(护理服务费用、失能等级评估费用，以下简称“异地费用”)实行省市两级清算机制，统一由服务地先行垫付，省级经办机构组织各统筹区开展异地费用的清算。</p><p style="line-height: 1.5em;">　　第五条 参保地经办机构负责异地照护人员备案申请的审核、异地费用的核对及清算支付。服务地经办机构负责受理异地照护人员的失能评估申请，组织开展评估，并将评估结果回传参保地;将异地服务纳入本地同质化管理;配合参保地经办机构做好异地照护人员信息查询、待遇衔接等工作。已在省内评估为重度失能且符合服务地有效期规定的，参保地和服务地互认评估结果。</p><p style="line-height: 1.5em;">　　第六条 服务地经办机构应规范服务管理，强化异地服务全流程巡查核查，健全风险防控机制，规范长护险基金使用，确保基金运行安全可持续。</p><p style="line-height: 1.5em;">　　<strong>第二章 异地备案</strong></p><p style="line-height: 1.5em;">　　第七条 参保人或代办人可线上通过“浙里办——浙里医保——浙里长护在线”办理省内异地备案，填写服务地、开始时间、护理方式等信息，阅读并同意《长护险省内异地备案告知书》;也可线下前往服务地或参保地经办窗口，办理省内异地长护服务备案。备案通过后即时生效，参保人或代办人可通过“浙里办——浙里医保——浙里长护在线”查询省内异地备案信息。</p><p style="line-height: 1.5em;">　　第八条 备案原则上长期有效，撤销或变更备案可通过“浙里办——浙里医保——浙里长护在线”或医保经办窗口办理。系统自动将变更信息推送至新服务地经办机构和参保地经办机构。</p><p style="line-height: 1.5em;">　　<strong>第三章 待遇申请和失能评估</strong></p><p style="line-height: 1.5em;"><strong>　</strong>　第九条 尚未进行失能等级评估的申请人，须通过“浙里长护在线——待遇申请——异地申请”模块，或向服务地经办机构窗口提交申请。通过“浙里长护在线”内置校验规则，系统自动核验参保、评估、待遇等状态信息，由服务地经办机构开展审核。以下情形不予受理异地失能等级评估申请：　　(一)未进行异地备案的;</p><p style="line-height: 1.5em;">　　(二)不符合服务地待遇享受条件的;</p><p style="line-height: 1.5em;">　　(三)申报材料不全或提供虚假材料的;</p><p style="line-height: 1.5em;">　　(四)最近一次评估结论未通过且未满6个月的</p><p style="line-height: 1.5em;">　　(五)其他不予受理评估申请的情形。</p><p style="line-height: 1.5em;">　　第十条 经办机构应建立方便群众办事的多元化线上、线下申请受理渠道，能够通过线上获取的，可不要求参保人线下提供。失能评估申请材料主要包括：《长期护理失能等级自评表》、申请人有效身份证件、病历或病情承诺书、申请表等;代办人申请时，需提供有效身份证件。</p><p style="line-height: 1.5em;">　　第十一条 服务地经办机构收到评估申请后，应在5个工作日内完成对备案有效性、材料完整性、是否符合申请条件等信息的审核;审核结果通过“浙里长护在线”平台推送。审核通过的，服务地经办机构组织失能等级评估，评估结果回传至参保地;审核不通过的，应告知参保人。</p><p style="line-height: 1.5em;">　　第十二条 经服务地失能等级评估符合长护险待遇享受条件的异地照护人员，按服务地政策享受待遇。在参保地已评估为重度失能且符合服务地有效期规定的异地照护人员，服务地经办机构无需重复评估，备案后按服务地政策享受待遇。</p><p style="line-height: 1.5em;">　<strong>　第四章 异地护理服务</strong></p><p style="line-height: 1.5em;">　　第十三条 异地长期照护服务包括居家护理、机构护理，不包含亲情照护。失能等级评估通过后，异地照护人员须按照服务地经办机构相关规定，选择定点长护服务机构并签约。服务地定点长护服务机构按照参保人员身体状况和护理需求制定护理服务计划，并按照护理服务计划、行业规范和长护险政策规定等为参保人员提供服务，如实记录服务内容。</p><p style="line-height: 1.5em;">　　第十四条 异地照护人员更换定点长护服务机构，须按服务地规定执行，定点长护服务机构不得以任何形式诱导、阻挠、干涉。</p><p style="line-height: 1.5em;">　　第十五条 定点长护服务机构应加强行业自律，依协议提供异地照护服务，全面实行收费公示和费用清单制度，严格遵循服务地长护服务项目规范与质量标准;定点长护服务机构向参保人员提供保障范围之外的服务事项，应当事先征得参保人员或其监护人、委托代理人书面同意。居家护理的，须落实图片、行动轨迹等要素采集;机构护理的，不得虚构、重复、分解收取护理服务费用。</p><p style="line-height: 1.5em;">　　<strong>第五</strong><strong>章 异地费用结算</strong></p><p style="line-height: 1.5em;">　　第十六条 省内异地失能等级评估费用执行服务地标准和规定，经服务地审核、参保地确认后，由服务地按规定拨付评估专家或评估机构。</p><p style="line-height: 1.5em;">　　省内异地长护服务费用结算按服务地支付方式和待遇标准执行。经定点长护服务机构申报、服务地审核、参保地确认后，原则上于次月底前全额拨付至定点长护服务机构。</p><p style="line-height: 1.5em;">　　第十七条 次月5日之前，服务地定点长护服务机构上传服务明细至“浙里长护在线”平台，系统根据参保人身份信息，自动判断异地服务结算方式，匹配服务地支付规则，回传参保人员个人负担和长护基金支付金额等信息，生成月度费用台账。</p><p style="line-height: 1.5em;">　　第十八条 次月10日前，定点长护服务机构、服务地经办机构、参保地经办机构三方明细对账，三方对账完成后，系统对当月数据进行固化。</p><p style="line-height: 1.5em;">　　第十九条 次月20日前，服务地经办机构比对系统记录与申请数据，重点核验服务真实性及费用合规性、评估任务有效性等信息，完成费用审核，生成《省内定点长护服务机构异地服务费用核拨表》《省内异地长护失能等级评估费用核拨表》并固化数据。</p><p style="line-height: 1.5em;">　　第二十条 次月底前，服务地生成支付计划，推送财务完成长护服务机构的费用拨付，支付结果实时同步至参保地。</p><p style="line-height: 1.5em;">　<strong>　第六章</strong><strong> 异地费用清算</strong></p><p style="line-height: 1.5em;">　　第二十一条 省内异地费用实行省市两级清算机制，省级经办机构原则上按月以各市相互垫付资金的差额，组织市级经办机构之间进行异地长护服务费用和失能等级评估费用的清算。根据实际情况，也可按需组织清算。</p><p style="line-height: 1.5em;">　　第二十二条 省级经办机构汇总各市上传的护理费用支付金额及评估费用垫付数据，生成各市应收付费用，市级经办机构下载明细数据，在5个工作日内完成核对并确认;省级经办机构生成《省内定点长护服务机构异地服务费用清算明细表》《省内异地长护失能等级评估费用清算明细表》《省内异地长期护理保险基金清算明细表》。原则上10个工作日内各地完成清算资金的上解。</p><p style="line-height: 1.5em;">　<strong>　第七章 审核核查</strong></p><p style="line-height: 1.5em;">　　第二十三条 异地长护服务经办管理遵循“服务地为主、参保地配合”原则，涵盖异地服务机构及其从业人员、异地长护险待遇享受人员等。</p><p style="line-height: 1.5em;">　　服务地经办机构应加强日常巡查、核查和专项治理，适时开展长护基金综合巡查、飞行检查等。参保地经办机构配合核查异地照护人员待遇资格，参保地与服务地经办机构应建立协查机制，确保对疑点问题快速响应与反馈。省级经办机构负责跨统筹区专项核查。</p><p style="line-height: 1.5em;">　　第二十四条 各级医保部门应建立举报投诉、信息披露、内部控制、欺诈防范等机制，切实加强管理。服务地医保部门应做好异地服务监管合违规扣款处理，异地服务监管追回的长护基金、扣款等抵扣当前月度清算资金或按原渠道返回参保地账户，涉及行政处罚、协议违约金等事项，由服务地医保部门按国家和省有关规定处理。</p><p style="line-height: 1.5em;">　　<strong>第八章 信息化和档案管理</strong></p><p style="line-height: 1.5em;">　　第二十五条 省级部门负责建设全省统一的长护险异地服务管理模块，整合备案、评估、服务、结算、审核等功能，与“浙里办”“国家医保服务平台”对接。</p><p style="line-height: 1.5em;">　　第二十六条 各统筹区不得重复建设异地服务信息系统，个性化业务需求需报省级经办机构批准后统一开发。</p><p style="line-height: 1.5em;">　　第二十七条 经办机构、定点机构需采集存储异地长护服务相关数据，建设异地照护人员“一人一档”，包括异地照护人员的基本情况、参保缴费、登记备案、长护服务记录等信息。</p><p style="line-height: 1.5em;">　　第九章 附则</p><p style="line-height: 1.5em;">　　第二十八条 本规程中第三方社会力量是指通过政府采购、购买服务的方式确定，与医保经办机构签订协议，受医保部门监督管理，具体开展长护经办服务的机构，包括但不限于信息技术服务机构、商业保险机构、社会服务机构。</p><p style="line-height: 1.5em;">　　第二十九条 各设区市经办机构可根据本地实际对本规程进行细化完善。</p><p style="line-height: 1.5em;">　　第三十条 本规程由省医疗保障局负责解释。国家和省有新规定的，从其规定。</p><p style="line-height: 1.5em;">　　第三十一条 本规程自2026年5月1日起施行。</p>                    </div>
+                                    </div>
+                <div class="">
+                    <div class="buttom_rq">
+                                            </div>
+                    <div class="box_comment_z" style="display: none;" id="comment_box">
+                        <div class="box_logout" >
+                            <textarea class="pl_textarea" placeholder="独学而无友、则孤陋寡闻！对于本条知识，您可以纠错、可以评论、可以质疑、还可以进行补充！总之，分享您的知识和见解，收获的远不止于自我提升..."></textarea>
+                            <button class="textarea_btn" onclick="fabulous_comment(2);">提交</button>
+                        </div>
+                    </div>
+                                    </div>
+                <div class="rwb_tjyd">
+                    <div class="clearfix box_read">
+                        <img src="/Public/home/images/tuijian_h.png" class="h_img"><h2> 推荐阅读</h2>
+                        <div class="hdNews clearfix">
+                                <a href="/home/index/article?id=4523&types=3">
+                                    <p><strong>落实增值税法合规典型案例之五:银川中铁水务优化票据管理体系,水费与污水处理费分开开票</strong>
+                                        <div class="rwb_tjyd_txt"><p>案例五:银川中铁水务集团有限公司优化票据管理体系,准确适用税收政策。该企业主要承担银川市公共供水民生职能,业务覆盖面广、服务受众量大、兼具公益性与经营性双重属性。</p><p>增值税法施行后,企业积极对接财政、城市管理、税务等部门,全面梳理水费、污水处理费业务属性、收费依据及开票规范,全力推进水费发票管理系统升级改造工程。2026年4月底改造完成后,企业实现经营性水费、污水处理费分类核算、分开开票、独立管理,从源头防范税目混用、票据混开、政策错用等涉税问题。</p><p>在税务部门辅导下,企业将税收合规融入日常经营、财务管理、票据管理全过程,持续健全内部票据管控机制,细化开票审核、数据校验、台账登记、资料归档全流程标准,常态化开展涉税事项自查自纠。企业已连续4年获评纳税缴费信用A级。</p><p>国家税务总局货物和劳务税司相关负责人表示,增值税法及其实施条例正式施行,是落实税收法定原则、深化财税体制改革的重要举措。增值税贯穿经营主体生产、批发、零售等各环节,涉税事项覆盖面广、业务关联性强。各类经营主体应当主动对标增值税法及相关配套规范性文件规定,将税务合规理念融入日常经营管理,严格规范发票开具、取得和管理,准确判断增值税政策适用条件,依法依规享受税收优惠,把税务合规优势转化为企业可持续发展的核心竞争力。</p></div>
+                                    </p>
+                                </a>
+                            </div><div class="hdNews clearfix">
+                                <a href="/home/index/article?id=4522&types=3">
+                                    <p><strong>落实增值税法合规典型案例之四:青海一家亲超市购销两端上线「交易即开票」,未开票收入占比降至11.8%</strong>
+                                        <div class="rwb_tjyd_txt"><p>案例四:青海一家亲超市连锁管理有限公司购销两端上线「交易即开票」功能,促进合规经营和税收遵从。该企业是集生鲜蔬果、鲜活肉蛋、日用百货销售于一体的综合连锁商超,门店分布广、交易频次高、单笔金额小。</p><p>在采购端,上线基于乐企联用平台开发的「数字农人」系统,将农产品收购业务全面纳入数字化管控,农户信息、采购订单、货款支付、资料归集全流程管理,每笔农产品收购业务数据可溯、资料可查,既满足企业采购信息归集和食品安全溯源的经营管理需要,也规范了发票进项税额抵扣与资料留存。截至2026年9月底,企业通过「数字农人」平台开具农产品收购发票1170份,累计开票金额1400万元。</p><p>在销售端,上线「交易即开票」系统,通过系统内置的商品税收分类编码,自动甄别应税百货与免税生鲜品类,智能匹配适用税率,消费者完成交易后自动开具发票,有效解决了商超零售不开具发票、收入确认不及时、品类税率错用等问题。系统上线以来,企业累计开具销售发票129.5万份,开票金额1.34亿元,未开票收入占比由系统上线前的66.4%下降至11.8%。</p><p>启示:商超零售企业普遍存在「不开票、迟确认、税率错用」三类问题,「交易即开票」通过税收分类编码自动甄别应税与免税品类、自动匹配税率,既解决了未开票收入的完整性,也降低了品类税率适用错误的风险。采购端的农产品收购数字化则同时服务于进项抵扣与食品安全溯源,是农产品加工与零售企业可复制的做法。</p></div>
+                                    </p>
+                                </a>
+                            </div>                    </div>
+                </div>
+            </div>
+            <div class="wrapper_r fr">
+                <div class="fr_img">
+                    <a href="https://www.jiaodiantax.com/index/index/course_list.html?course=series&tab_id=3"><img src="/Public/home/images/go_jd_pc.jpg" style="width: 100%;"></a>
+                </div>
+                <div class="card_wrap news">
+                    <div class="card card_hotrank_n ">
+                        <div class="card_head">
+                            <h4 class="title">智能推荐</h4>
+                        </div>
+                        <div class="card_content s_pg16">
+                            <ul>
+                                <li>
+                                        <span class="num top">1</span>
+                                        <a href="/home/index/article?id=4524&types=3">税收是法定经营成本:亏损企业是否还需要缴税?</a>
+                                    </li><li>
+                                        <span class="num top">2</span>
+                                        <a href="/home/index/article?id=4523&types=3">落实增值税法合规典型案例之五:银川中铁水务优化票据管理体系,水费与污水处理费分开开票</a>
+                                    </li><li>
+                                        <span class="num top">3</span>
+                                        <a href="/home/index/article?id=4522&types=3">落实增值税法合规典型案例之四:青海一家亲超市购销两端上线「交易即开票」,未开票收入占比降至11.8%</a>
+                                    </li><li>
+                                        <span class="num top">4</span>
+                                        <a href="/home/index/article?id=4521&types=3">落实增值税法合规典型案例之三:中国移动海南公司应对电信服务税目税率调整的全链条闭环</a>
+                                    </li><li>
+                                        <span class="num top">5</span>
+                                        <a href="/home/index/article?id=4520&types=3">落实增值税法合规典型案例之二:福建榕强建设构建「甲供工程实质性认定」机制</a>
+                                    </li>                                <li>
+                                        <span class="num top">6</span>
+                                        <a href="/home/index/article?id=671&types=4">山东莱州百通财务管理注册9家空壳企业拆分收入帮助代理企业偷税,追缴税费罚款合计70.51万元</a>
+                                    </li><li>
+                                        <span class="num top">7</span>
+                                        <a href="/home/index/article?id=670&types=4">杭州众税标体心科技协助代理企业违规列支并违规享受加计扣除,被罚45.23万元并没收违法所得32.8万元</a>
+                                    </li><li>
+                                        <span class="num top">8</span>
+                                        <a href="/home/index/article?id=669&types=4">福建宁德天穗粮油无实际经营虚开稻谷、玉米增值税专用发票289份被认定虚开</a>
+                                    </li><li>
+                                        <span class="num top">9</span>
+                                        <a href="/home/index/article?id=668&types=4">上海税务依法查处同腾生物虚报研发费用加计扣除偷税案,追缴滞纳金罚款共计376万元</a>
+                                    </li><li>
+                                        <span class="num top">10</span>
+                                        <a href="/home/index/article?id=667&types=4">一条举报线索牵出「发票工厂」:三年非法出售增值税专用发票票面金额74亿余元</a>
+                                    </li>                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--公共底部-->
+    <!--<div class="buttom_gg">-->
+<!--    <div class="buttom_gg_l" style="margin-top: 100px">-->
+<!--        <img src="/Public/home/images/search.jpg" alt="小程序">-->
+<!--        <span class="bottom_tex">扫码进入小程序版</span>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="jdsearch w">
+    <div class="w_bottom">
+        <div class="bottom">
+            <div class="m_outlink">
+                <div class="link">
+                    <span>友情链接：</span>
+                    <!-- <a href="https://www.jiaodiantax.com" class="icon-wb" target="_blank" title="焦点财税" content="nofollow">焦点财税</a> -->
+                    <!-- <a href="http://www.csfwzx.com/" class="icon-wb" target="_blank" title="焦点财税">中道财税</a>
+                    <a href="http://www.caishuibaomu.com/" class="icon-wb" target="_blank" title="焦点财税">天同财税</a> -->
+                    <p class="copyright fr">
+                        陕西焦点聚光咨询有限公司
+                        <a href="http://beian.miit.gov.cn/" content="nofollow">陕ICP备2026010351号</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    <!--公共底部-->
+    <script>
+        
+        $('.more_content_op').click(function () {　　//点击标签
+            $(this).siblings().removeClass("comment_content_of");
+            $(this).hide();
+        });
+        $('.coneten_img img').each(function () {
+            $img_src = $(this).attr('src');
+            // $(this).attr('src', 'https://www.jiaodiantax.com' + $img_src);
+            $(this).attr('src', $img_src);
+        });
+        $('.open_comment').click(function () {　　//点击a标签
+            if ($('#comment_box').is(':hidden')) {　　//如果当前隐藏
+                $('#comment_box').show();　　//那么就显示div
+            } else {　　//否则
+                $('#comment_box').hide();　　//就隐藏div
+            }
+        });
+        function fabulous_comment($set_types=null) //点赞和评论 （只有答疑和解读）
+        {
+            //$set_types当前操作的类型 1:点赞、2：评论
+            $c_id = '25964'; //文章id
+            $user_info = ''; //用户信息
+            $c_types = '1'; //文章类型
+            $comment = $.trim($(".pl_textarea").val()) ? $.trim($(".pl_textarea").val()) : null; //评论内容
+            if($set_types == 2)
+            {
+                if(!$user_info)
+                {
+                    alert('登录后评论！');
+                    return false;
+                }
+                if(!$comment)
+                {
+                    alert('内容不能为空！');
+                    return false;
+                }
+            }
+            $.ajax({
+                url : "/Home/Index/fabulous_comment.html",
+                dataType : 'json',
+                type : 'get',
+                data: {
+                    set_types: $set_types,
+                    c_id: $c_id,
+                    c_types: $c_types,
+                    comment: $comment,
+                },
+                success: function(res)
+                {
+                    if(res.status == 200)
+                    {
+                        if($set_types == 1) //点赞
+                        {
+                            $('#fabulous').text(res.fabulous_num);
+                        }
+                        else //评论
+                        {
+                            alert(res.str);
+                            $(".pl_textarea").val(''); //评论内容
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

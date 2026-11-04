@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html><head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width"> 
+  <meta name="renderer" content="webkit"> 
+  <title>中国银保监会有关部门负责人就《关于长期医疗保险产品费率调整有关问题的通知》答记者问_上海市地方金融监督管理局</title> 
+  <meta name="SiteName" content="上海市地方金融监督管理局"> 
+  <meta name="SiteDomain" content=""> 
+  <meta name="SiteIDCode" content=""> 
+  <meta name="ArticleTitle" content="中国银保监会有关部门负责人就《关于长期医疗保险产品费率调整有关问题的通知》答记者问">
+  <!-- * --> 
+  <meta name="PubDate" content="2020年04月03日">
+  <!-- * --> 
+  <meta name="ContentSource" content="银保监会">
+  <!-- * --> 
+  <meta name="Author" content=""> 
+  <meta name="description" content=" "> 
+  <meta name="keywords" content=""> 
+  <link href="/assets/css/site.css" rel="stylesheet"> 
+  <script src="/assets/js/jquery-1.10.2.min.js"></script> 
+  <script src="/assets/js/jquery.cookie.js"></script> 
+  <link href="/assets/css/index.css" rel="stylesheet"> 
+  <script src="/assets/js/navscripts.js"></script> 
+  <script src="/assets/js/jquery.ui.widget.js"></script> 
+  <script src="/assets/js/jquery.ui.autocomplete.js"></script> 
+  <script src="/assets/js/jquery.ui.core.js"></script> 
+  <script src="/assets/js/jquery.ui.position.js"></script> 
+  <link href="/assets/css/jquery.ui.autocomplete.css" rel="stylesheet"> 
+  <link href="/assets/css/interactiveplatformindex.css" rel="stylesheet"> 
+  <link href="/assets/css/interactiveplatformpage.css" rel="stylesheet"> 
+  <script src="/assets/js/share.js"></script> 
+  <link href="/assets/css/zzsc.css" rel="stylesheet"> 
+  <script type="text/javascript">
+
+        function JSONToDate(jsonDate) {
+            try {
+                var date = new Date(parseInt(jsonDate.replace("/Date(", "").replace(")/", ""), 10));
+                var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+                return month + "-" + day;
+            } catch (ex) {
+                return "";
+            }
+        }
+
+        function titleSub(title) {
+            if (title == null) {
+                return "";
+            }
+            title = title.replace(" ", "");
+            if (title.length > 15) {
+                return title.replace("—", "").substr(0, 12) + "...";
+            }
+            return title.replace("—", "").substr(0, 12);
+        }
+
+        $(function () {
+            $("input[name=searchZccxMap]").click(function () {
+                var val = $("#txtTzFxZccxMap").val();
+                $.ajax({
+                    url: '/Home/GetZCCX?CustomQuery=CustomQuery',
+                    data: { title: val },
+                    type: "get",
+                    dataType: "json",
+                    success: function (reslut) {
+                        if (reslut != null) {
+                            $("ul[name=searchZccxMapUL]").html("");
+                            $.each(reslut, function (i, o) {
+                                var tmpTitle = (o.ShortTitle != "" && o.ShortTitle != null) ? o.ShortTitle : titleSub(o.Title);
+                                var html = '<a href="/ZhengWuDaTing/Detail?informationid=' + o.ID + '" title="' + o.Title + '"><div class="fzggxwmain">' +
+                                    '<div class="fzggxwleft9">' + tmpTitle + '</div>' +
+                                    '<div class="fzggxwright">[' + JSONToDate(o.PublishedTime) + ']</div><div class="clear"></div></div></a>';
+                                $("ul[name=searchZccxMapUL]").append("<li>" + html + "</li>");
+                            });
+                        }
+                    }
+                });
+            });
+
+            $('#txtTzFxZccxMap').keydown(function (e) {
+                if (e.keyCode == 13) {
+                    $("input[name=searchZccxMap]").click();
+                }
+            });
+
+            var tag = 0;
+
+            $("#jgcxMap").on("click", "a[name=OgnTypeJgcxMap]", function () {
+                $("a[name=OgnTypeJgcxMap]").removeClass("TagSelct");
+                $(this).addClass("TagSelct");
+                tag = $(this).attr("cid");
+                $("input[name=searchJgcxMap]").click();
+            });
+
+            $("#zlxzMap").on("click", "a[name=ZLXZTypeJgcxMap]", function () {
+                $("a[name=ZLXZTypeJgcxMap]").removeClass("TagSelct");
+                $(this).addClass("TagSelct");
+                tag = $(this).attr("cid");
+                $.ajax({
+                    url: '/Home/GetZLXZ',
+                    data: { keyWords: tag },
+                    type: "get",
+                    dataType: "json",
+                    success: function (reslut) {
+                        if (reslut != null) {
+                            $("ul[name=searchZLXZTypeJgcxMapUL]").html("");
+                            $.each(reslut, function (i, o) {
+                                var tmpTitle = (o.ShortTitle != "" && o.ShortTitle != null) ? o.ShortTitle : titleSub(o.Title);
+                                var html = '<a href="' + o.FileUrl + '" title="' + titleSub(o.Title) + '"><div class="fzggxwmain">' +
+                                    '<div class="fzggxwleft9">' + tmpTitle + '</div>' +
+                                    '<div class="fzggxwright">[' + JSONToDate(o.PublishedTime) + ']</div><div class="clear"></div></div></a>';
+                                $("ul[name=searchZLXZTypeJgcxMapUL]").append("<li>" + html + "</li>");
+                            });
+                        }
+                    }
+                });
+            });
+
+            $("#fxtsMap").on("click", "a[name=FXTSTypeJgcxMap]", function () {
+                $("a[name=FXTSTypeJgcxMap]").removeClass("TagSelct");
+                $(this).addClass("TagSelct");
+                tag = $(this).attr("cid");
+                $.ajax({
+                    url: '/Home/GetFXTS',
+                    data: { keyWords: tag },
+                    type: "get",
+                    dataType: "json",
+                    success: function (reslut) {
+                        if (reslut != null) {
+                            $("ul[name=searchFXTSTypeJgcxMapUL]").html("");
+                            $.each(reslut, function (i, o) {
+                                var tmpTitle = (o.ShortTitle != "" && o.ShortTitle != null) ? o.ShortTitle : titleSub(o.Title);
+                                var html = '<a href="/ZhengWuDaTing/Detail?informationid=' + o.ID + '" title="' + o.Title + '"><div class="fzggxwmain">' +
+                                    '<div class="fzggxwleft9">' + tmpTitle + '</div>' +
+                                    '<div class="fzggxwright">[' + JSONToDate(o.PublishedTime) + ']</div><div class="clear"></div></div></a>';
+                                $("ul[name=searchFXTSTypeJgcxMapUL]").append("<li>" + html + "</li>");
+                            });
+                        }
+                    }
+                });
+            });
+
+            $('#txtTzFxJgcxMap').keydown(function (e) {
+                if (e.keyCode == 13) {
+                    $("input[name=searchJgcxMap]").click();
+                }
+            });
+
+            $("input[name=searchJgcxMap]").click(function () {
+                var val = $("#txtTzFxJgcxMap").val();
+                $.ajax({
+                    url: '/Home/GetOrgani',
+                    data: { title: val, tag: tag },
+                    type: "get",
+                    dataType: "json",
+                    success: function (reslut) {
+                        if (reslut != null) {
+                            $("ul[name=searchJgcxMapUL]").html("");
+                            $.each(reslut, function (i, o) {
+                                var tmpTitle = titleSub(o.OrganName);
+                                //<div class="fzggxwright">[' + JSONToDate(o.CreateTime) + ']</div>
+                                var html = '<a href="/ZhengWuDaTing/JgDetail?id=' + o.ID + '" title="' + o.OrganName + '"><div class="fzggxwmain">' +
+                                    '<div class="fzggxwleft9">' + tmpTitle + '</div>' +
+
+                                    '<div class="clear"></div></div></a>';
+                                $("ul[name=searchJgcxMapUL]").append("<li>" + html + "</li>");
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script> 
+  <script type="text/javascript">
+        $(function () {
+            //右侧浮窗
+            function rigScroll() {
+                var winWidth = $(window).width();
+                if (winWidth < 1024) {
+                    $(".gov_weixin_share").css({ "right": 10 })
+                } else {
+                    var winRig = (winWidth - 1005) / 2 - 90;
+                    $(".gov_weixin_share").css({ "right": winRig })
+                }
+                $(".closeBtn").click(function () {
+                    $(".gov_weixin_share").hide();
+                    $("#btnshrink").show();
+                });
+                $("#btnshrink").click(function () {
+                    $(".gov_weixin_share").show();
+                    $("#btnshrink").hide();
+                });
+
+            }
+            rigScroll()
+            $(window).scroll(function () {
+                rigScroll()
+            });
+
+            $(window).resize(function () {
+                rigScroll()
+            });
+
+            $(".closeBtn").click();
+        });
+    </script> 
+  <script type="text/javascript">
+        jQuery(function () {
+            jQuery.get("/Home/GetBrowserCount", function (response) {
+                jQuery("#browserCount").html("您是第<span>" + response + "</span>位浏览者");
+                jQuery("#browserCount").attr("title", "您是第" + response + "位浏览者");
+
+            });
+        });
+    </script> 
+  <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#btnSearch").click(function () {
+                window.location.href = "/infomation/SearchInfomation/?keyWord=" + encodeURI($("#txtSearch").val());
+            });
+
+            jQuery(".hotKeys").click(function () {
+                window.location.href = "/infomation/SearchInfomation/?keyWord=" + encodeURI($(this).text());
+            });
+
+            jQuery("#txtSearch").keyup(function (e) {
+                if (e.which == 13) {
+                    jQuery("#btnSearch").click();
+                }
+            });
+
+            try {
+                jQuery("#txtSearch").autocomplete({
+                    minLength: 1,
+                    source: function (request, response) {
+                        if ($.trim(request.term) != "") {
+                            $.ajax({
+                                type: "POST",
+                                url: '/InteractivePlatform/ServerDataAll?keyword=' + encodeURI(request.term),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success: function (data) {
+                                    response($.map(data, function (item) {
+                                        return { value: item };
+                                    }));
+                                }
+                            });
+                        }
+                    }
+                });
+            } catch (e) {
+
+            }
+
+        });
+    </script> 
+  <script type="text/javascript">
+        $(function () {
+            var defaultWidth = $("body").outerWidth();
+            $("body").on("click", "#jhelper_zoom_in", function () {
+                if (window.navigator.appVersion.indexOf("MSIE 8.0") >= 0) {
+                    $("html").css("overflow", "scroll");
+                    $("body").attr("style", "width:1000px !important;");
+                    console.info("body's width: " + defaultWidth);
+                }
+            });
+        });
+    </script> 
+ </head> 
+ <body> 
+  <div id="container"> 
+   <script src="/assets/js/header1.js"></script>        <div id="header">
+		<div id="skip">
+                    <a id="accesshelp" title="新窗口打开无障碍操作说明页面" href="/wzwza/index.html#div0" target="_blank">无障碍操作说明</a>
+                    <a href="javascript:createNodeDiv(" mainnav',="" '已定位到网站导航');'="" title="跳转到网站导航区">跳转到网站导航区</a>
+                    <a href="javascript:createNodeDiv(" main',="" '已定位到主要内容区域');'="" title="跳转到主要内容区域">跳转到主要内容区域</a>
+                </div> 
+            <div class="headermain">
+                <div class="headerleft">
+                    <ul style="font-size: 12px;">
+                       <li id="date" style="float: left; width: 148px; font-size: 12px;">2026年11月3日  星期二</li>
+                       <li style="float: left; width: 138px; height: 35px;">
+                       <iframe allowtransparency="true" frameborder="0" width="180" height="35" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&amp;z=3&amp;t=0&amp;v=0&amp;d=1&amp;bd=0&amp;k=000000&amp;f=&amp;q=1&amp;e=1&amp;a=1&amp;c=58362&amp;w=180&amp;h=36&amp;align=left"></iframe>
+                       </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="headerright" style="margin-right: 20px;">
+                    <a href="javascript:void(0)" title="中文繁体" name="lang" style="font-size: 12px;">中文繁体</a>
+                    |&nbsp;&nbsp;<a href="https://english.shanghai.gov.cn/" title="英文版" style="font-size: 12px;" target="_blank">English</a>
+
+                    &nbsp;&nbsp;|
+                    <a href="javascript:void(0)" id="cniil_wza" title="网页无障碍辅助工具条，读屏软件用户请忽略。" style="font-size: 12px;">无障碍工具</a>
+                    &nbsp;&nbsp;|
+                    
+                    <a href="javascript:void(0)" id="quchu" title="去除导航" style="font-size: 12px;">去除导航</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+ 
+   <div id="containert"> 
+    <script src="/assets/js/header2.js"></script>            <div class="top" style="width:100%;">
+                <div class="logomain" style="position: relative">
+                    <div class="logoleft"><img title="" src="/assets/img/logo_05.png" height="131"></div>
+                    <div class="logoright">
+                        <div class="ss">
+<form id="form" action="http://ss.shanghai.gov.cn/service/jrj/search" method="GET" target="_blank">
+<ul>
+<li class="ssinput">
+<input name="q" type="text" title="请输入关键字查询" placeholder="请输入关键字查询" autocomplete="off">
+</li>
+<li class="ssbutton" title="搜索">
+<a href="javascript:void (0)" onclick="ssbtn();" title="搜索">
+<img src="/assets/img/ss_input.png" title="搜索">
+</a>
+</li>
+</ul>
+</form>
+                            <div class="clear"></div>
+                        </div>
+
+<div class="ssrc">
+    <span class="hotKeys" style="width:65px">搜索热词：</span>
+        <a href="http://ss.shanghai.gov.cn/service/jrj/search?page=1&amp;view=&amp;contentScope=2&amp;dateOrder=1&amp;tr=1&amp;dr=&amp;format=1&amp;uid=a8919263-ed77-59a3-5641-41be1812957e&amp;sid=00000171-0b4f-b366-ad16-f10b569acece&amp;re=2&amp;all=1&amp;debug=&amp;siteId=jrj.sh.gov.cn&amp;siteArea=all&amp;q=%E9%93%B6%E8%A1%8C" class="hotKeys" title="银行" target="_blank">银行</a>
+        <a href="http://ss.shanghai.gov.cn/service/jrj/search?page=1&amp;view=&amp;contentScope=2&amp;dateOrder=1&amp;tr=1&amp;dr=&amp;format=1&amp;uid=a8919263-ed77-59a3-5641-41be1812957e&amp;sid=00000171-0b4f-b366-ad16-f10b569acece&amp;re=2&amp;all=1&amp;debug=&amp;siteId=jrj.sh.gov.cn&amp;siteArea=all&amp;q=%E9%87%91%E8%9E%8D" class="hotKeys" title="金融" target="_blank">金融</a>
+        <a href="http://ss.shanghai.gov.cn/service/jrj/search?page=1&amp;view=&amp;contentScope=2&amp;dateOrder=1&amp;tr=1&amp;dr=&amp;format=1&amp;uid=a8919263-ed77-59a3-5641-41be1812957e&amp;sid=00000171-0b4f-b366-ad16-f10b569acece&amp;re=2&amp;all=1&amp;debug=&amp;siteId=jrj.sh.gov.cn&amp;siteArea=all&amp;q=%E9%87%91%E8%9E%8D%E6%9C%8D%E5%8A%A1" class="hotKeys" title="金融服务" target="_blank">金融服务</a>
+</div>
+                        
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="nav">
+                    <ul>
+                        <li><a ctrlz="1" href="/index.html" class="sy">首&nbsp;&nbsp;&nbsp;页</a></li>
+                        <li><a ctrlz="1" href="/GYWM148/" class="gywm">关于我们</a></li>
+                        <li><a ctrlz="1" href="/XWZX134/" class="xwzx">新闻中心</a></li>
+                        <li><a ctrlz="1" href="/zwgk0920/" class="xxgk" title="政务公开">政务公开</a></li>
+                        <li><a ctrlz="1" href="/ZWDT136/" class="zwdt1">政务大厅</a></li>
+                        <li style="margin-right:0px;"><a ctrlz="1" href="/HDPT141/" class="hdpt">互动平台</a></li>
+
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+<script type="text/javascript"> function ssbtn(){window.open('http://ss.shanghai.gov.cn/service/jrj/search?page=1&siteId=jrj.sh.gov.cn&q='+encodeURI(document.getElementsByName('q')[0].value) ,'_blank');}</script>
+ 
+    <link href="/assets/css/index.css" rel="stylesheet"> 
+    <link href="/assets/css/page.css" rel="stylesheet" type="text/css"> 
+    <div id="containerss"> 
+     <div id="container"> 
+      <div class="xxym"> 
+       <div class="xxleft"> 
+        <div class="Position"> 
+         <a href="/index.html" title="首页">首页</a> 
+         <a href="/XXGK135/index.html">》信息公开</a> 
+         <a href="/ZCJD146/index.html">》政策解读</a> 
+        </div> 
+        <div class="xxleftmain"> 
+         <div style=" background:#fff;line-height:28px;margin-top:20px;"> 
+          <ul style="width:600px;margin-left:auto;margin-right:auto;margin-top:25px;clear:both;"> 
+           <li> <span style="color: #999999; white-space: nowrap;float:right;*margin-top:-25px;">发布时间: [2020-04-03]</span></li> 
+           <li style="line-height: 32px; float: left; font-weight: bold; color: #e76403; background: url('/assets/img/ico2.png') no-repeat; text-indent: 25px;"> 中国银保监会有关部门负责人就《关于长期医疗保险产品费率调整有关问题的通知》答记者问 </li> 
+          </ul> 
+          <ul style="width:600px;margin-top:25px;margin-left:auto;margin-right:auto;margin-bottom:30px;color:#333;clear:both;"> 
+           <li style="line-height: 32px; float: left; text-indent: 25px; background: url('/assets/img/ico3.png') no-repeat;"> 
+            <div style="text-align:justify;text-indent:2em;">
+             近日，银保监会印发了《关于长期医疗保险产品费率调整有关问题的通知》（以下简称《通知》）。银保监会有关部门负责人就有关问题回答了记者提问。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>一、出台《通知》的背景是什么？</strong>
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             近年来，健康保险快速发展，医疗保险作为健康保险的主要险种之一，也受到了消费者热烈欢迎和市场广泛关注。数据显示，2019年，医疗保险原保险保费收入2442亿元，同比增长32%，高于行业总保费增速约20个百分点，占健康险总保费的34.6%。但从期限来看，绝大部分为1年期业务，长期医疗险产品较少，不能有效满足人民群众长期健康保障需求。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             2019年11月，银保监会发布《健康保险管理办法》，规定保险公司可以在保险产品中约定对长期医疗保险产品进行费率调整，其主要目的是引导保险公司开发销售长期医疗保险产品，这既能有效解决短期医疗险因产品停售等原因无法续保的问题，同时也符合国际通行做法。为规范费率可调的长期医疗保险产品开发销售行为，保护消费者合法权益，银保监会在研究借鉴国际经验的基础上，研究出台了《通知》。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>二、《通知》的基本原则是什么？</strong>
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             对长期保险产品的费率进行调整在我国尚属新鲜事物，但从国际市场来看已相对成熟，特别是在医疗保险领域，已成为美国、英国、韩国、香港等多个国家或地区的普遍做法。《通知》制定过程中，银保监会广泛征求各方面意见，充分借鉴国际经验，确定了以下原则：
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>一是</strong>鼓励产品创新。进一步丰富健康保险产品，鼓励保险公司为消费者提供保障期限较长、保障责任更加充分的医疗保险产品。回应社会关切，从制度上解决患病人群和老年人难以购买商业医疗保险的问题。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>二是</strong>坚持市场化导向。贯彻落实人身保险产品费率政策改革总体要求，将产品定价权和费率调整权交给市场，由各公司根据医疗保险的实际经营情况科学合理地确定费率调整的时间和调整幅度。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>三是</strong>强化信息披露。坚持费率调整公开透明，通过规范产品条款表述、产品说明书内容、费率调整情况公示以及费率调整信息通知等方式，强化社会监督，约束保险公司不合理的费率调整行为。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>四是</strong>保护消费者合法权益。在坚持市场化的基础上，制定费率调整基本要求，细化保险公司不得上浮费率的“负面清单”，规范保险公司经营销售行为，明确对违规行为的惩戒措施，强化消费者权益保护。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>三、《通知》的主要内容有哪些？</strong>
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>一是</strong>明确费率可调的长期医疗保险产品范围。考虑到科学性和可操作性，目前仅限于采用自然费率定价的长期医疗保险，包括保险期间为一年以上的医疗保险，以及保险期间为一年，但含有保证续保条款的医疗保险。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>二是</strong>明确费率调整的基本要求。保险公司应当制定费率调整办法，明确费率调整的触发条件、内部决策机制和工作流程。首次费率调整时间不早于产品上市销售之日起满3年，每次费率调整间隔不得短于1年。保险公司不得因单个被保险人身体状况的差异实行差别化费率调整政策。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>三是</strong>明确产品条款及产品说明书相关内容。规定保险公司销售费率可调的长期医疗保险产品，应当向投保人提供产品说明书。产品条款和产品说明书应当对费率调整情况进行详细说明，同时产品说明书还应当以案例形式演示本产品提供的保障，以及投保人可能面临的各年度费率调整情况。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>四是</strong>明确费率调整的信息披露要求。规定保险公司应当在公司网站披露费率调整办法和相关产品信息，并对费率调整情况进行公示。对于每一次费率调整，保险公司应当以投保单中约定的方式通知投保人。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>五是</strong>规范保险公司销售行为，明确对违规行为的监管措施。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>四、《通知》的实施对市场有什么影响？</strong>
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             《通知》通过细化费率调整的相关规定，解决了困扰医疗保险发展的制度障碍，明确传达了鼓励发展长期医疗保险的积极信号，将有利于促进长期医疗险的健康发展，更好地保障消费者权益。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>一是</strong>有利于丰富产品供给，助推医疗保险市场健康发展。通过费率调整机制的引入，保险公司能够在一定程度上规避医疗费用通胀风险，开发销售长期医疗保险产品的意愿进一步增强。同时，《通知》参考借鉴其他国家做法，将费率调整的决定权交由公司，有利于进一步激发市场活力，丰富产品供给。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>二是</strong>有利于更好地保障保险消费者合法权益。
+             <strong>一方面</strong>，《通知》对保险公司费率调整行为进行了规范，明确规定了保险公司费率调整应当履行的信息披露和告知义务，也强调保险公司不得因单个被保险人身体状况的差异实行差别化的费率调整政策，有利于防止保险公司随意调费、无依据调费。
+             <strong>另一方面</strong>，通过大力发展长期医疗保险产品，将更好地满足消费者的长期健康保障需求，有效避免因被保险人健康状况变化、或者保险公司产品停售而无法续保的风险，较好解决了消费者的后顾之忧。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>五、对于消费者选购医疗保险产品的意见和建议有哪些？</strong>
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             商业健康保险是健康保障体系的重要组成部分，是健康服务产业链条的重要整合者。消费者在选购商业医疗保险产品时，可以结合自身实际情况，重点关注以下几个方面：
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>一是</strong>根据自身基本医疗保险情况选择适合的保险产品。根据《健康保险管理办法》，费用补偿型医疗保险产品区分被保险人是否拥有公费医疗、基本医疗保险、其他费用补偿型医疗保险等不同情况，在保险条款、费率或者赔付金额等方面予以区别对待。被保险人同时拥有多份有效的费用补偿型医疗保险保险单的，可以自主决定理赔申请顺序。由于费用补偿型医疗保险遵循损失补偿原则，发生的医疗费用不能重复理赔，建议消费者购买此类产品时重点关注保险条款相关情况，同时也不建议重复购买此类产品。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>二是</strong>根据自身情况选择购买短期医疗保险产品或者长期医疗保险产品。根据法律法规要求，除特定情形外，保险合同成立后投保人可以解除合同，保险人不得解除合同。因此，消费者投保长期健康保险产品后，因健康状况变化导致医疗费用风险增加，或者保险公司停售该产品，在合同约定的保险期间内保险公司仍然要履行合同责任，这是长期保险产品区别于短期险产品的重要之处。
+            </div>
+            <div style="text-align:justify;text-indent:2em;">
+             <strong>三是</strong>关注等待期、免赔额、保险责任、责任免除以及费率调整等涉及自身权益的重要事项，并在投保时如实告知自身健康状况。
+            </div>
+            <div style="text-align:justify;text-indent:2em;"></div> </li> 
+          </ul> 
+          <div class="clear"></div> 
+         </div> 
+         <div class="clear"></div> 
+         <h4 style="text-align: center; margin-top: 30px;" id="biaoqians"> <a style="color: #ff6000; white-space: nowrap;display:none" id="tags">银保监会,健康保险,保险产品</a> 标签：<a target="_blank" href="http://ss.shanghai.gov.cn/search?page=1&amp;view=&amp;contentScope=2&amp;dateOrder=1&amp;tr=1&amp;dr=&amp;format=1&amp;uid=369bccaf-b2db-93c6-ac85-981c2d09e9be&amp;sid=00000171-abb7-a8ea-aa65-6920b9e80b11&amp;re=2&amp;all=1&amp;debug=&amp;siteId=jrj.sh.gov.cn&amp;siteArea=all&amp;q=银保监会" style="color: #ff6000; white-space: nowrap;">&nbsp;银保监会&nbsp;</a><a target="_blank" href="http://ss.shanghai.gov.cn/search?page=1&amp;view=&amp;contentScope=2&amp;dateOrder=1&amp;tr=1&amp;dr=&amp;format=1&amp;uid=369bccaf-b2db-93c6-ac85-981c2d09e9be&amp;sid=00000171-abb7-a8ea-aa65-6920b9e80b11&amp;re=2&amp;all=1&amp;debug=&amp;siteId=jrj.sh.gov.cn&amp;siteArea=all&amp;q=健康保险" style="color: #ff6000; white-space: nowrap;">&nbsp;健康保险&nbsp;</a><a target="_blank" href="http://ss.shanghai.gov.cn/search?page=1&amp;view=&amp;contentScope=2&amp;dateOrder=1&amp;tr=1&amp;dr=&amp;format=1&amp;uid=369bccaf-b2db-93c6-ac85-981c2d09e9be&amp;sid=00000171-abb7-a8ea-aa65-6920b9e80b11&amp;re=2&amp;all=1&amp;debug=&amp;siteId=jrj.sh.gov.cn&amp;siteArea=all&amp;q=保险产品" style="color: #ff6000; white-space: nowrap;">&nbsp;保险产品&nbsp;</a></h4> 
+         <div class="xxzxej"> 
+          <div id="weibo_pos"><img src="/assets/img/fenxiang.jpg"><img src="/assets/img/xinl.png" onclick="data_sendto('tsina');return false;" alt="分享到新浪微博" title="分享到新浪微博"><img src="/assets/img/weixin.png" onclick="data_share();return false;" alt="扫描二维码" title="扫描二维码"><div id="share_QRcode_s"><div id="output" style="display: none;"><img src="http://service.shanghai.gov.cn/QRcode/ShareQRcode.aspx?url=https%3A%2F%2Fjrj.sh.gov.cn%2FZCJD146%2F20200403%2F0031-158848.html" class="qrshare"><a onclick="data_close();return false;" id="tip_share_close"></a><i id="tipxjt"></i><p class="share_qr_intro">用微信扫描二维码<br>分享至好友和朋友圈</p></div></div></div> 
+          <div class="right_line"></div> 
+         </div> 
+        </div> 
+        <div style="margin-top: 15px;"> 
+         <div style="border: 1px solid #EEEEEE; padding: 10px; color: #333333; background-color: white; line-height: 26px; font-family: 仿宋;"> 
+          <p style="height: 30px; color: #D54242;"><strong>上海金融门户网站版权与免责声明</strong></p> 
+          <p style="text-indent: 2em;">1.凡本网站及其子网站其信息来源注明“上海市金融工作党委”、“上海市地方金融监督管理局”、“上海市金融工作局”的，其版权属于“上海金融”门户网站及其子网站所有。 其他媒体、网站或个人转载使用时必须注明：“文章来源：上海金融网站”。 </p> 
+          <p style="text-indent: 2em;">2.凡本网站及其子网站转载其他媒体、网站或个人的文章，目的在于传递更多信息，并不代表本网站及其子网站赞同其观点和对其真实性负责。其他媒体、网站或个人转载使用时必须保留本站注明的文章来源，并自负法律责任。</p> 
+         </div> 
+        </div> 
+        <div class="clear"></div> 
+       </div> 
+       <div class="xxright"> 
+        <div class="xgxw"> 
+         <div class="xxrighttitle"> 
+          <div class="rdxgxwtitle">
+           <a href="/ZCJD146/" title="政策解读">政策解读</a>
+          </div> 
+          <div class="rdxgxwright">
+           <a href="/ZCJD146/" title="更多">更多》</a>
+          </div> 
+          <div class="clear"></div> 
+         </div> 
+         <div class="xgxwlb"> 
+          <ul> 
+           <li><a href="/ZCJD146/20200917/c1338c79d10d4e3d81bb096f27ed5e6b.html" title="中国银保监会有关部门负责人就《银行保险机构应对突发事件金融服务管理办法》答记者问">中国银保监会有关部门负责人就《银行保险机构应对突发事件金融服务管理办法》答记者问</a></li> 
+           <li><a href="/ZCJD146/20200917/26d59dabccb24b7281128d46d7e3242b.html" title="中国银保监会有关部门负责人就 《关于加强小额贷款公司监督管理的通知》答记者问">中国银保监会有关部门负责人就 《关于加强小额贷款公司监督管理的通知》答记者问</a></li> 
+           <li><a href="/ZCJD146/20200915/2d06e21a52b24300a74c363fb4a323a0.html" title="国务院政策例行吹风会“服务实体经济明确金融控股公司准入规范有关情况”文字实录">国务院政策例行吹风会“服务实体经济明确金融控股公司准入规范有关情况”文字实录</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="xgxw"> 
+         <div class="xxrighttitle"> 
+          <div class="rdxgxwtitle">
+           <a href="/CJWD143/" title="常见问答">常见问答</a>
+          </div> 
+          <div class="rdxgxwright">
+           <a href="/CJWD143/" title="更多">更多》</a>
+          </div> 
+          <div class="clear"></div> 
+         </div> 
+         <div class="xgxwlb"> 
+          <ul> 
+           <li><a href="/CJWD143/20201109/17e69fc8448a4a53838c0adca97b9d78.html" title="存款保险标识即将启用，&lt;br&gt;一文了解什么是存款保险">存款保险标识即将启用，<br>一文了解什么是存款保险</a></li> 
+           <li><a href="/CJWD143/20200817/389b859966884cf3bb5dcd848bedf6aa.html" title="悉心呵护你的信用报告">悉心呵护你的信用报告</a></li> 
+           <li><a href="/CJWD143/20200624/ecfb1c844f5e42fcbef7c229babe2f2b.html" title="个人信用报告，到底有啥用？">个人信用报告，到底有啥用？</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <a href="/HDPT141/index.html"> <img src="/assets/img/zxtw.jpg" style="cursor: pointer;" width="268"> </a> 
+       </div> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="clear"></div> 
+    </div> 
+    <script type="text/javascript">
+
+    //$(function () {
+    //    $(".xxleftmain").find("img").each(function () {
+    //        //$(this).click(function () {
+    //        var oWidth = $(this).width();
+    //        var oHeight = $(this).height();
+    //        if (oWidth > 650) {
+    //            $(this).attr("width", "600px");
+    //            $(this).attr("height", oHeight * 650 / oWidth + "px");
+    //            //alert($(this).attr("width") + $(this).attr("height"));
+    //        }
+
+
+    //        //})
+
+    ////    })
+
+    //})
+    $(function () {
+        //var oWidth = $("#IndexPicture").width();
+        //var oHeight = $("#IndexPicture").height();
+        //if (oWidth > 650) {
+        //    $("#IndexPicture").attr("width", "600px");
+        //    $("#IndexPicture").attr("height", oHeight * 650 / oWidth + "px");
+        //}
+        $(".xxleftmain").find("img").each(function () {
+            var oWidth = $(this).width();
+            var oHeight = $(this).height();
+
+            if (oWidth > 650) {
+                $(this).attr("width", "600px");
+                $(this).attr("height", oHeight * 650 / oWidth + "px");
+            }
+
+
+
+
+        })
+
+    })
+</script> 
+   </div> 
+   <script src="/assets/js/footer.js"></script>        <div id="footer" style="font-size: 12px;">
+            <div class="footermain">
+<ul> 
+      <li class="footerlogo" style="padding-left: 30px;padding-top: 10px;"><img src="/assets-2021/img/logo1.png" alt="上海金融"> </li> 
+      <li class="footernr innr-foot" style="width: 670px;">
+  <ul class="zhuban"> <li>主办：</li><li>中共上海市委金融委员会办公室<br>上海市地方金融管理局</li><li>中共上海市金融工作委员会<br>上海市推进国际金融中心建设办公室 <a href="https://jrj.sh.gov.cn/BQSM/index.html" title="版权申明" target="_blank">版权申明</a></li>   </ul> <p>地址：中国上海大沽路100号市政大厦&nbsp;&nbsp;&nbsp;工作时间：周一至周五 9：00 — 18:00</p> <p><a href="https://beian.miit.gov.cn" target="_blank" title="沪ICP备2021016245号-2">沪ICP备2023020284号-1</a>&nbsp;&nbsp;邮政编码：200003&nbsp;&nbsp;电话：021—23111111（总机）&nbsp;&nbsp;邮箱：jrb@shanghai.gov.cn</p> </li> 
+     </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="ylz">
+                <table style="margin: 0 auto;">
+                    <tbody><tr>
+                    	<td>
+                           <span id="_ideConac"><a href="//bszs.conac.cn/sitename?method=show&amp;id=0AC858DBAE010D64E053012819AC2C2E" target="_blank"><img id="imgConac" vspace="0" hspace="0" border="0" src="/assets/img/red.png" data-bd-imgshare-binded="1"></a></span><script src="http://dcs.conac.cn/js/02/000/0000/60464845/CA020000000604648450001.js" type="text/javascript"></script><span id="_ideConac"></span>
+                        </td>
+<td><img src="/assets-2021/img/slwzafw.png" width="100px"></td>
+                        <td>
+                            <div style="width:300px;margin:0 auto; padding:0px 0;">
+                                <img src="/assets/img/beian.png" title=""><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102005381" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">沪公网安备 31010102005381号</p></a>
+                            </div>
+                            网站标记码：3100000093
+                        </td>
+                        <td>
+                            <a href="/wzdt/index.html" title="网站地图"><img src="/assets/img/zddt.png"></a>
+                        </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+ 
+  </div> 
+  <script type="text/javascript">
+        $(function () {
+            $("#quchu").click(function () {
+                if ($("#quchu").text() == "去除导航") {
+                    $(".top").hide(500);
+                    $("#footer").hide(500);
+                    $("#quchu").text("打开导航");
+                }
+                else {
+                    $(".top").show(500);
+                    $("#footer").show(500);
+                    $("#quchu").text("去除导航");
+                }
+            })
+        });
+    </script> 
+  <script src="/assets/js/BG5TOGBK.js"></script> 
+  <script type="text/javascript">
+        var j = 0;
+        document.onkeyup = function (event) {
+            var e = event || window.event;
+            var keyCode = e.keyCode || e.which;
+            var aArray = List();
+            //alt + 1
+            if ((e.altKey && e.shiftKey == false && e.keyCode == 49) || e.ctrlKey && e.shiftKey == false && e.keyCode == 49) {
+                window.open("/AccessibilityHelp.htm#div1");
+            }
+            //alt+z | ctrl+shift+z
+            if ((e.altKey && e.keyCode == 90) || (e.ctrlKey && e.keyCode == 90)) {
+                if (j == aArray.length) {
+                    $(aArray[j - 1]).removeClass("ctrlz");
+                    j = 0;
+                } else {
+                    if (e.shiftKey) {
+                        j -= 1;
+                    }
+                }
+                for (var i = j; j < aArray.length;) {
+                    if (i != 0) {
+                        $(aArray[i - 1]).removeClass("ctrlz");
+                    }
+                    $(aArray[i]).removeClass("ctrlz");
+                    $(aArray[i]).addClass("ctrlz");
+                    Zidong(i);
+                    if (e.shiftKey) {
+                        j--;
+                    } else {
+                        j++;
+                    }
+                    break;
+                }
+            }
+
+
+        }
+
+        jQuery(document).ready(function () {
+            jQuery(document).keydown(
+                function (e) {
+                    e = e || window.event;
+                    console.info(e.keyCode);
+                    //主体功能
+                    // 1. 工具条开关：快捷键(Alt+J)
+                    //if (e.altKey == true && e.shiftKey == false && e.keyCode == 74)
+                    //toggleToolBar();
+                    //2. 纯文本与可视化模式切换：快捷键（Alt+Shift+J）；
+                    if (e.altKey == true && e.shiftKey == true && e.keyCode == 74)
+                        openTextFunction();
+                    //3. 链接遍历：建议快捷键TAB  默认就有的
+
+                    //对于上下结构页面：
+                    //1. 跳转到头部内容区快捷键：快捷键（Alt+shift+1）
+                    if (e.altKey == true && e.shiftKey == true && (e.keyCode == 49 || e.keyCode == 35 || e.keyCode == 97))
+                        jQuery(document).scrollTop(0);
+                    //2. 跳转到网页中间区域快捷键：快捷键（Alt+Shift+2）
+                    if (e.altKey == true && e.shiftKey == true && (e.keyCode == 50 || e.keyCode == 40 || e.keyCode == 98)) {
+                        if (jQuery(".pagemain").length > 0) {
+                            jQuery(document).scrollTop(217);
+                        } else {
+                            jQuery(document).scrollTop(jQuery("#containerss").position().top);
+                        }
+                    }
+                    if (e.altKey == true && e.shiftKey == true && (e.keyCode == 51 || e.keyCode == 34 || e.keyCode == 99)) {
+                        if (jQuery(".pagemain").length > 0) {
+                            jQuery(document).scrollTop(217);
+                        } else {
+                            jQuery(document).scrollTop(jQuery(".hdpt1").position().top - 100);
+                        }
+                    }
+                    //3. 跳转到底部内容区快捷键：快捷键（Alt+shift+3）
+                    if (e.altKey == true && e.shiftKey == true && (e.keyCode == 52 || e.keyCode == 34 || e.keyCode == 100))
+                        jQuery(document).scrollTop(jQuery(document).height());
+
+                    ////热点区域
+                    ////1. 跳转到无障碍操作说明页面：快捷键（Alt+1或Ctrl+1） http://www.shyp.gov.cn/wzasm.html#div1
+                    //if ((e.altKey == true || e.ctrlKey == true) && e.shiftKey == false && (e.keyCode == 49 || e.keyCode == 97))
+                    //    window.open('http://www.shyp.gov.cn/wzasm.html#div1', '_blank')
+                    ////2. 跳转到主菜单(网站导航): 快捷键（Alt+2或Ctrl+2） http://www.shyp.gov.cn/NewMH/Home/WzDt
+                    //if ((e.altKey == true || e.ctrlKey == true) && e.shiftKey == false && (e.keyCode == 50 || e.keyCode == 98))
+                    //    window.open('http://www.shyp.gov.cn/NewMH/Home/WzDt', '_blank')
+                    //3. 跳转到主要内容区域：快捷键(Alt+4或Ctrl+4)，跳转到主要内容区域后，再使用Tab键或向下方向键阅读内容 跳中间
+                    if ((e.altKey == true || e.ctrlKey == true) && e.shiftKey == false && (e.keyCode == 52 || e.keyCode == 100)) {
+                        if (jQuery(".pagemain").length > 0) {
+                            jQuery(document).scrollTop(217);
+                        } else {
+                            jQuery(document).scrollTop(jQuery("#containerss").position().top);
+                        }
+                    }
+                    ////4. 跳转到搜索区块(若页面包含) ：快捷键（Alt+6或Ctrl+6）
+                    //if ((e.altKey == true || e.ctrlKey == true) && e.shiftKey == false && (e.keyCode == 54 || e.keyCode == 102))
+                    //    jQuery(document).scrollTop(jQuery("#cxfw_content_1").position().top - 100);
+                });
+            if (!('placeholder' in document.createElement('input'))) {
+                jQuery(':input[placeholder]').each(function (index, element) {
+                    var self = $(this), txt = self.attr('placeholder');
+                    self.wrap($('<div></div>').css({ position: 'relative', zoom: '1', border: 'none', background: 'none', padding: 'none', margin: 'none' }));
+                    var pos = self.position(), h = self.outerHeight(true), paddingleft = self.css('padding-left');
+                    var holder = $('<span></span>').text(txt).css({ position: 'absolute', left: pos.left, top: pos.top, height: h, lineHeight: h + 'px', paddingLeft: paddingleft, color: '#aaa' }).appendTo(self.parent());
+                    self.focusin(function (e) {
+                        holder.hide();
+                    }).focusout(function (e) {
+                        if (!self.val()) {
+                            holder.show();
+                        }
+                    });
+                    holder.click(function (e) {
+                        holder.hide();
+                        self.focus();
+                    });
+                });
+            }
+        });
+
+        function List() {
+            var len = 0;
+            var arr = new Array(len);
+            $("a,img").each(function (i, obj) {
+                if ($(this).attr("ctrlz") == "1") {
+                    arr[len] = $(this);
+                    len++;
+                }
+            });
+            len++;
+            //$("img").each(function (i, obj) {
+            //    if ($(this).attr("ctrlz") == "1") {
+            //        arr[len] = $(this);
+            //        len++;
+            //    }
+            //});
+            //console.log(len);
+            return arr;
+        }
+        function Zidong(i) {
+            switch (i) {
+                case 8:
+                    window.scrollTo(0, 200);
+                    break;
+                case 10:
+                    window.scrollTo(0, 300);
+                    break;
+                case 16:
+                    window.scrollTo(0, 500)
+                    break;
+                case 27:
+                    window.scrollTo(0, 700)
+                    break;
+            };
+        }
+
+    </script> 
+  <style type="text/css">
+        .ctrlz { border: solid 1px blue; }
+    </style> 
+  <link href="http://www.shanghai.gov.cn/jhelper_V2.0/jhelper_tool_style.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="http://www.shanghai.gov.cn/jhelper_V2.0/shyp/jhelper_config.js" charset="gb2312"></script> 
+  <noscript>
+   不能读取工具条配置
+  </noscript> 
+  <script type="text/javascript" src="http://www.shanghai.gov.cn/jhelper_V2.0/jhelper_2.0.js" charset="gb2312"></script> 
+  <noscript>
+   不能读取工具条
+  </noscript> 
+  <script type="text/javascript" src="http://static.gridsumdissector.com/js/Clients/GWD-801925-D81847/gs.js"></script> 
+  <script type="text/javascript" charset="utf-8" src="http://jhelper.shanghai.gov.cn/tianqi/weather.aspx?location=shanghai"></script> 
+  <!-- 统一量化代码 --> 
+  <script type="text/javascript" src="/assets/js/jhelper_config.js"></script> 
+  <script type="text/javascript" src="http://jhelper.shanghai.gov.cn/publicJS/3100000093.js"></script> 
+  <!-- 统一量化代码 --> 
+  <script type="text/javascript" src="/assets/js/tag.js"></script>   
+ 
+</body></html>

@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 03 Nov 2026 14:34:08 GMT
+Content-Type: application/pdf
+Content-Length: 174801
+Last-Modified: Thu, 08 Oct 2026 09:28:00 GMT
+Connection: keep-alive
+ETag: "6ac76220-2aad1"
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Accept-Ranges: bytes
+
