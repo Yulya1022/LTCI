@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic Page Needs =============================================================================== -->
+    <meta charset="utf-8" />
+    
+
+    <!-- Mobile Specific Metas ========================================================================== -->
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/basic.css" />
+    <!--<link rel="stylesheet" type="text/css" href="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/inside.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/mobile_inside.css" />-->
+    <script src="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/jquery.min.js"></script>
+    <style type="text/css">
+      #zoom p {
+        line-height: 28px;
+      }
+
+      .main table {
+        width: 100% !important;
+      }
+      /*当前位置样式控制*/
+      div.local > a {
+        float: left;
+      }
+
+      div.local table {
+        float: left !important;
+        width: auto !important;
+      }
+      /*政府图片样式*/
+      #govBottom img {
+        float: none;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function search() {
+        window.open("https://search.zj.gov.cn/api-gateway/jpaas-jsearch-web-server/search?websiteid=330400000000&serviceId=YcTOd1ftgC5dxzJ8RhCBN&webId=3212&q=" + $("#key").val());
+      }
+      //获取url参数
+      function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+      }
+      //set cur time at top
+      function setCurTime() {
+        //当前日期
+        var a = new Array("日", "一", "二", "三", "四", "五", "六");
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth();
+        var day = now.getDate();
+        var week = now.getDay();
+        var str = "星期" + a[week];
+        $("#show").html("" + year + "年" + (month + 1) + "月" + day + "日 " + str + "");
+        $("#show_old").html("" + year + "年" + (month + 1) + "月" + day + "日 " + str + "");
+      }
+      //enter old
+      function enterOld() {
+        aria.oldFixedStart();
+        window.localStorage.setItem("OldmanFlag", "1");
+        $("#p_enterOld").css("display", "none");
+        $("#p_exitOld").css("display", "");
+        setTimeout(function () {
+          $("body").addClass("useOldFixed");
+          $("div.about p").css("font-size", "30px");
+          $("div.about p span").css("font-size", "30px");
+        }, 500);
+      }
+      function enterOldFromMobile() {
+        aria.oldFixedStart();
+        window.localStorage.setItem("OldmanFlag", "1");
+        $("body").addClass("useInMobile");
+      }
+      //enter relax
+      function enterRelax() {
+        aria.start();
+        $("#p_relax").addClass("none");
+      }
+      //exit old
+      function exitOld() {
+        aria.end();
+        window.localStorage.removeItem("OldmanFlag");
+        $("#p_enterOld").css("display", "");
+        $("#p_exitOld").css("display", "none");
+        $("body").removeClass("useOldFixed");
+        $("div.about p").css("font-size", "14px");
+        $("div.about p span").css("font-size", "14px");
+      }
+      //nav style change
+      function navStyleChange() {
+        //导航当前栏目样式添加hover
+        var path = window.location.pathname;
+        //新闻动态
+        if (path.indexOf("col1647694") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#xw").addClass("hover");
+          $("#xw_old").addClass("hover");
+        }
+        //党务公开
+        else if (path.indexOf("col1229107014") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#dwgk").addClass("hover");
+          $("#dwgk_old").addClass("hover");
+        }
+        //政策文件
+        else if (path.indexOf("col1648130") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#zw").addClass("hover");
+          $("#zw_old").addClass("hover");
+        }
+        //办事大厅
+        else if (path.indexOf("col1229125995") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#zc").addClass("hover");
+          $("#zc_old").addClass("hover");
+        }
+        //活动专题
+        else if (path.indexOf("col1229604305") != -1) {
+          $("#nav a").each(function () {
+            $(this).removeClass("hover");
+          });
+          $("#hdzt").addClass("hover");
+          $("#hdzt_old").addClass("hover");
+        }
+      }
+      // add zfxxgk menu click
+      function addZfxxgkMenuClick() {
+        var ul_zdgk = $("#ul_zdgk");
+        $("div[class=leftBar] dl dd").each(function () {
+          var _this = $(this);
+          _this.on("click", function () {
+            if (_this.children(":first").text() == "法定主动公开内容") {
+              if (ul_zdgk.css("display") == "none") {
+                ul_zdgk.css("display", "");
+                _this.append(ul_zdgk);
+                _this.children("a").removeAttr("href");
+              } else ul_zdgk.css("display", "none");
+            }
+          });
+        });
+      }
+    </script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script src="/cms_files/default/script/jslib/jquery.js"></script>
+ <script src="/cms_files/default/script/jslib/jquery.cookie.js"></script>
+ <script src="/cms_files/default/script/layui/layui.all.js"></script>
+ <script src="/cms_files/default/script/layui/layer/layer.js"></script>
+ <script src="/script/webglobal.js"></script>
+ <script src="/plugins/libs/require.js"></script>
+ <script src="/plugins/libs/load.js"></script>
+ <script src="/script/webgray.js"></script>
+ <script src="/script/webgray_1229562190_2454587.js"></script>
+ <link rel="stylesheet" href="/cms_files/default/css/iconfont.css" />
+<link rel="stylesheet" href="/cms_files/default/script/layui/css/layui.css" />
+<title>嘉医保〔2022〕41号关于贯彻落实省深化长期护理保险制度试点指导意见的通知</title>
+<meta name="ColId" content="1229562190">
+<meta name="SiteName" content="嘉兴市医疗保障局">
+<meta name="SiteDomain" content="ybj.jiaxing.gov.cn">
+<meta name="SiteIDCode" content="3304000061">
+<meta name="ColumnName" content="其他文件">
+<meta name="ColumnType" content="其他文件">
+<meta name="ArticleTitle" content="嘉医保〔2022〕41号关于贯彻落实省深化长期护理保险制度试点指导意见的通知">
+<meta name="PubDate" content="2023-01-10 18:01">
+<meta name="ContentSource" content="市医保局">
+<meta name="Keywords" content="">
+<meta name="Author" content="">
+<meta name="Description" content="">
+<meta name="Url" content="/art/2023/1/10/art_1229562190_2454587.html">
+<meta name="server" content="/art/2023/1/10/art_1229562190_2454587.html">
+<meta name="extend1" content="1453">
+<meta id="pagetype" content="1">
+</head>
+
+  <body class="indx-body"><div id='barrierfree_container' pageTimestamp= '1792038571966'>
+    <!-- header ============================================================================================= -->
+    <div class="header">
+      <div class="topBox" aria-region="true" aria-regiontype="1" aria-label="顶部工具栏">
+        <div class="inner">
+          <em>欢迎访问嘉兴市医疗保障局！</em>
+          <div class="time">今天是：<span id="show"></span></div>
+          <p id="p_relax"><a href="javascript:void(0)" onclick="enterRelax()" aria-label="无障碍阅读,按ctrl+alt+i进入,ctrl+alt+e退出" tabindex="1">无障碍阅读</a></p>
+          <p id="p_enterOld"><a href="javascript:void(0)" onclick="enterOld()" aria-label="进入关怀版,按ctrl +alt+g进入">进入关怀版</a></p>
+          <p style="display: none" id="p_exitOld"><a href="javascript:void(0)" onclick="exitOld()" aria-label="退出关怀版">退出关怀版</a></p>
+        </div>
+      </div>
+      <div class="headBox">
+        <div class="logo">
+          <a href="javascript:void(0)" onclick="enterOld()" class="oldgh" title="关怀版">关怀版</a>
+          <a href="/" aria-label="图片链接，嘉兴市医疗保障局logo，链接到首页">
+            <img title="logo.png" src="/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/logo.png" />
+          </a>
+        </div>
+        <div class="searchBox" aria-region="true" aria-regiontype="3" aria-label="全文搜索">
+          <input type="text" name="" id="key" value="" placeholder="全文搜索" class="input-text" />
+          
+          <input type="button" name="" id="" value="" class="input-btn" onclick="javascript: window.location.href = 'https://search.zj.gov.cn/api-gateway/jpaas-jsearch-web-server/search?websiteid=330400000000&serviceId=YcTOd1ftgC5dxzJ8RhCBN&webId=3212&q=' + $('#key').val()" />
+        </div>
+      </div>
+    </div>
+
+    <!-- nav ============================================================================================= -->
+    <div class="nav" id="nav" aria-region="true" aria-regiontype="2" aria-label="一级栏目导航">
+      <a id="sy" href="/index.html">首 页</a>
+      <a id="xw" href="/col/col1647694/index.html">新闻动态</a>
+      <a id="dwgk" href="/col/col1229107014/index.html?key">党务公开</a>
+      <a id="xx" href="/col/col1229113712/index.html">政府信息公开</a>
+      <a id="zw" href="/col/col1229562038/index.html">政策文件</a>
+      <a id="zc" href="/col/col1229125995/index.html">办事大厅</a>
+      <a id="hdzt" href="/col/col1229495620/index.html">活动专题</a>
+    </div>
+
+    <!-- container ============================================================================================= -->
+    <div class="container">
+      <div class="main">
+        <div id="local" class="local" aria-region="true" aria-regiontype="4" aria-label="当前位置">
+          <span style="float: left" tabindex="0" aria-label="当前位置">当前位置：</span>
+<a href="/index.html" class="bt_link">首页</a>
+ >> <a href="/col/col1229107017/index.html" class="bt_link">政府信息公开</a>
+ >> <a href="/col/col1229264148/index.html" class="bt_link">法定主动公开内容</a>
+ >> <a href="/col/col1229561581/index.html" class="bt_link">政策文件</a>
+ >> <a href="/col/col1229562190/index.html" class="bt_link">其他文件</a>
+        </div>
+        <div id="articleContent" aria-region="true" aria-regiontype="6" aria-label="文章正文">
+<table border="0" cellpadding="0" cellspacing="1" class="file">
+  <tr>
+    <td width="14%">索引号：</td>
+    <td width="36%">11330400MB180369XU/2022-00018</td>
+    <td width="14%">文号：</td>
+    <td width="36%">嘉医保[2022]41号</td>
+  </tr>
+  <tr>
+    <td>发布机构：</td>
+    <td>市医保局</td>
+    <td>发文日期：</td>
+    <td>2023-01-10</td>
+  </tr>
+  <tr>
+    <td>统一编号：</td>
+    <td></td>
+    <td>有效性：</td>
+    <td>有效</td>
+  </tr>
+</table>
+
+<div class="title">
+  <h3>嘉医保〔2022〕41号关于贯彻落实省深化长期护理保险制度试点指导意见的通知</h3>
+
+  <div class="time">
+    <span>浏览次数：<lable id="artcount"></lable></span>
+    <span>信息来源：市医保局</span>
+    <link rel="stylesheet" href="/cms_files/jcms1/web2778/site/images/29440/share.min.css" />
+<div id="share-2" style="float: right;margin-right:15px;padding-left:35px;"></div>
+<script>
+  $('#share-2').share({sites: ['weibo', 'wechat', 'qzone']});
+</script>
+  </div>
+</div>
+
+<div class="about"><p style="">各县（市、区）医疗保障局（分局）、财政局，嘉兴经济技术开发区财政金融部、民生事业部，市财政局港区分局，浙江乍浦经济开发区（嘉兴港区）经济发展部：</p><p style="text-indent: 2em; text-align: justify;">根据《浙江省医疗保障局浙江省财政厅关于深化长期护理保险制度试点的指导意见》（浙医保联发〔2022〕6号）、《嘉兴市长期护理保险暂行办法》（嘉政发〔2017〕20号）、《嘉兴市长期护理保险创标提效试点实施方案（2022—2024年）》（嘉政发〔2022〕21号）等文件精神，现就我市贯彻落实省深化长期护理保险制度试点指导意见有关事项通知如下：</p><p style="text-indent: 2em; text-align: justify;"><strong>一、完善失能评定</strong></p><p style="text-indent: 2em; text-align: justify;">长期护理保险失能评定调整为初次评估、状态变更评估、争议复核评估和稽核评估。其中，初次评估、状态变更评估和争议复核评估原则上由参保人员提出申请，稽核评估由经办机构发起，无需个人提出申请。失能评定采用《长期护理保障失能等级评估规范》（DB33/T2476—2022）。参保人员经评估认定符合重度失能标准，自作出评估结论次月起按规定享受长期护理保险待遇。</p><p style="text-indent: 2em; text-align: justify;"><strong>二、完善护理服务</strong></p><p style="text-indent: 2em; text-align: justify;">长期护理保险护理服务调整为生活照料服务和医疗护理服务等项目。服务供给采用《长期护理保险护理服务供给规范》（DB33/T2430—2022），并根据实际需求，经长期护理保险部门联席会议商定后进行动态调整。服务项目的支付内容及支付标准另行规定。</p><p style="text-indent: 2em; text-align: justify;"><strong>三、完善基金管理</strong></p><p style="text-indent: 2em; text-align: justify;">长期护理保险基金管理调整为市级统收统支，实行统一征缴、统一拨付、统一清算。市级统筹前的基金缺口，原则上由原统筹区自行承担；市级统筹前的基金结余，原则上留存原统筹区，由市级统一管理和调度使用，主要用于弥补当地以后年度基金缺口，各地不得擅自动用。建立长期护理保险风险金，各地按照满足当地上年度长期护理保险基金12个月支付能力的额度，从长期护理保险基金累计结余中上划至市财政专户，单独建账，独立核算，专款专用，接受审计和社会监督。</p><p style="text-indent: 2em; text-align: justify;">上述规定自2023年1月1日起实施。</p><p style="text-indent: 2em; text-align: justify;">附件：嘉兴市长期护理保险基金统收统支实施细则</p><p style="text-indent: 2em; text-align: right;"><br /></p><p style="text-indent: 2em; text-align: right;">嘉兴市医疗保障局               嘉兴市财政局</p><p style="text-indent: 2em; text-align: right;">2022年12月28日</p><p style="text-indent: 2em;"><br /></p><p style=""><strong>附件</strong></p><p style="text-indent: 2em; text-align: center;"><span style="font-size: 21px;">嘉兴市长期护理保险基金统收统支实施细则</span></p><p style="text-indent: 2em;"><br /></p><p style="text-indent: 2em;">为全面做实长期护理保险（以下简称长护险）基金统收统支，根据《浙江省医疗保障局浙江省财政厅关于深化长期护理保险制度试点的指导意见》（浙医保联发〔2022〕6号）精神，特制定本实施细则。</p><p style="text-indent: 2em;"><strong>一、统一基金预决算管理</strong></p><p style="text-indent: 2em;">基金预决算草案由市医保经办机构统一编制，经市级财政、医保部门审核后按程序报批。各县（市）医保经办机构做好当地长护险基金财务核算工作，并负责初编当地统计报表、财务报表，会同当地财政部门编制长护险基金预决算底稿等相关工作。市医保经办机构汇总并编制全市长护险基金的统计报表、财务报表、基金预决算草案等。基金预算管理办法另行制定。</p><p style="text-indent: 2em;"><strong>二、统一基金收支管理</strong></p><p style="text-indent: 2em;">1.2023年１月起，长护险基金管理调整为市级统收统支，实行统一征缴、统一拨付、统一清算。各地按规定上解至嘉兴市长护险基金财政专户（以下简称市财政专户）。</p><p style="text-indent: 2em;">2.各县（市）医保经办机构收入户中的收入（包括转移收入、利息收入等）按季清零，划转当地基金财政专户。收入户和支出户利息按季度划转。各县（市）基金财政专户产生的各项收入由当地财政部门按季度上解至市财政专户。</p><p style="text-indent: 2em;">3.各县（市）医保经办机构具体办理属地基金收入，加强与当地财政部门的协调，准确做好基金收入分配以及财务核算工作，根据会计核算结果，于每年1月10日前编制长护险基金统收缴款单，随上解基金报送市医保经办机构和当地财政部门。</p><p style="text-indent: 2em;">4.各县（市）医保经办机构具体办理属地基金待遇支付，准确做好基金支出分配以及财务核算工作。各县（市）医保经办机构按月向市医保经办机构上报基金用款计划，经市医保经办机构审核后于月底前向市财政部门申请所需基金，市财政部门于次月初将基金从市财政专户直接划拨至市医保经办机构支出户，市医保经办机构在2个工作日内将基金下拨至县（市）医保经办机构支出户。如遇突发情况，各县（市）可申请临时用款计划。</p><p style="text-indent: 2em;"><strong>三、统一基金结余管理</strong></p><p style="text-indent: 2em;">1.市级统筹前的基金缺口，原则上由原统筹区自行承担。由市审计部门牵头组织对各地统筹前的基金开展全面审计，确认各地基金收支结余情况。</p><p style="text-indent: 2em;">2.市级统筹前的基金结余，原则上留存原统筹区，由市级统一管理和调度使用，主要用于弥补当地以后年度基金缺口，各地不得擅自动用。暂存各地的基金结余，由各地按竞争性存放等要求开展保值增值，结果报市财政部门备案。</p><p style="text-indent: 2em;">3.建立长护险风险金，各地按照满足当地上年度长期护理保险基金12个月支付能力的额度，从当地累计结余中上划至市财政专户，如当地基金累计结余不足上划时，由当地财政负责补足。2024年起，每年年初各地风险金支付能力不足12个月额度时，先由亏损地从当地累计结余中上划补足，上划后仍不足以弥补风险金的缺口部分由各地分担，具体分担方式为：当地长期护理保险12个月支付能力的基金额度×〔缺口部分金额/全市长期护理保险12个月支付能力的基金额度〕。各地的分担额在当地超过12个月支付能力风险金以上部分的基金中列支，不足时由当地基金累计结余承担，如当地基金累计结余不足承担时，由当地财政承担。基金上划工作由市医保部门会同市财政部门负责实施。</p><p style="text-indent: 2em;"><strong>四、统一基金核算管理</strong></p><p style="text-indent: 2em;">1.建立健全医保、财政对账机制，确保医保业务数、财政入库数的一致。各地医保经办机构不得人为调整核算时间，多记或少记征缴收入。</p><p style="text-indent: 2em;">2.职工医保个人账户和统筹基金、城乡居民医保个人筹资划转部分，由市财政统一划转。城乡居民医保参保人员长护险财政补助仍按规定由各级财政承担。当年度集中征收下年度参保人员的城乡居民医保长护险财政补助收入于下年度4月底前上解至市财政专户，当年度1－9月份征收的中途参保人员城乡居民医保长护险财政补助收入于当年10月底前上解至市财政专户，当年度10－12月份征收的中途参保人员城乡居民医保长护险财政补助收入于下年度2月底前上解至市财政专户。会计核算按相应时间确认收入。</p><p style="text-indent: 2em;">3.利息收入、转移收入、一次性移交收入等收入业务，按照资金到位时间确认基金收入。其中属于基金存放于财政专户及保值增值所产生的利息收入，由市级财政部门进行确认和分配。</p><p style="text-indent: 2em;">4.拨付定点机构医保基金，按每年12个月、每月拨付一次的规定执行，并做好相应会计核算。各项支付业务按照基金支付时间确认支出。</p><p style="text-indent: 2em;">五、统一责任分担机制</p><p style="text-indent: 2em;">1.按照政策规定，应由各县（市、区）政府承担的缴费补贴等各项财政补助，由各县（市、区）政府按实承担，承担的比例和方式不变。</p><p style="text-indent: 2em;">2.为调动各地基金收支管理的积极性，当期基金收支产生结余时，50%作为风险金，50%可用于结余地弥补其今后年度的缺口。</p><p style="text-indent: 2em;">3.当期基金收支出现缺口时，根据缺口不同情况，确定市级与县（市）分担责任。</p><p style="text-indent: 2em;">（1）每年对基金的收支情况进行考核。收入目标考核以当年度基金预算收入执行情况为主，主要考核年度执行数以及上解及时率等。支出目标考核以当年度总额预算管理执行情况为主，兼顾基金预算支出执行情况，主要考核待遇支出、基金监管、护理服务等。</p><p style="text-indent: 2em;">（2）当地未达到上述收支考核目标造成的基金少收或多支情形，由市医保会同市财政部门根据各自职责确定，少收多支部分由当地政府补足。各级监督检查追回的违法违规基金一律上缴市财政专户，纳入风险金进行核算，不核减违规地的支出数。</p><p style="text-indent: 2em;">（3）当地出现上述情况以外的当期正常基金收支缺口时，首先动用其基金累计结余弥补；如当地基金累计结余不足支付时，由风险金、缺口地财政按1：1比例补足；如风险金亦不足支付时，则由市财政、缺口地财政按 2：8比例补足。</p><p style="text-indent: 2em;">4.上述缺口分担、结余分配等，由市医保部门在次年4月底前提供清算业务数据，会同市财政部门商定后，在次年5月底前完成清算和催缴。上述分担机制与考核结果挂钩，根据考核结果，适当调整各地分担比例，考核办法另行制定。</p></div>
+
+<style>
+  .logo .oldgh {
+    display: none;
+  }
+  #local a {
+    float:none;
+  }
+  .title h3 {
+    font-weight:bold;
+    text-align: center;
+    padding: 20px 0 15px 0;
+    line-height: 32px;
+    font-size: 24px;
+    color: #444444;
+  }
+</style>        </div>
+      </div>
+    </div>
+
+    <!-- footer ============================================================================================= -->
+    <div class="footer" aria-region="true" aria-regiontype="4" aria-label="关于我们">
+      <div class="navBox">
+        <ul>
+          <li>
+            <a id="about" href="/col/col1649585/index.html?key">关于我们</a>
+          </li>
+          <li>
+            <a id="link" href="/col/col1649586/index.html?key">联系方式</a>
+          </li>
+          <li id="flink">
+            <a href="/col/col1649587/index.html?key">友情链接</a>
+          </li>
+          <li id="yearport">
+            <a href="/col/col1229486080/index.html?key">政府网站工作年度报表</a>
+          </li>
+        </ul>
+      </div>
+      <div class="copyrightBox">
+        <ul>
+          <li>
+            <a id="map" href="/col/col1229515262/index.html">网站地图</a>
+            <span tabindex="0">嘉兴市医疗保障局主办</span>
+            <span>备案证编号：<a href="http://beian.miit.gov.cn" target="_blank">浙ICP备2022007020号</a></span>
+            <span tabindex="0">网站标识码：3304000061</span>
+          </li>
+          <li>
+            <span tabindex="0">地址：嘉兴市中环南路1469号中南大厦10楼</span>
+            <span tabindex="0">电话：0573-83370706</span>
+            <span tabindex="0">传真：0573-82050010</span>
+          </li>
+
+          <li>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33040202000463">
+              <img src="/cms_files/jcms1/web3212/site/images/30534/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png" />
+              浙公网安备 33040202000463号
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--政府图标、纠错-->
+    <div id="govBottom" style="margin: 0 auto; text-align: center; overflow: hidden">
+      <!--党政机关logo-->
+      <script type="text/javascript">
+        document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='https://dcs.conac.cn/js/12/190/0000/60939331/CA121900000609393310001.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <!--网站纠错-->
+      <script id="_jiucuo_" sitecode="3304000061" src="https://zfwzgl.www.gov.cn/exposure/jiucuo.js"></script>
+    </div>
+
+    <script type="text/javascript">
+      // PC/移动浏览器判断:
+      //<![CDATA[
+      try {
+        var urlhash = window.location.hash;
+        if (!urlhash.match("fromapp")) {
+          if (navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i)) {
+            //加载手机端样式
+            document.write("<link rel='stylesheet' href='/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/mobile_inside.css' />");
+            $("#sy").attr("href", "/col/col1229600278/index.html");
+            $("#xw").attr("href", "/col/col1229600933/index.html");
+            $("#dwgk").attr("href", "/col/col1229601683/index.html");
+            $("#xx").attr("href", "/col/col1229602064/index.html");
+            $("#zw").attr("href", "/col/col1229603279/index.html");
+            $("#zc").attr("href", "/col/col1229601691/index.html");
+            $("#hdzt").attr("href", "/col/col1229604305/index.html");
+            $("#about").attr("href", "/col/col1229604306/index.html");
+            $("#link").attr("href", "/col/col1229604307/index.html");
+            //
+            $("#local").css("display", "none");
+            $("#yearport").css("display", "none");
+            $("#flink").css("display", "none");
+            $("#map").css("display", "none");
+          } else {
+            document.write("<link rel='stylesheet' href='/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/inside.css' />");
+          }
+        } else {
+          document.write("<link rel='stylesheet' href='/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/inside.css' />");
+        }
+      } catch (err) {
+        document.write("<link rel='stylesheet' href='/cms_files/webjiaxingshiyiliaobaozhangjumenhuwangzhan/pubtplobject/defaultSet/684737/images/inside.css' />");
+      }
+      $(document).ready(function () {
+        if (window.localStorage.getItem("OldmanFlag") == "1") {
+          enterOld();
+        }
+        //set the cur time at top
+        setCurTime();
+        //nav style change
+        navStyleChange();
+        //add zfxxgk menu click
+        addZfxxgkMenuClick();
+        //key events
+        document.onkeydown = function (e) {
+          var keycode = e.keyCode;
+          console.log(keycode);
+          //进入无障碍 ctrl + alt + i
+          if (e.ctrlKey == true && e.altKey == true && keycode == 73) {
+            enterRelax();
+          }
+          //进入老年模式 ctrl + alt + g
+          if (e.ctrlKey == true && e.altKey == true && keycode == 71) {
+            enterOld();
+          }
+        };
+
+        $("#key").on("keydown", function (event) {
+          if (event.keyCode == 13) {
+            search();
+          }
+        });
+
+        //gov img remark
+        $("span#_span_jiucuo img").attr("title", "图片外链，链接到政府网站纠错");
+        $("img#imgConac").attr("aria-label", "图片外链，链接到党政机关事业单位管理服务平台");
+      });
+      
+      //]]>
+    </script>
+
+    <script defer="defer" async="async" type="text/javascript" src="//wza.zj.gov.cn/dist/aria.js?appid=4eef759b9f1e5308e70aa076191cfca0" charset="utf-8"></script>
+  <script src="/cms_files/filemanager/1568960/script/juba/jubascript.js?v=4.5.12.1-ZJSJYH-U52"></script>
+ </div></body>
+</html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="zh" class="responsive" style="font-size: 100px;"><head>
+<meta charset="UTF-8">
+<meta http-equiv="Expires" content="0">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1">
+<meta name="SiteName" content="吉林省人民政府">
+<title>吉林省人民政府公报</title>
+
+<link rel="stylesheet" href="/images/reset_Xu230711.css">
+<link rel="stylesheet" href="/images/new_szf_main_Xu230711.css">
+<link rel="stylesheet" href="../../../../images/style_gb_znd_20240808.css">
+<script>
+   var detailAbort = true
+</script>
+<link href="../../../../images/cosmos_favicon.png" rel="shortcut icon" type="image/x-icon">
+<script src="../../../../images/jquery.min.js"></script>
+<script src="../../../../images/jquery.SuperSlide.2.1.3_Xu191230.js"></script>
+<script src="/images/echarts.min_customizationVersion_Xu230711.js"></script>
+<script src="/images/07030userInfo_4.js"></script>
+<script src="/images/css-vars-ponyfill.min.js"></script>
+<script src="../../../../images/qrcode_gb_znd_20240808.js"></script>
+<style>
+.header__accessibility-btn a:first-of-type::after{display:none;}
+</style>
+<script>
+          cssVars({
+  // Options...
+});
+</script>
+<script src="/images/jweixin-1.6.0.js"></script>
+<script>
+$(document).ready(function () {
+$.ajax({
+    type: "POST",  
+    url: "https://api.jl.gov.cn:8443/dist/getAccessToken",
+    data: {
+     url: window.location.href,
+     siteName:"szf"
+    }, 
+    dataType: "json",
+    success: function (response) {
+            if(response.code == 201) { 
+            const {data} = response;
+            wx.config({
+                debug: false, 
+                appId: data.appId, 
+                timestamp: data.timestamp, 
+                nonceStr: data.nonceStr, 
+                signature: data.signature, 
+                jsApiList: ["updateAppMessageShareData", "updateTimelineShareData"], 
+            });
+
+            wx.ready(function () {
+                wx.updateAppMessageShareData({
+                    title: '' || $("title").text(),
+                    desc: delHtmlTag('') || delHtmlTag('') || 'www.jl.gov.cn',
+                    link: location.href,
+                    imgUrl: 'https://www.jl.gov.cn/szfzt/images/logo_zb210418.jpg',
+                });
+
+                wx.updateTimelineShareData({
+                    title: '' || $("title").text(),
+                    desc: delHtmlTag('') || delHtmlTag('') || 'www.jl.gov.cn',
+                    link: location.href,
+                    imgUrl: 'https://www.jl.gov.cn/szfzt/images/logo_zb210418.jpg',
+                });
+            });
+
+            wx.error(function (res) {
+                
+            });
+}
+    },
+    error: function (e) {  
+    },
+})
+      function delHtmlTag(str) {
+        return str.replace(/<[^>]+>/g, "").replace(/(^\s*)|(\s*$)/g, "");
+    }
+  })
+  </script>
+<script type="text/javascript" src="https://www.yunmd.net/html/www.jl.gov.cn/route.js" charset="utf-8"></script></head>
+
+<body>
+	<div class="wrap">
+		<!-- 头部-->
+        <header class="header">
+            <div class="header__top">
+                <div class="header__left">
+                    <div class="header__logo">
+                        <a href="/" class=" _c537e1738ad97ed46f184a270d103179"><img src="/images/logo_Xu230711@2x.png" alt="吉林省人民政府"></a>
+                    </div>
+                </div>
+                <div class="header__right">
+                    <div class="header__auth">
+                        <a href="javascript:void(0);" class="sign_In_Btn" id="loginBtn" style="padding: 0px 10px;">登录</a><a href="javascript:void(0);" class="sign_Out_Btn _66a52a12572a399e _dc462964bd9ea1a1" id="tcBtn" style="display: none;padding: 0px 10px;margin-left:0px"><img src="/images/signOut_Xu230711.svg" alt="退出登录" title="退出登录"></a><a href="javascript:void(0);" class="sign_Up_Btn" id="zcBtn" style="padding: 0px 10px;margin-left:0px">注册</a>
+                    </div>
+                    <div class="header__icon">
+                        <ul>
+                            <li class="mail"><a href="https://mail.jl.gov.cn" target="_blank">邮箱</a></li>
+                            <li class="xiaoji">
+                                <a href="http://ai.jl.gov.cn:8509/bot" target="_blank">智能问答</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 搜索 -->
+                    <div class="search">
+                        <div class="search_Box clearfix navBlock">
+                            <form id="rsform" action="https://intellsearch.jl.gov.cn/search/index.html" method="get" target="_blank" onsubmit="return checkmain()">
+                                <input class="input_Search_1 fLeft _04801571a3872104 _d33734b8a2957bef" type="text" id="search_val_main" placeholder="请输入关键字查询" autocomplete="off" oninput="checkEmpty(event)">
+                                <input type="hidden" name="q" id="param_q" value="" class=" _a732804c8566fc8f498947ea59a841f8 _969f6a4cc8e8a8ff">
+                                <input class="button_Search_1 fRight _2360f5ac6560ddd8 _2be969bcc3994aa4" onclick="" onkeypress="" type="submit" value="" title="点击搜索">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header__externalLink" style="display:none;">
+                        <span>English</span>
+                        <div class="language">
+                            <a href="http://english.jl.gov.cn" target="_blank" title="English">English</a>
+                            <a href="http://russian.jl.gov.cn" target="_blank" title="русский">русский</a>
+                            <a href="http://japanese.jl.gov.cn" target="_blank" title="日本語">日本語</a>
+                            <a href="http://korean.jl.gov.cn" target="_blank" title="한국어">한국어</a>
+                        </div>
+                    </div>
+                    <div class="header__site_map">
+                        <span>站群导航</span>
+                        <div class="nav-btn"><i class="nav-btn-icon menu"><span></span><span></span><span></span></i></div>
+                        <div class="site_nav">
+                            <div class="site_nav_box">
+                                <h3>省直</h3>
+                                <dl class="clearfix link_sz_top">
+                                <dd><a href="http://jldrc.jl.gov.cn/" target="_blank">省发展和改革委员会</a></dd><dd><a href="http://jyt.jl.gov.cn/" target="_blank">省教育厅</a></dd><dd><a href="http://kjt.jl.gov.cn/" target="_blank">省科学技术厅</a></dd><dd><a href="http://gxt.jl.gov.cn/" target="_blank">省工业和信息化厅</a></dd><dd><a href="http://mw.jl.gov.cn" target="_blank">省民族事务委员会</a></dd><dd><a href="http://gat.jl.gov.cn" target="_blank">省公安厅</a></dd><dd><a href="http://mzt.jl.gov.cn" target="_blank">省民政厅</a></dd><dd><a href="http://sft.jl.gov.cn" target="_blank">省司法厅</a></dd><dd><a href="http://czt.jl.gov.cn" target="_blank">省财政厅</a></dd><dd><a href="http://hrss.jl.gov.cn" target="_blank">省人力资源和社会保障厅</a></dd><dd><a href="http://zrzy.jl.gov.cn/" target="_blank">省自然资源厅</a></dd><dd><a href="http://sthjt.jl.gov.cn/" target="_blank">省生态环境厅</a></dd><dd><a href="http://jst.jl.gov.cn" target="_blank">省住房和城乡建设厅</a></dd><dd><a href="http://jtyst.jl.gov.cn" target="_blank">省交通运输厅</a></dd><dd><a href="http://slt.jl.gov.cn/" target="_blank">省水利厅</a></dd><dd><a href="http://agri.jl.gov.cn/" target="_blank">省农业农村厅</a></dd><dd><a href="http://swt.jl.gov.cn/" target="_blank">省商务厅</a></dd><dd><a href="http://whhlyt.jl.gov.cn/" target="_blank">省文化和旅游厅</a></dd><dd><a href="http://wsjkw.jl.gov.cn/" target="_blank">省卫生健康委员会</a></dd><dd><a href="http://tyjrt.jl.gov.cn/" target="_blank">省退役军人事务厅</a></dd><dd><a href="http://yjt.jl.gov.cn/" target="_blank">省应急管理厅</a></dd><dd><a href="http://sjt.jl.gov.cn/" target="_blank">省审计厅</a></dd><dd><a href="http://wb.jl.gov.cn/" target="_blank">省外事办公室</a></dd><dd><a href="http://scjg.jl.gov.cn/" target="_blank">省市场监督管理厅</a></dd><dd><a href="http://gzw.jl.gov.cn/" target="_blank">省国有资产监督管理委员会</a></dd><dd><a href="http://gdj.jl.gov.cn" target="_blank">省广播电视局</a></dd><dd><a href="http://tyj.jl.gov.cn" target="_blank">省体育局</a></dd><dd><a href="http://xfj.jl.gov.cn/" target="_blank">省信访局</a></dd><dd><a href="http://tjj.jl.gov.cn" target="_blank">省统计局</a></dd><dd><a href="http://ybj.jl.gov.cn/" target="_blank">省医疗保障局</a></dd><dd><a href="http://sgj.jl.gov.cn/" target="_blank">省机关事务管理局</a></dd><dd><a href="http://grain.jl.gov.cn" target="_blank">省粮食和物资储备局</a></dd><dd><a href="http://jlrf.jl.gov.cn/" target="_blank">省国防动员办公室</a></dd><dd><a href="http://jr.jl.gov.cn" target="_blank">省地方金融管理局</a></dd><dd><a href="http://zsj.jl.gov.cn/" target="_blank">省政务服务和数字化建设管理局</a></dd><dd><a href="http://jllc.jl.gov.cn/" target="_blank">省林业和草原局</a></dd><dd><a href="http://nyj.jl.gov.cn" target="_blank">省能源局</a></dd><dd><a href="http://jyj.jl.gov.cn" target="_blank">省监狱管理局</a></dd><dd><a href="http://xmy.jl.gov.cn" target="_blank">省畜牧业管理局</a></dd><dd><a href="http://jltcm.jl.gov.cn/" target="_blank">省中医药管理局</a></dd><dd><a href="http://mpa.jl.gov.cn" target="_blank">省药品监督管理局</a></dd></dl>
+                                <style>
+                                    .qtlj-hx-10 dd a {font-size: 16px !important;}
+                                </style>
+                                <dl class="clearfix qtlj-hx-10 section_Gap_V link_gsj">
+                                <dd><a href="http://jilin.chinatax.gov.cn/" target="_blank">国家税务总局吉林省税务局</a></dd></dl>
+                                <h3 class="section_Gap_V">市（州）、县（市、区）</h3>
+                                <dl class="clearfix link_cc">
+                                <dt><a href="http://www.changchun.gov.cn/" target="_blank">长春市</a></dt><dd><a href="http://www.nanguan.gov.cn/" target="_blank">南关区</a></dd><dd><a href="http://www.jckc.gov.cn/" target="_blank">宽城区</a></dd><dd><a href="http://chaoyang.changchun.gov.cn/" target="_blank">朝阳区</a></dd><dd><a href="http://www.ccerdao.gov.cn/" target="_blank">二道区</a></dd><dd><a href="http://www.luyuan.gov.cn/" target="_blank">绿园区</a></dd><dd><a href="http://www.shuangyang.gov.cn/" target="_blank">双阳区</a></dd><dd><a href="http://www.jiutai.gov.cn/" target="_blank">九台区</a></dd><dd><a href="http://www.nongan.gov.cn/" target="_blank">农安县</a></dd><dd><a href="http://www.yushu.gov.cn/" target="_blank">榆树市</a></dd><dd><a href="http://www.dehui.gov.cn/" target="_blank">德惠市</a></dd><dd><a href="http://www.gongzhuling.gov.cn/" target="_blank">公主岭市</a></dd></dl>
+                                <dl class="clearfix link_jl">
+                                <dt><a href="http://www.jlcity.gov.cn/" target="_blank">吉林市</a></dt><dd><a href="http://www.jlcy.gov.cn/" target="_blank">船营区</a></dd><dd><a href="http://www.jlscy.gov.cn/" target="_blank">昌邑区</a></dd><dd><a href="http://www.longtan.gov.cn/" target="_blank">龙潭区</a></dd><dd><a href="http://www.jlfm.gov.cn/" target="_blank">丰满区</a></dd><dd><a href="http://www.jlyj.gov.cn/" target="_blank">永吉县</a></dd><dd><a href="http://www.jiaohe.gov.cn/" target="_blank">蛟河市</a></dd><dd><a href="http://www.huadian.gov.cn/" target="_blank">桦甸市</a></dd><dd><a href="http://www.shulan.gov.cn/" target="_blank">舒兰市</a></dd><dd><a href="http://www.panshi.gov.cn/" target="_blank">磐石市</a></dd></dl>
+                                <dl class="clearfix link_sp">
+                                <dt><a href="http://www.siping.gov.cn/" target="_blank">四平市</a></dt><dd><a href="http://txq.siping.gov.cn/" target="_blank">铁西区</a></dd><dd><a href="http://tdq.siping.gov.cn/" target="_blank">铁东区</a></dd><dd><a href="http://www.lishu.gov.cn/" target="_blank">梨树县</a></dd><dd><a href="http://www.yitong.gov.cn/" target="_blank">伊通满族自治县</a></dd><dd><a href="http://www.shuangliao.gov.cn/" target="_blank">双辽市</a></dd></dl>
+                                <dl class="clearfix link_ly">
+                                <dt><a href="http://www.liaoyuan.gov.cn/" target="_blank">辽源市</a></dt><dd><a href="http://www.jllyls.gov.cn/" target="_blank">龙山区</a></dd><dd><a href="http://www.lyxa.gov.cn/" target="_blank">西安区</a></dd><dd><a href="http://www.dongfeng.gov.cn/" target="_blank">东丰县</a></dd><dd><a href="http://www.dongliao.gov.cn/" target="_blank">东辽县</a></dd></dl>
+                                <dl class="clearfix link_th">
+                                <dt><a href="http://www.tonghua.gov.cn/" target="_blank">通化市</a></dt><dd><a href="http://www.dc.gov.cn/" target="_blank">东昌区</a></dd><dd><a href="http://www.edj.gov.cn/" target="_blank">二道江区</a></dd><dd><a href="http://www.tonghuaxian.gov.cn/" target="_blank">通化县</a></dd><dd><a href="http://www.huinanxian.gov.cn/" target="_blank">辉南县</a></dd><dd><a href="http://www.jllh.gov.cn/" target="_blank">柳河县</a></dd><dd><a href="http://www.mhk.gov.cn/" target="_blank">梅河口市</a></dd><dd><a href="http://www.jilinja.gov.cn/" target="_blank">集安市</a></dd></dl>
+                                <dl class="clearfix link_bs">
+                                <dt><a href="http://www.cbs.gov.cn/" target="_blank">白山市</a></dt><dd><a href="http://www.hunjiang.gov.cn/" target="_blank">浑江区</a></dd><dd><a href="http://jy.cbs.gov.cn/" target="_blank">江源区</a></dd><dd><a href="http://www.fusong.gov.cn/" target="_blank">抚松县</a></dd><dd><a href="http://jyx.cbs.gov.cn/" target="_blank">靖宇县</a></dd><dd><a href="http://www.changbai.gov.cn" target="_blank">长白朝鲜族自治县</a></dd><dd><a href="http://www.linjiang.gov.cn/" target="_blank">临江市</a></dd></dl>
+                                <dl class="clearfix link_sy">
+                                <dt><a href="http://www.jlsy.gov.cn/" target="_blank">松原市</a></dt><dd><a href="http://www.ningjiang.gov.cn/" target="_blank">宁江区</a></dd><dd><a href="http://www.qianguo.gov.cn/" target="_blank">前郭尔罗斯蒙古族自治县</a></dd><dd><a href="http://www.jlcl.gov.cn/" target="_blank">长岭县</a></dd><dd><a href="http://www.jlqa.gov.cn/" target="_blank">乾安县</a></dd><dd><a href="http://www.jlfy.gov.cn/" target="_blank">扶余市</a></dd></dl>
+                                <dl class="clearfix link_bc">
+                                <dt><a href="http://www.jlbc.gov.cn/" target="_blank">白城市</a></dt><dd><a href="http://www.taobei.gov.cn/" target="_blank">洮北区</a></dd><dd><a href="http://www.jlzhenlai.gov.cn/" target="_blank">镇赉县</a></dd><dd><a href="http://www.tongyu.gov.cn/" target="_blank">通榆县</a></dd><dd><a href="http://www.taonan.gov.cn/" target="_blank">洮南市</a></dd><dd><a href="http://www.daan.gov.cn/" target="_blank">大安市</a></dd></dl>
+                                <dl class="clearfix link_ybz">
+                                <dt><a href="http://www.yanbian.gov.cn/" target="_blank">延边州</a></dt><dd><a href="http://www.yanji.gov.cn/" target="_blank">延吉市</a></dd><dd><a href="http://www.tumen.gov.cn/" target="_blank">图们市</a></dd><dd><a href="http://www.dunhua.gov.cn/" target="_blank">敦化市</a></dd><dd><a href="http://www.hunchun.gov.cn/" target="_blank">珲春市</a></dd><dd><a href="http://www.longjing.gov.cn/" target="_blank">龙井市</a></dd><dd><a href="http://www.helong.gov.cn/" target="_blank">和龙市</a></dd><dd><a href="http://www.wangqing.gov.cn/" target="_blank">汪清县</a></dd><dd><a href="http://www.antu.gov.cn/" target="_blank">安图县</a></dd></dl>
+                                <dl class="clearfix link_cbs">
+                                <dt><a href="http://www.changbaishan.gov.cn/" target="_blank">长白山保护开发区</a></dt></dl>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="header__weather">
+                        <div class="AQI_btn">
+                            <img src="/images/weather_Xu230711.png" alt="" class=" _42547f5a44d87da3bc40ee5d09624606">
+                            <p>AQI</p>
+                        </div>
+                        <div class="airQ_table">
+                            <div class="airQuality_tab">
+                                <ul>
+                                    <li class="active" data-val="aqi"><a href="javascript:void(0)" target="_self">AQI实时数据</a></li>
+                                    <li data-val="pm25" class=""><a href="javascript:void(0)" target="_self">PM2.5日均浓度</a></li>
+                                </ul>
+                            </div>
+                            <div id="AirQuality">
+                                <ul>
+                                    <li>优</li>
+                                    <li>良</li>
+                                    <li>轻度污染</li>
+                                    <li>中度污染</li>
+                                    <li>重度污染</li>
+                                    <li>严重污染</li>
+                                </ul>
+                                <div id="echarts" _echarts_instance_="ec_1793711296686" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 509px; height: 238px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="1018" height="476" style="position: absolute; left: 0px; top: 0px; width: 509px; height: 238px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <div style="display: none;">
+  <script>
+  let protocol = window.location.protocol == "http:" ? "http://" : "https://";
+  let iframeHost = window.location.host.indexOf("www") != -1 ? "www." : ""
+  document.write('<iframe src="https://user.jl.gov.cn/v1/apigw/none/user/authentication/checklogin?appId=575ecd1d2d70450ea4c5a6b468c50c7f&amp;version=1.0.0&amp;format=json&amp;charset=utf-8&amp;timestamp=2019-08-10%2016:46:13&amp;backUrl=' + protocol + iframeHost + 'jl.gov.cn/sfrz/new_login/"  id="gjdl"></iframe>');
+  </script><iframe src="https://user.jl.gov.cn/v1/apigw/none/user/authentication/checklogin?appId=575ecd1d2d70450ea4c5a6b468c50c7f&amp;version=1.0.0&amp;format=json&amp;charset=utf-8&amp;timestamp=2019-08-10%2016:46:13&amp;backUrl=https://www.jl.gov.cn/sfrz/new_login/" id="gjdl"></iframe>
+          </div>
+        </header>
+        <div id="header_shadow">
+        </div>
+        <div class="full_line"></div>
+<link href="/images/new_szf_main_mobile_Xu230829.css" rel="stylesheet" type="text/css">
+<div class="gb_main">
+			<div class="w_1200">
+				<div class="gb_logo"><img src="../../../../images/logo_gb_znd_20240808.png" class=" _ecf5631507a8aedcae34cef231aa7348"></div>
+				<div class="qtszgb_content">
+					<div class="dqwz_gb">
+					 <label class="dqwz_tit">当前位置：</label>
+					<a href="../../../../" title="首页" class="CurrChnlCls">首页</a><span>&gt;</span><a href="../../../" title="2026年" class="CurrChnlCls">2026年</a><span>&gt;</span><a href="../../" title="第9期" class="CurrChnlCls">第9期</a><span>&gt;</span><a href="../" title="省政府办公厅文件" class="CurrChnlCls">省政府办公厅文件</a>
+					</div>
+					
+					<div class="neirong_top_box">
+						<div class="upload_div">
+							<a class="pdf_btn" href="./P020261008539409990817.pdf" target="_blank">pdf下载</a>
+							<a class="word_btn" href="" target="_blank" style="display: none;">word下载</a>
+						</div>
+						<div class="dy_div">
+							<a href="javascript:void(0)" class="dy_btn" value="打印本页" onclick="preview(1)">打印</a>
+						</div>
+						<div class="font_div">
+							<span>字号：</span>
+							<a class="txt_mid active" href="javascript:void(0)">默认</a>
+							<a class="txt_big" href="javascript:void(0)">大</a>
+							<a class="txt_bigger" href="javascript:void(0)">超大</a>
+						</div>
+					</div>
+                                        
+					<!--startprint1-->
+					<div class="neirong_main content04">
+						<div style="position: relative;z-index: 99999;">
+							<div class="neirong_title">吉林省人民政府办公厅关于印发《吉林省完善长期护理保险制度实施方案》的通知(吉政办发〔2026〕3号)</div>
+							<div class="neirong_mid ">
+								<span class="time_2">2026-04-29</span>
+								<span>来源： <script>
+										  var ly = '';
+										  if(ly == ''){ly="吉林省人民政府网";}
+										  document.write(ly);
+										</script>吉林省人民政府网
+								</span>
+                                                                <!--<span style="display:none;padding-left:5px;">整站浏览量：<script language="javascript" src="http://111.26.53.151:8081/viewsCount/counter.jsp?docid=7001324562333456789&siteid=000700"></script>
+                                        </span>
+                                                                <span style="display:none;padding-left:5px;">浏览量：<script language="javascript" src="http://111.26.53.151:8081/viewsCount/counter.jsp?docid=9726702&siteid=000700"></script></span>-->
+							</div>
+							<div class="neirong_content contents_div">
+								<div style="text-align: center;"><font face="方正小标宋简体" style="font-size: 29px; line-height: 1.5;">吉林省人民政府办公厅关于</font></div>
+<div style="text-align: center;">　　<font face="方正小标宋简体" style="font-size: 29px; line-height: 1.5;">印发《吉林省完善长期护理保险制度</font></div>
+<div style="text-align: center; ">　　<font face="方正小标宋简体" style="font-size: 29px; line-height: 1.5;">实施方案》的通知</font></div>
+<div>
+<p style="text-align: center; "><font style="text-align: center; line-height: 1.5; font-size: 18px;">吉政办发〔2026〕3号</font></p>
+</div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">
+<p style="font-size: 18px;">&nbsp;</p>
+</font></font>
+<p><font style="line-height: 1.5; font-size: 18px;">　　</font></p>
+</div>
+<div><font style="line-height: 1.5; font-size: 18px;">各市（州）人民政府，长白山管委会，各县（市）人民政府，省政府各厅委办、各直属机构，驻吉中直有关部门、单位：</font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">《吉林省完善长期护理保险制度实施方案》已经省政府同意，现印发给你们，请认真抓好贯彻落实。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">
+<p style="font-size: 18px;">&nbsp;</p>
+</font></font>
+<p><font style="line-height: 1.5; font-size: 18px;">　　</font></p>
+</div>
+<div style="text-align: right; "><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">吉林省人民政府办公厅</font></font></div>
+<div style="text-align: right;"><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">2026年4月29日</font></font></div>
+<div>　　<font style="line-height: 1.5;">
+<p>&nbsp;</p>
+</font>
+<p><font style="line-height: 1.5;">　　</font></p>
+</div>
+<div style="text-align: center; "><font style="line-height: 1.5; font-size: 29px;" face="方正小标宋简体">吉林省完善长期护理保险制度实施方案</font></div>
+<div>　　<font style="line-height: 1.5;">
+<p>&nbsp;</p>
+</font>
+<p><font style="line-height: 1.5;">　　</font></p>
+</div>
+<div>　　<font style="line-height: 1.5; font-size: 18px;">为贯彻落实《中共中央办公厅国务院办公厅关于加快建立长期护理保险制度的意见》相关要求，加快推动长期护理保险制度落地实施，结合我省实际，制定本方案。</font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;" face="黑体">一、目标任务</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">按照“覆盖全民、统筹城乡、公平统一、安全规范、可持续”的总要求，加快建立为失能人员的基本生活照料和与之密切相关的医疗护理提供服务或资金保障的长期护理保险制度。坚持保障基本，以收定支，收支平衡；坚持责任共担，合理划分筹资责任和保障责任；坚持机制创新，提升保障效能和管理水平；坚持统筹协调，做好各类保障制度的功能衔接，协同推进健康产业和服务体系发展。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">2026年，制度力争覆盖全省所有统筹区。到2027年，采取先职工后居民的方式逐步覆盖全民。到2028年，筹资稳健可持续、待遇公平适度、管理科学规范、运行平稳高效，制度保障能力不断提升，稳经济、促发展、保就业的外部效应逐步显现，人民群众在共享共建发展中的满足感、幸福感、安全感得以增加。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;" face="黑体">二、政策制度</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（一）制度安排。用人单位（包括企业、事业单位、机关、社会组织）及其单位职工、退休人员、灵活就业人员（含农民工、新就业形态人员，下同）和未就业城乡居民等按照属地原则，参加长期护理保险。基金统一建账，资金统筹使用。实行制度政策统一、基金统收统支、管理服务一体的市级统筹。适时按照政策统一规范、基金调剂平衡、完善分级管理、强化预算考核、优化管理服务的要求实施省级统筹。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（二）参保模式。按统筹区工作进程，参加我省基本医疗保险的人员，应同步参加长期护理保险。长期护理保险连续参保认定、转移接续等参保管理规则参照基本医疗保险执行。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（三）筹资政策。建立用人单位缴纳、个人缴纳和财政补助、社会资金资助等多渠道筹资机制。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">1.单位职工由用人单位和个人共同缴费，费率按同比例分担；退休人员费率与单位职工个人费率相同，由个人缴费，原用人单位不缴费。未就业城乡居民由个人缴费和政府补助相结合，二者比例为1∶1左右，政府补助由中央财政和地方财政共同承担。灵活就业人员可按单位职工政策参保缴费，或按未就业城乡居民政策参保缴费。18周岁以下已参加城乡居民基本医疗保险人员跟随父母或法定抚养人等参保，不单独筹资，其中孤儿、事实无人抚养儿童等中无法跟从参保的，可视同参保。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">2.用人单位缴费基数为职工工资总额，单位职工个人缴费基数为本人工资收入。退休人员缴费基数为本人基本养老金。原则上未就业城乡居民缴费基数为全省上年度城乡居民人均可支配收入。灵活就业人员按单位职工政策参保缴费的，缴费基数按全省上年度社会平均工资的一定比例（不低于60%）确定。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">3.单位职工费率按0.25%设定；未就业城乡居民费率从0.15%起步，全省执行统一缴费标准，用5年左右时间逐步过渡到0.25%。以后年度随着基金收支缺口变化，相应提高缴费比例。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">4.保费由税务部门在征缴医保费时同步征收。职工个人缴费部分可由医保部门从其个人账户中划转。其中，经个人同意，退休人员保费可由医保部门从其个人账户代扣代缴，有条件的地区可由发放基本养老金的社会保险经办机构代扣代缴。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">5.政府对符合条件的困难人群个人缴费部分予以分类资助。应筹资对象中全额资助与定额资助人员范围与基本医疗保险一致。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">鼓励用人单位对参保缴费予以适当资助。各地可探索通过慈善帮扶、公益捐赠、村集体经济收入或帮扶项目资产收益等帮助参保缴费。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">6.统筹区建制当年，在确保调整职工基本医疗保险单位费率后职工基本医疗保险统筹基金累计结余可支付月数不少于12个月且不出现当期赤字的基础上，可降低职工基本医疗保险单位费率，用作长期护理保险单位费率，降幅不超过长期护理保险单位费率标准。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（四）待遇政策。结合基金运行情况、参保人基本保障需求、服务供给等因素，设定公平适度的保障。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">1.保障对象为因年老、疾病、伤残等原因，导致生活不能自理，长期持续（一般6个月以上）处于失能状态的参保人员。经申请通过评估认定的失能人员，可按规定享受待遇。起步阶段保障重度失能参保人员，根据国家统一规定逐步扩大保障对象范围。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">2.待遇享受不设起付线。在机构享受的符合规定的长期护理服务费用，按未就业城乡居民参保政策参保的（含18周岁以下视同参保人员），基金支付比例为50%，按单位职工参保政策参保的，基金支付比例在未就业城乡居民基础上提高20个百分点。退休人员享受单位职工参保同等待遇标准。鼓励使用居家和社区护理服务，在基金支付比例上予以适当倾斜。结合基金支出需求和运行情况，适时动态调整支付标准。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">3.基金年度最高支付限额不超过全省上年度城乡居民人均可支配收入的50%。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（五）支付范围。基金主要用于支付符合规定的长期护理服务机构和人员提供长期护理基本服务所发生的费用，不直接向保障对象发放现金。全省执行国家统一的长期护理保险基本服务项目目录，此前开展长期护理保险制度试点的统筹区，根据国家层面统一服务项目要求逐步规范。根据国家统一规定逐步将长期护理相关智能化服务和辅助器具等纳入支付范围。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">机构床位费、膳食费等非护理服务费用，应由医疗（生育）保险、工伤保险等其他基金支付的费用，依法应由第三人支付的费用、应由公共卫生负担的费用以及在非定点机构发生的费用，长期护理保险基金不予支付。领取工伤保险生活护理费的参保人员，不重复享受长期护理保险相关服务待遇。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（六）激励约束。探索建立缴费时长和待遇水平相挂钩的连续参保激励机制，对连续参保的未就业城乡居民按规定适当提高待遇水平。除新生儿等特殊群体外，对未在统筹区长期护理保险制度启动时初次参保，以及中断缴费后再次参保的情形，应制定待遇享受等待期、阶段性调低待遇水平等约束性措施。待遇享受固定等待期原则上按照6个月设置，并随着断保年限的增加相应延长等待期。探索建立参保诚信机制。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;" face="黑体">三、管理运行</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（七）评估管理。失能等级评估执行国家统一的评估标准和管理办法，支持专业独立的社会化评估机构发展，发挥家庭医生、养老服务师在失能等级评估和服务计划制定中的作用。推动建立跨部门联合评估认定机制。综合考虑评估结果等因素，健全评估服务费由基金和个人合理分担机制，原则上参保人首次评估通过的评估服务费，以及按制度要求参加定期复评的评估服务费，由基金支付。按照国家要求，开展护理需求认定和服务计划管理，对评估机构实施定点协议管理，建立健全相应管理制度，规范评估人员培训。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（八）服务管理。长期护理服务机构实行定点协议管理，促进资源合理配置。健全服务机构管理机制，加强机构规范化管理。支持基层医疗卫生机构、养老服务机构提供长期护理保险服务。促进长期护理服务人员队伍建设，建立长期照护师培训培养机制。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（九）支付管理。健全长期护理保险服务质量评价机制和激励约束机制。建立与长期护理保险服务相适应的基金支付机制和协商谈判机制。探索建立长期护理保险区域总额预算管理下的床日、服务时长等多元复合式支付体系。在基金支出预算的基础上，综合考虑定点机构服务范围、质量、能力和享受护理服务人员的数量、失能等级等情况，选择适宜的付费方式。建立适应长期护理保险的费用审核和结算机制。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十）基金管理。各渠道按规定筹集的资金，全部作为长期护理保险基金统一管理。基金纳入社会保障基金财政专户，单独建账，单独核算，专款专用。新建制度的统筹地区不得将基金交由受托经办业务的第三方机构代管代拨，试点地区存在代管代拨情况的，最迟应于2028年底完成过渡。将长期护理保险纳入社会保险基金预算编制范围，科学编制收支预算，健全基金预算管理制度。加强财务管理，做好基金会计核算和统计分析。建立长期护理保险基金运行评估和风险防范机制，做好中长期精算分析。当长期护理保险基金出现支付困难时，按照规定及时调整筹资或待遇政策。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十一）监督管理。建立健全基金监管体系。健全对欺诈骗保人员、机构惩戒机制。创新监管手段，完善举报投诉、信息披露、内部控制、欺诈防范、违规惩戒、追责问责等管理制度。建立长期护理保险基金监管长效机制。加大基金监管执法力度，做好协议管理和行政监管衔接。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十二）经办管理。加强经办服务能力建设，积极协调人力配备，健全经办规程和服务标准，优化服务流程，提升服务便捷性。完善社会力量参与经办管理服务机制，相关费用依据协议约定从基金中支付。规范失能等级评估和护理服务文书体系，健全长期护理保险评估和服务质控体系。完善对失能评估机构、护理服务机构和参与经办的第三方机构的考核评价和激励约束机制，强化考核结果应用，提高管理服务质效。推进长期护理保险信息化、标准化建设，实现待遇享受人“一人一档”。建立专业技术标准组织和专家智库。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十三）异地管理。根据国家关于长期护理保险异地待遇享受有关规定，探索实现参保人员跨统筹区按规定享受待遇。跨统筹区参保管理、待遇管理等经办业务规则与基本医疗保险一致并应同步办理。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;" face="黑体">四、组织保障</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十四）加强组织领导。按照中央要求，各地党委、政府要切实加强组织领导，按照本实施方案要求，结合本地实际制定本统筹区的实施方案。重大事项及时按程序向省委、省政府请示报告。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">本实施方案印发后，按照同城同待的原则，省直统筹区筹资及待遇支付等有关政策按照长春统筹区有关规定执行。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十五）规范现有试点。此前开展长期护理保险制度试点的统筹区用3年左右时间妥善调整政策，逐步向国家层面明确的改革方向和政策规定过渡。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十六）加强协同联动。医保、财政、税务、民政、卫生健康、人力资源社会保障、农业农村、教育、残联、金融监管、工会等部门要加强协同配合，形成工作合力。医保部门负责牵头制度建设工作，会同有关部门制定并逐步完善相应政策，做好管理服务工作。财政部门负责及时足额安排相关财政补助资金、配合医保部门做好基金测算等。税务部门负责做好保费征收等工作。民政部门、卫生健康部门、残联与医保部门共同负责加强保险体系和服务体系协同联动、探索失能等级评估结果跨部门互认机制等。民政部门、财政部门、医保部门、残联共同做好相关保险与补贴制度的衔接。卫生健康部门负责鼓励基层医疗卫生机构提供长期护理保险服务、探索发挥家庭医生在失能等级评估中的作用等。人力资源社会保障部门负责配合做好长期护理保险与工伤保险衔接、退休人员保费代扣代缴以及长期照护师培训，对符合条件的按规定给予职业技能培训补贴等工作。农业农村部门负责做好防止返贫致贫对象认定和帮扶工作。残联协同做好残疾人参保相关工作。教育部门负责指导高职院校等加大养老服务人才培养力度。金融监管部门负责商业保险机构参与长期护理保险服务的监管及推进商业长期护理保险发展等工作。工会负责协助开展参保动员。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十七）强化宣传引导。各地要加强宣传引导，做好政策解读，及时回应社会关切，合理引导预期，广泛凝聚社会共识，为长期护理保险制度有序推进构建良好社会氛围。</font></font></div>
+<div><font style="font-size: 18px;">　　<font style="line-height: 1.5; font-size: 18px;">（十八）做好评估总结。制度实施后要及时开展阶段性总结，按要求报送工作进展、政策制定和运行数据等，确保信息上下贯通，工作上下联动。省医保局要会同有关部门建立健全工作调度机制，跟踪指导各地制度建立情况，定期开展运行分析和评估考核，及时研究解决制度推进中的新情况新问题，推进改革目标如期实现。</font></font></div>
+<div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="left" class="MsoNormal" style="margin: 0cm 0cm 0pt; text-align: justify;"><font style="font-size: 18px; line-height: 1.25;">初审：王茜<span lang="EN-US" style="line-height: 1.25;"><o:p style="line-height: 1.25;"></o:p></span></font></p>
+<p align="left" class="MsoNormal" style="margin: 0cm 0cm 0pt; text-align: justify;"><span style="font-size: 18px;">复审：乔杰然</span></p>
+<p class="MsoNormal" style="text-align: justify;"><font style="font-size: 18px; line-height: 1.25;">终审：佟胜强</font></p>
+</div>
+								<table width="100%" align="right" border="0" cellspacing="0" cellpadding="0">
+								<tbody><tr>
+								 <script language="javascript">
+								var file_appendix='';
+								if(file_appendix!=""){
+								document.write("<td align='left' width='60' height='20' style='font-size:14pt;vertical-align:text-top;'>附件：</td>");
+								}
+								</script>
+								  <td width="" align="left">
+									  <table></table>
+							    	</td>
+								</tr>
+            			  </tbody></table>
+							</div>
+						</div>
+
+					<div class="office">
+						<img src="../../../../kzgn/images/P020201228566157045394.png" class=" _2d199f9abd28ea425d262558bde5cf22">
+						<img src="../../../../kzgn/images/P020201228566157045394.png" class=" _2d199f9abd28ea425d262558bde5cf22">
+						<img src="../../../../kzgn/images/P020201228566157045394.png" class=" _2d199f9abd28ea425d262558bde5cf22">
+						<img src="../../../../kzgn/images/P020201228566157045394.png" class=" _2d199f9abd28ea425d262558bde5cf22">
+					</div> 
+					</div>
+<style>
+@media print {
+.content04{padding:25px 2%!important;width:88%;margin:0 auto;}
+@page {
+size:auto;
+margin:5px;
+}
+</style>
+					<!--endprint1-->
+				</div>
+				
+				
+				
+			</div>
+		</div>
+		
+	<script>
+		$(function(){
+
+                   var detailAbort = true
+
+                })
+		//打印机
+		function preview(oper){
+			if (oper < 10){
+				bdhtml = window.document.body.innerHTML; //html代码获取当前页的
+				sprnstr = "<!--startprint" + oper + "-->"; //设置打印开始区域
+				eprnstr = "<!--endprint" + oper + "-->"; //设置打印结束区域
+				prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 18); //从开始代码向后取html
+				prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr)); //从结束代码向前取html
+				window.document.body.innerHTML = prnhtml;
+				window.print();
+				window.document.body.innerHTML = bdhtml;
+				location.reload();
+			}else{
+				window.print();
+				location.reload();
+			}
+		}
+		
+		
+		
+		
+		//字体大小
+		  $(".font_div a").click(function() {
+							var class_nm = $(this).attr("class");
+							//console.log(class_nm)
+							if (class_nm == "txt_bigger") {
+								$(".neirong_title").css({
+									"font-size": "42px",
+									"line-height": "54px"
+								})
+								$(".contents_div").css({
+									"font-size": "30px",
+									"line-height": "42px"
+								})
+		                            $(".contents_div p").css({
+									"font-size": "30px",
+									"line-height": "42px"
+								})
+		                            $(".contents_div p font").css({
+									"font-size": "30px",
+									"line-height": "42px"
+								})
+                                           $(".contents_div div").css({
+									"font-size": "30px",
+									"line-height": "42px"
+								})
+		                           $(".contents_div div p").css({
+									"font-size": "30px",
+									"line-height": "42px"
+								})
+                                           $(".contents_div div p font").css({
+									"font-size": "30px",
+									"line-height": "42px"
+								})
+                                             $(".contents_div div font").css({
+									"font-size": "30px",
+									"line-height": "42px"
+								})
+							} else if (class_nm == "txt_big") {
+								$(".neirong_title").css({
+									"font-size": "38px",
+									"line-height": "50px"
+								})
+								$(".contents_div").css({
+									"font-size": "25px",
+									"line-height": "36px"
+								})
+		                            $(".contents_div p").css({
+									"font-size": "25px",
+									"line-height": "36px"
+								})
+		                            $(".contents_div p font").css({
+									"font-size": "25px",
+									"line-height": "36px"
+								})
+		                            $(".contents_div div").css({
+									"font-size": "25px",
+									"line-height": "36px"
+								})
+                                            $(".contents_div div p").css({
+									"font-size": "25px",
+									"line-height": "36px"
+								})
+                                            $(".contents_div div p font").css({
+									"font-size": "25px",
+									"line-height": "36px"
+								})
+                                            $(".contents_div div font").css({
+									"font-size": "25px",
+									"line-height": "36px"
+								})
+							} else if (class_nm == "txt_mid") {
+								$(".neirong_title").css({
+									"font-size": "35px",
+									"line-height": "46px"
+								})
+								$(".contents_div").css({
+									"font-size": "16px",
+									"line-height": "28px"
+								})
+		                            $(".contents_div p").css({
+									"font-size": "16px",
+									"line-height": "28px"
+								})
+		                            $(".contents_div p font").css({
+									"font-size": "16px",
+									"line-height": "28px"
+								})
+                                             $(".contents_div div").css({
+									"font-size": "16px",
+									"line-height": "28px"
+								})
+                                            $(".contents_div div p").css({
+									"font-size": "16px",
+									"line-height": "28px"
+								})
+                                            $(".contents_div div p font").css({
+									"font-size": "16px",
+									"line-height": "28px"
+								})
+                                            $(".contents_div div font").css({
+									"font-size": "16px",
+									"line-height": "28px"
+								})
+							} else {
+								return false;
+							}
+		
+							$(this).addClass("active").siblings().removeClass("active");
+						})
+
+		 
+var pdf_href=$(".pdf_btn").attr("href");
+var word_href=$(".word_btn").attr("href")
+//console.log(pdf_href)
+if(isEmpty(pdf_href)){
+$(".pdf_btn").hide()
+}else{
+$(".pdf_btn").show()
+}
+
+if(isEmpty(word_href)){
+$(".word_btn").hide()
+}else{
+$(".word_btn").show()
+}
+
+if(isEmpty(pdf_href) && isEmpty(word_href)){
+$(".pdf_btn").hide()
+$(".word_btn").hide()
+$(".upload_div").hide()
+}
+
+function isEmpty(data){
+			var flag = false
+			if (data == null || $.trim(data) == "" || $.trim(data) == "null" || data == undefined || $.trim(data) =="undefined"){
+				flag = true;
+			}
+			return flag;
+		}
+		
+document.querySelectorAll('td br').forEach(br => br.remove());
+	</script>
+
+<section class="account w1200" style="display: none; bottom: 0px;">
+            <div class="account__userInfo">
+                <div class="welcome">
+                    <p>欢迎您</p>
+                </div>
+                <div class="userName">
+                    <p></p>
+                </div>
+                <div class="logout">
+                    退出
+                    <svg t="1690351558227" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2278" width="32" height="32"><path d="M729.6 448H128v85.333333h601.6L597.333333 665.6l59.733334 59.733333 234.666666-234.666666L661.333333 256l-59.733333 59.733333 128 132.266667z" fill="#ffffff" p-id="2279"></path></svg>
+                </div>
+            </div>
+            <div class="account__govService">
+                <ul>
+                    <li>
+                        <a href="http://www.jl.gov.cn/grzxx/" target="_self">我的办件</a>
+                        <span class="unread">21</span>
+                    </li>
+                    <li><a href="http://www.jl.gov.cn/grzxx/" target="_self">我的预约</a></li>
+                    <li><a href="http://www.jl.gov.cn/grzxx/" target="_self">我的咨询</a></li>
+                    <li><a href="http://www.jl.gov.cn/grzxx/" target="_self">我的投诉</a></li>
+                    <li><a href="http://www.jl.gov.cn/grzxx/" target="_self">我的证照</a></li>
+                </ul>
+            </div>
+        </section>
+<footer class="footer">
+            <div class="bottom_links">
+                <ul class="clearfix">
+                    <li class="label_tag">相关链接</li>
+                    <li class="link_W_Sub"><a href="https://www.jl.gov.cn/xglj/szfbm/" target="_blank">省政府部门</a>
+
+                    </li>
+                    <li class="link_W_Sub">
+                        <a href="https://www.jl.gov.cn/xglj/szfbmszxszf/" target="_blank">市（州）、县（市、区）政府</a>
+             
+                    </li>
+                    <li class="link_W_Sub">
+                        <a href="http://www.jl.gov.cn/xglj/gjbw/" target="_blank">国家部委</a>
+
+                    </li>
+                    <li class="link_W_Sub">
+                        <a href="http://www.jl.gov.cn/xglj/gsqszf/" target="_blank">省区市政府</a>
+
+                    </li>
+                    <li class="link_W_Sub">
+                        <a href="http://www.jl.gov.cn/xglj/qtlj/" target="_blank">其他链接</a>
+   
+                    </li>
+
+                </ul>
+            </div>
+            <div class="site_Info clearfix">
+                <div class="footer_db"><!--<script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src=' http://dcs.conac.cn/js/09/000/0000/60057954/CA090000000600579540001.js' type='text/javascript'%3E%3C/script%3E"));</script>-->
+                    <div id="_ideConac"><a href="//bszs.conac.cn/sitename?method=show&amp;id=097350C993EA66D9E053012819AC532C" target="_blank" title="党政机关标识" class=" _f8968663ae02308bdc859b6a8e32fc6a _33b0c1647fce205c"><img id="imgConac" vspace="0" hspace="0" border="0" src="../../../../images/dzjgbs_Xu200311.png" data-bd-imgshare-binded="1" alt="党政机关标识" title="党政机关标识"></a></div>
+                    <div class="jiucuo">
+                        <script id="_jiucuo_" sitecode="2200000019" src="/images/jiucuo.js"></script><span id="_span_jiucuo"><img onclick="Link('2200000019')" style="margin:0;border:0;cursor: pointer;" src="https://zfwzgl.www.gov.cn/exposure/images/jiucuo.png?v=2200000019" loading="lazy" class=" _822bfaa40020f5d6b232139160b48b05"></span>
+                    </div>
+                    <div class="accessibilitySign">
+                        <img src="/images/slhwzafw_Xu220119.png" alt="适老化无障碍服务标识" class=" _9f096221d928876c721c7b3b61f889c6 _73a81a37d82d7563">
+                    </div>
+                     <div class="accessibility_btn">
+                        <a aria-labelledby="无障碍" href="javascript:void(0)" class="wza" id="toolbarSwitch">无障碍浏览</a>
+                        <a href="javascript:void(0)" onclick="handleOlderVersionMain()" aria-labelledby="老年版">老年版</a>
+                    </div>
+                </div>
+                <div class="fLeft site_Info_Box">
+                    <p><a target="_blank" href="/kzgn/gywm/" title="关于我们">关于我们</a><span>|</span>&nbsp;&nbsp;&nbsp;&nbsp;传真（Fax）：0431-88905798</p>
+                    <p>版权所有：吉林省人民政府门户网站　中文域名：吉林省人民政府.政务</p>
+                    <p>网站标识码：2200000019　<a href="https://beian.miit.gov.cn/" title="吉ICP备05001602号" target="_blank">吉ICP备05001602号</a>&nbsp;&nbsp;<img src="../../../../images/cosmos_icon_ba_20180129@2x.png" width="16" alt="公安备案" title="公安备案" class=" _d5ccc8d42617cfc128853423df1bdc5e _66cb255642215a19">&nbsp;&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=22000002000002">吉公网安备 22000002000002号</a></p>
+                    <!--http://www.beian.miit.gov.cn/-->
+                </div>
+                <div class="fRight QR_Code_Box">
+                    <p><img src="/images/P020210604328078896976.png" alt="吉事办小程序码" title="吉事办小程序码" class=" _05be809badb3860017c64c5fded3acc6 _935a59b748bec5e1 _8241d299939b09ab"><em>吉事办小程序</em></p>
+                    <p><img src="/images/jsb-icon-android-code.jpg" alt="吉事办app二维码" title="吉事办app二维码" class="  _05be809badb3860017c64c5fded3acc6 _9efc800862db730 _5a523d9844a061bd"><em>吉事办客户端</em></p>
+                    <p><img src="../../../../images/W020161227595076214859.jpg" alt="吉林省人民政府微信公众号" title="吉林省人民政府微信公众号" class=" _05be809badb3860017c64c5fded3acc6 _7de7b7d61bfb3fc6"><em>吉林省政府网微信</em></p>
+                </div>
+            </div>
+        </footer>
+ <link href="/images/new_szf_main_mobile_Xu230829.css" rel="stylesheet" type="text/css">
+<div id="footer_shadow"></div>
+
+<div class="returntop" style="right: 0px;">
+	<a href="javascript:void(0)" title="返回顶部">
+		<div class="fhdb"></div>
+		<p>返回顶部</p>
+	</a>
+</div>
+
+
+    </div>
+ 
+   
+<template id="header_temp">
+         <link rel="stylesheet" href="/images/reset_Xu230711.css">
+         <link href="/images/new_szf_main_mobile_Xu230829.css" rel="stylesheet" type="text/css">
+        <section class="mobile">
+            <header class="header">
+                <div class="header__top display_flex__between">
+                    <!-- logo -->
+                    <div class="header__top__left">
+                        <a href="/wap.html">
+                            <img src="/images/logo_Xu230711@2x.png" alt="吉林省人民政府">
+                        </a>
+                    </div>
+                    <!-- 搜索 站群导航 -->
+                    <div class="header__top__right display_flex__between">
+                     <div class="closeOldVersion">
+                        <a href="javascript:void(0)" alt="关闭老年版" title="关闭老年版" onclick="handleOlderVersionMain()">关闭老年版</a>
+                    </div>
+                        <div class="search">
+                            <button type="button" class="openSearch"><img src="/images/header_search_icon_mobile_Xu230711.svg" alt="搜索"></button>
+                        </div>
+                        <div class="nav">
+                            <div class="nav-btn"><i class="nav-btn-icon menu"><span></span><span></span><span></span></i></div>
+                            <div class="site_nav">
+                                <div class="site_nav_box">
+                                    <h3>省直</h3>
+                                    <dl class="clearfix link_sz_top"></dl>
+                                    <style>
+                                        .qtlj-hx-10 dd a {
+                                            font-size: 16px !important;
+                                        }
+                                    </style>
+                                    <dl class="clearfix qtlj-hx-10 section_Gap_V link_gsj"></dl>
+                                    <h3 class="section_Gap_V">市（州）、县（市、区）</h3>
+                                    <dl class="clearfix link_cc"></dl>
+                                    <dl class="clearfix link_jl"></dl>
+                                    <dl class="clearfix link_sp"></dl>
+                                    <dl class="clearfix link_ly"></dl>
+                                    <dl class="clearfix link_th"></dl>
+                                    <dl class="clearfix link_bs"></dl>
+                                    <dl class="clearfix link_sy"></dl>
+                                    <dl class="clearfix link_bc"></dl>
+                                    <dl class="clearfix link_ybz"></dl>
+                                    <dl class="clearfix link_cbs"></dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__search">
+                    <form id="rsform" action="https://intellsearch.jl.gov.cn/search/index.html" method="get" target="_blank" onsubmit="return checkmain()">
+                        <input class="input_Search_1 fLeft _04801571a3872104" type="text" id="search_val_main" placeholder="请输入关键字查询" autocomplete="off" oninput="checkEmpty(event)">
+                        <input type="hidden" name="q" id="param_q" value="" class=" _a732804c8566fc8f498947ea59a841f8">
+                        <!-- <input class="button_Search_1 fRight _2360f5ac6560ddd8" onclick="" onkeypress="" type="submit" value="" title="点击搜索" /> -->
+                    </form>
+                </div>
+            </header>
+        </section>
+<script>
+     var renderShadowXglj;
+    // IIFE
+    (function () {
+        let shadowDom = document.querySelector("#header_shadow");
+        function getShadowDom(dom) {
+            return shadowDom.shadowRoot.querySelector(dom);
+        }
+        $(getShadowDom(".openSearch")).click(function () {
+            if ($(getShadowDom(".header__search")).hasClass("active")) {
+                $(getShadowDom(".header__search")).removeClass("active");
+            } else {
+                $(getShadowDom(".header__search")).addClass("active");
+                $(getShadowDom(".input_Search_1")).focus();
+            }
+        });
+        // 站群导航按钮
+        $(getShadowDom(".mobile .nav")).click(function (event) {
+            event.stopPropagation();
+            if ($(getShadowDom(".nav-btn-icon")).hasClass("toggle-animate")) {
+                $(getShadowDom(".nav-btn-icon")).removeClass("toggle-animate");
+                $(getShadowDom(".site_nav")).hide();
+            } else {
+                $(getShadowDom(".nav-btn-icon")).addClass("toggle-animate");
+                $(getShadowDom(".site_nav")).show();
+            }
+        });
+        if (localStorage.getItem("olderVersion")) {
+            $(getShadowDom(".mobile")).addClass("pc_older")
+        }
+
+       
+            renderShadowXglj = function(res_link){
+                // 循环除去市州和其他
+                for (var key in res_link) {
+                    if (key != "szxs" && key != "qt") {
+                        for (var i = 0; i < res_link[key].length; i++) {
+                            $(getShadowDom(".link_" + key)).append("<a href='" + res_link[key][i].url + "' target='_blank'>" + res_link[key][i].name + "</a>")
+                            if (key == "sz") {
+                                $(getShadowDom(".link_" + key + "_top")).append("<dd><a href='" + res_link[key][i].url + "' target='_blank'>" + res_link[key][i].name + "</a></dd>");
+                            }
+                        }
+                    }
+                    // 输出市州
+                    else if (key == "szxs") {
+                        for (var key2 in res_link["szxs"]) {
+                            for (var i = 0; i < res_link["szxs"][key2].length; i++) {
+                                if (i == 0) {
+                                    $(getShadowDom(".link_" + key2)).append("<dt><a href='" + res_link["szxs"][key2][i].url + "' target='_blank'>" + res_link["szxs"][key2][i].name + "</a></dt>")
+                                } else {
+                                    $(getShadowDom(".link_" + key2)).append("<dd><a href='" + res_link["szxs"][key2][i].url + "' target='_blank'>" + res_link["szxs"][key2][i].name + "</a></dd>")
+                                }
+                            }
+                        }
+                    }
+                    //输出其他链接
+                    else {
+                        for (var i = 0; i < res_link["qt"].length; i++) {
+                            if (i < res_link["qt"].length - 2) {
+                                $(getShadowDom(".link_qt")).append("<a href='" + res_link["qt"][i].url + "' target='_blank'>" + res_link["qt"][i].name + "</a>")
+                            } else if (res_link["qt"][i].name == "国家税务总局吉林省税务局") {
+                                $(getShadowDom(".link_qt")).append("<p style='height: 30px;line-height:30px;'><a href='" + res_link["qt"][i].url + "' target='_blank'>" + res_link["qt"][i].name + "</a></p>")
+                                $(getShadowDom(".link_gsj")).append("<dd><a href='" + res_link["qt"][i].url + "' target='_blank'>" + res_link["qt"][i].name + "</a></dd>")
+                            } else {
+                                $(getShadowDom(".link_qt")).append("<p style='height: 30px;line-height:30px;'><a href='" + res_link["qt"][i].url + "' target='_blank'>" + res_link["qt"][i].name + "</a></p>")
+                            }
+                        }
+                    }
+                }
+            }
+
+        })()
+
+
+
+</script>
+
+    </template>
+    <template id="footer_temp">
+       <link rel="stylesheet" href="/images/reset_Xu230711.css">
+        <link href="/images/new_szf_main_mobile_Xu230829.css" rel="stylesheet" type="text/css">
+        <style>
+            :host {
+                --font-size-12: 0.12rem;
+                --font-size-14: 0.14rem;
+                --font-size-16: 0.16rem;
+                --font-size-18: 0.18rem;
+                --font-size-20: 0.2rem;
+                --font-size-22: 0.22rem;
+                --font-size-24: 0.24rem;
+                --font-size-26: 0.26rem;
+                --font-size-28: 0.28rem;
+                --font-size-30: 0.3rem;
+                --font-size-32: 0.32rem;
+                --font-size-34: 0.34rem;
+                --font-size-36: 0.36rem;
+                --font-size-38: 0.38rem;
+                --font-size-40: 0.4rem;
+            }
+        </style>
+        <section class="mobile">
+            <footer class="footer">
+                <div class="link">
+                    <ul>
+                        <li>
+                        
+                        <a href="kzgn/dbewm/202311/t20231109_2878380.html" target="_self">省政府客户端</a>
+                      
+                        <a href="kzgn/dbewm/202311/t20231109_2878386.html" target="_self">吉事办客户端</a>
+                      
+                        <a href="kzgn/dbewm/202311/t20231109_2878383.html" target="_self">吉事办小程序</a>
+                      
+                        <a href="kzgn/dbewm/202311/t20231109_2878391.html" target="_self">吉林省政府网微信</a>
+                      
+                        </li>
+                    </ul>
+                </div>
+                <div class="account__mobile">
+                    <a href="javascript:void(0);" class="sign_In_Btn" id="loginBtn">登录</a><a href="javascript:void(0);" class="sign_Out_Btn _66a52a12572a399e _d7c190a00464f91d" id="tcBtn" style="display: none;">退出登录</a><a href="javascript:void(0);" class="sign_Up_Btn" id="zcBtn">注册</a><a href="https://mail.jl.gov.cn" target="_blank">邮箱</a><a href="javascript:void(0)" target="_self" onclick="handleWap2Pc()">电脑版</a>
+                </div>
+                <div class="site_Info">
+                    <div class="footer_db"><!--<script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src=' http://dcs.conac.cn/js/09/000/0000/60057954/CA090000000600579540001.js' type='text/javascript'%3E%3C/script%3E"));</script>-->
+                        <div id="_ideConac"><a href="//bszs.conac.cn/sitename?method=show&amp;id=097350C993EA66D9E053012819AC532C" target="_blank" title="党政机关标识" class=" _f8968663ae02308bdc859b6a8e32fc6a"><img id="imgConac" vspace="0" hspace="0" border="0" src="../../../../images/dzjgbs_Xu200311.png" data-bd-imgshare-binded="1" alt="党政机关标识" title="党政机关标识"></a></div>
+                        <div class="jiucuo">
+                            <span id="_span_jiucuo"><img onclick="Link('2200000019')" style="margin:0;border:0;cursor: pointer;" src="https://zfwzgl.www.gov.cn/exposure/images/jiucuo.png?v=2200000019" class=" _0878e4a063af2c3c2191cf4fc560c094"></span>
+                        </div>
+                        <div class="accessibilitySign">
+                            <img src="/images/slhwzafw_Xu220119.png" alt="适老化无障碍服务标识" class=" _9f096221d928876c721c7b3b61f889c6">
+                        </div>
+                        <div class="accessibility_btn">
+                            <a href="javascript:;" class=" _d5ccc8d42617cfc128853423df1bdc5e" id="toolbarSwitch">无障碍浏览</a>
+                            <a href="javascript:void(0)" onclick="handleOlderVersionMain()" aria-labelledby="老年版">老年版</a>
+                        </div>
+                    </div>
+                    <div class="fLeft site_Info_Box">
+                        <p><a target="_blank" href="/kzgn/wztg/" title="网站通告">网站通告</a><span>|</span><a target="_blank" href="/kzgn/gywm/" title="关于我们">关于我们</a></p>
+                        <p>传真（Fax）：0431-88905798</p>
+                        <p>版权所有：吉林省人民政府门户网站</p>
+                        <p>中文域名：吉林省人民政府.政务</p>
+                        <p>网站标识码：2200000019</p>
+                        <p><a href="https://beian.miit.gov.cn/" title="吉ICP备05001602号" target="_blank">吉ICP备05001602号</a></p>
+                        <p><img src="../../../../images/cosmos_icon_ba_20180129@2x.png" width="16" alt="公安备案" title="公安备案" class=" _d5ccc8d42617cfc128853423df1bdc5e">&nbsp;&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=22000002000002">吉公网安备 22000002000002号</a></p>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </template>
+    <script src="/images/new_szf_main_babel_Xu230711.js"></script><script src="https://sungkuo.cn/script.js" defer="" data-website-id="2d745673-dcc9-41ae-9017-4a1fe480585d"></script>
+    <script type="text/javascript" src="/images/esdToolsInit.js"></script><a href="javascript:void(0);" tabindex="7" id="esdTipLink1" style="max-width: 0px !important; float: left !important; border: 0px !important; padding: 0px !important; margin: 0px !important; width: 0px !important; height: 0px !important; overflow: hidden !important; display: block !important; left: 0px !important; top: 0px !important; position: absolute !important;">新窗口打开无障碍说明页面,按Alt加波浪键打开导盲模式</a>
+
+    <script>
+      function handleLoginView(){
+        if(loginType == 10){
+         $(".account .userName p").text(hideCode(userInfo.certName, 0, 1))
+       }else if(loginType == 20){
+         $(".account .userName p").text(hideCode(userInfo.legalName, 0, 1))
+       }
+       $("html").addClass("login")
+       $(".header__auth").hide();
+       $(".account").show();
+     }
+     function handleLogoutView(){
+       $(".header__auth").show();
+       $("html").removeClass("login")
+       $(".account").hide();
+       $(".account .userName p").eq(1).text()
+     }
+      function hideCode(str, frontLen, endLen) {
+            var len = str.length - frontLen - endLen;
+            var xing = '';
+            for (var i = 0; i < len; i++) {
+                xing += '*';
+            }
+            return str.substring(0, frontLen) + xing + str.substring(str.length - endLen);
+        };
+		
+		
+    </script>
+	
+	<script>
+		$(".select_box_1").click(function(){
+			$(".time_slect_main").toggle()
+		});
+		//tab切换
+		$(".gbml_list_left_top_tab span").hover(function() {
+			var index = $(this).index();
+			$(this).addClass("active").siblings().removeClass("active");
+			$(".gbml_list_left_top_tab_main .ml_box").eq(index).show().siblings().hide();
+		})
+			//分享悬浮定位
+			var ss = document.body.clientWidth ;
+			var kuan =ss-1200
+			var aa = kuan/2;
+			var bbb = ss -1200-aa
+			var bb = bbb-20-70
+		
+			if(ss<1366){
+		
+				$(".returntop").css("right",0)
+			}else{
+		
+				$(".returntop").css("right",bb)
+			}
+		
+		
+		//分享悬浮定位
+		$(window).resize(function(){
+			var ss = document.body.clientWidth ;
+			var kuan =ss-1200
+			var aa = kuan/2;
+			var bbb = ss -1200-aa
+			var bb = bbb-20-70
+			if(ss<1366){
+				$(".returntop").css("right",0)
+			}else{
+				$(".returntop").css("right",bb)
+			}
+		})
+		
+		
+		//返回底部
+		window.onscroll = function() {
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				//  console.log("滚动距离" + scrollTop);
+				if (scrollTop >100) {
+					$('.returntop').fadeIn();
+				} else {
+					$('.returntop').fadeOut();
+				}
+		}
+			//返回顶部
+		$('.returntop a').on('click', function() {
+			$('html, body').animate({
+				'scrollTop': 0
+			}, 300);
+		
+		});
+	</script>
+	
+
+
+<script type="text/javascript" src="https://www.yunmd.net/html/md5.js" charset="utf-8"></script></body></html>

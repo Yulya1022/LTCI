@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>市医保局市发展改革委市民政局市卫生健康委市税务局关于加强长期护理保险待遇支付管理服务有关问题的通知_医保局文件_政务公开</title>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+
+<meta name="SiteName" content="天津市医疗保障局">  
+<meta name="SiteDomain" content="https://ylbz.tj.gov.cn">
+<meta name="SiteIDCode" content="1200000077">
+<meta name="ColumnName" content="医保局文件" />
+<meta name="ColumnDescription" content="医保局文件" />
+<meta name="ColumnKeywords" content="政务公开,医保局文件" />
+<meta name="ColumnType" content="政务公开" />
+<meta name="PubTime" content="2023-11-29 14:26:39" random="138" />
+
+<meta name="ArticleTitle" content="市医保局市发展改革委市民政局市卫生健康委市税务局关于加强长期护理保险待遇支付管理服务有关问题的通知" />
+
+
+
+<meta name="PubDate" content="2021-06-03" />
+
+
+
+<meta name="ContentSource" content="天津市医疗保障局" />
+
+
+    <!--资源引用脚本-->
+    <link rel="stylesheet" type="text/css" href="https://jyhpt.tj.gov.cn/images/N_common.css">
+
+<script type="text/javascript" src="https://jyhpt.tj.gov.cn/images/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://jyhpt.tj.gov.cn/images/jquery-migrate-3.4.0.min.js"></script>
+<script type="text/javascript" src="https://jyhpt.tj.gov.cn/images/N_common.js"></script>
+<script type="text/javascript" src="https://jyhpt.tj.gov.cn/images/N_new_mixin.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../images/N_new_mixin.css">
+
+<link rel="stylesheet" type="text/css" href="https://jyhpt.tj.gov.cn/images/N-QT.css">
+<script type="text/javascript" src="https://jyhpt.tj.gov.cn/images/N-QT.js"></script>
+<link rel="stylesheet" type="text/css" href="https://jyhpt.tj.gov.cn/images/N_new_mixin-index-b.css">
+<script type="text/javascript" src="https://jyhpt.tj.gov.cn/images/N_new_mixin-index-b.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://jyhpt.tj.gov.cn/images/N39-2-xl-style.css">
+    <script type="text/javascript">
+        //处理日期方法
+        function GetDateStr(timeStr) {
+            var yearStr = '', monthStr = '', dayStr = '';
+            if (timeStr.length >= 10) {
+                yearStr = timeStr.substr(0, 4);
+                monthStr = timeStr.substr(5, 2);
+                dayStr = timeStr.substr(8, 2);
+            }
+            return yearStr + '年' + monthStr + '月' + dayStr + '日';
+        }
+
+        $(function () {
+            //原模板去掉样式逻辑
+            //$(".TRS_PreAppend").removeAttr("style");
+            //处理段落两端对齐逻辑
+            $('.TRS_UEDITOR p').each(function () {
+                if ($(this).css('text-align') != 'right' && $(this).css('text-align') != 'center') {
+                    $(this).css('text-align', 'justify');
+                }
+            });
+
+            //处理主题分类
+            var ztValue = $('#content_zt').text();
+            ztValue = ztValue.replace(/\;/g, '；');
+            ztValue = ztValue.replace(/\-/g, '');
+            if (ztValue.lastIndexOf('\\') == (ztValue.length - 1)) {
+                ztValue = ztValue.substr(0, (ztValue.length - 1));
+            }
+            $('#content_zt').text(ztValue);
+            //处理成文日期
+            var cwrqValue = '2021-06-03 14:30:00';
+            cwrqValue = GetDateStr(cwrqValue);
+            $('#content_cwrq').text(cwrqValue);
+
+            //处理发文日期
+            var fbrqValue = '2021-06-03 14:30:00';
+            fbrqValue = GetDateStr(fbrqValue);
+            $('#content_fbrq').text(fbrqValue);
+
+			var hasRelated = false;
+			var zcjd = $('.xl-rl-zcjd').find('ul').find('li').length;
+			var xgzc = $('.xl-rl-xgzc').find('ul').find('li').length;
+			var xgbd = $('.xl-rl-xgbd').find('ul').find('li').length;
+
+            if ($('.xl-rl-zcjd').find('ul').find('li').length == 0) {
+                $('.xl-rl-zcjd').hide();
+            }
+			if ($('.xl-rl-xgzc').find('ul').find('li').length == 0) {
+                $('.xl-rl-xgzc').hide();
+            }
+			if ($('.xl-rl-xgbd').find('ul').find('li').length == 0) {
+                $('.xl-rl-xgbd').hide();
+            }
+			if((zcjd+xgzc+xgbd)==0){
+			    $("#xlrllt").removeClass("xl-w71 xl-fll xl-br-fg xl-zw-cons-lf").addClass("xl-w100");
+				$("#xlrlrt").removeClass("xl-w29 xl-fll");
+				$('.xl-zw-cons-rt').hide();
+			}else{
+				hasRelated = true;
+			}
+
+			//根据时间判断
+			var isQian = '',isPic=0;
+
+			isQian = '';
+			isPic = $('.xl-zw-info').find('img').length;
+			console.log("时间之前：" +isQian + "|包含图片："+isPic);
+
+			//就是如果有图片，则政策的宽度为606；如果没图片，判断日期，如果在日期时间点之前，606，如果时间点后，直接正常宽度。
+			//if (maxWidth != "" && maxWidth != null && maxWidth != undefined)
+			if (!ismobile()) {
+			    if (isQian != "" && isQian != null && isQian != undefined) {
+			        $(".xl-zw-info").css('width', '606px').css('margin', '0 auto');
+			    }
+				//if (isPic) {//有图片
+
+				//	$(".xl-zw-info").css('width','606px').css('margin','0 auto');
+
+				//} else {
+				//	if (isQian != "" && isQian != null && isQian != undefined){
+				//			$(".xl-zw-info").css('width','606px').css('margin','0 auto');
+				//	}
+				//}
+			}
+			if (ismobile()) {
+			    $(".xl-zw-info *").css('width', 'unset');
+                            $(".xl-zw-info img").css('height', 'unset');
+
+				//字体大小转换
+				var $box = $('.TRS_PreAppend');
+				pt2px($box);
+			}
+
+        });
+
+        function pt2px(box){
+		  if (box.children()&&box.children().length>0) {
+		    box.children().each(function(index,item) {
+		      var $item = $(item)
+		      pt2px($item);
+		      $.each(['fontSize','lineHeight','textIndent'],function(j,cur){
+		        var computed = parseFloat($item.css(cur));
+		        var computed = parseFloat(computed*0.22/16);
+		        if(computed>3 && cur=="textIndent"){
+		        	computed = 3;
+		        }
+		        if(computed){
+		          computed=computed+'rem';
+		          $item.css(cur,computed);
+		        }
+		      })
+
+		    });
+		  }
+		}
+    </script>
+    <style type="text/css">
+        /* 原编辑器样式，勿删勿注释！！！ Generator: eWebEditor */
+        p.MsoNormal, li.MsoNormal, div.MsoNormal {
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            font-size: 10.5pt;
+            font-family: "Times New Roman";
+        }
+
+        p.MsoHeader, li.MsoHeader, div.MsoHeader {
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            text-align: center;
+            tab-stops: center 207.65pt right 415.3pt;
+            layout-grid-mode: char;
+            border: none;
+            padding: 0cm;
+            font-size: 9.0pt;
+            font-family: "Times New Roman";
+        }
+
+        p.MsoFooter, li.MsoFooter, div.MsoFooter {
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            tab-stops: center 207.65pt right 415.3pt;
+            layout-grid-mode: char;
+            font-size: 9.0pt;
+            font-family: "Times New Roman";
+        }
+
+        p.MsoBodyText, li.MsoBodyText, div.MsoBodyText {
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            font-size: 16.0pt;
+            font-family: "Times New Roman";
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /*内容区域默认行高*/
+        .xl-zw-info {
+            line-height: 40px;
+            color: rgb(61,61,61);
+        }
+
+        .article_content {
+            /*width: 606px;*/
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0;
+            border: none;
+            line-height: 40px;
+            font-size: 16pt;
+            margin-top: 0px;
+            min-height: 400px;
+            font-family: "仿宋_GB2312";
+            background-color: #ffffff;
+        }
+
+            .article_content p {
+                text-justify:newspaper;
+                word-break: break-all;
+                word-wrap:break-word;
+            }
+.qt-current-location{
+   font-size: 20px;
+        }
+.qt-current-location a, 
+.qt-current-location a:hover,
+.qt-current-location a:visited, 
+.qt-current-location a:active
+{
+font-size:20px;
+}
+        .xl-zw-rtlist > li {
+            font-size: 14px;
+            height: auto;
+            line-height: 21px;
+        }
+        .xl-zw-rtlist > li > a:hover, 
+        .xl-zw-rtlist > li:hover:before {
+            color: rgb(70,129,175);
+        }
+    </style>
+</head>
+<body>
+    <!--公用common-head-政府信息公开.html-->
+    <style>
+
+
+.head-top img{
+		margin-right: .05rem;
+	}
+	.head-zfxxgk-title {
+		width: 620px;
+		height: 100px;
+		left: 290px;
+	}
+	#zzmsbtn,.zzzq_item{
+		 border-left: none;
+		background: rgb(244, 186, 47);
+		padding: 0 10px;
+		height: 25px;
+		line-height: 25px;
+		border-radius: 9px;
+		margin-right: 10px;
+		font-weight: bold;
+		font-size: 14px;
+		display: inline-block !important;
+	}
+        @media screen and (max-device-width: 768px){
+            .head-zfxxgk-title {
+                width: 4.4rem;
+                height: unset;
+            }
+        } 		
+    </style>
+<!-- 公用common-head-top.html -->
+<div class="head-top">
+  <div class="main clear">
+    <a href="https://www.tj.gov.cn/" target="_blank">
+      <img src="https://jyhpt.tj.gov.cn/images/DOCUMENT20200927635977932964.png" UrlIsAbs=TRUE />
+      天津政务网
+    </a>
+    <span class="current-now">2019年12月3日星期二</span>
+	<p>
+		<a id="simplifiedLink">简体</a><span class="jgline">|</span>
+		<a id="translateLink">繁体</a>
+		<!--切换时注意更新无障碍-->
+		<a href="javascript:void(0);"  id="toolbarSwitch" onclick="EsdToolbarInit.openClickFunc();" onkeydown="EsdToolbarInit.openKeydownFunc(event);">无障碍</a>
+		<a href="javascript:void(0);"  id="zzmsbtn"><img class="wza-img" src="https://fzgg.tj.gov.cn/images/zzmslogo.png" /><span>长者模式</span></a>
+	</p>
+
+  </div>
+</div>
+
+<!--公用common-head-政府信息公开.html-->
+<div class="head-zfxxgk-bg">
+  <div class="main">
+    <a id="logo-link" href="https://ylbz.tj.gov.cn/" ><img class="head-zfxxgk-logo" src="https://ylbz.tj.gov.cn/xxgk/zfxxgk1/images/P020200922398972358393.png" /></a>
+    <img class="head-zfxxgk-title" src="https://ylbz.tj.gov.cn/YBJSY/qdfy/xxgktb/202011/W020210918546044052573.png" />
+  </div>
+  <p class="head-line-blue"></p>
+</div>
+<script type="text/javascript">
+  $(function () {
+    var rootName = '首页';
+    if ($.trim(rootName) != '机构调整') {
+      $('#logo-link').prop('href', 'https://ylbz.tj.gov.cn/');
+    }
+  });
+</script>
+    <!--End 公用common-head-政府信息公开.html-->
+    <!--Center中间-->
+    <div class="xl-zw-main">
+        <div class="xl-mcon">
+            <!-- 面包屑 -->
+            <style>
+.qt-current-location{
+font-size:20px;
+}
+.qt-current-location a,
+.qt-current-location a:hover, 
+.qt-current-location a:visited, 
+.qt-current-location a:active{
+font-size:20px;
+}
+ @media screen and (max-device-width: 768px){
+  .qt-current-location{
+             font-size: 0.24rem;
+         }
+ .qt-current-location a, 
+ .qt-current-location a:hover,
+ .qt-current-location a:visited, 
+ .qt-current-location a:active
+ {
+ font-size:0.24rem;
+ }
+  }    
+</style>
+<div class="qt-current-location">
+    <img class="qt-pcicon" src="https://jyhpt.tj.gov.cn/images/bread.png" />
+    <a href="../../../" target="_blank" title="政务公开" class="CurrChnlCls">政务公开</a>&nbsp;&nbsp;>&nbsp;&nbsp;<a href="../../" target="_blank" title="政策法规" class="CurrChnlCls">政策法规</a>&nbsp;&nbsp;>&nbsp;&nbsp;<a href="../" target="_blank" title="医保局文件" class="CurrChnlCls">医保局文件</a>
+</div>
+            <div class="xl-zw-con">
+                <div class="xl-zw-top">
+                    <div class="top-container">
+                        <div class="sx-item item-all">
+                            <div class="sx-title">名&#12288;&#12288;&#12288;&#8194;称&#8194;：</div>
+                            <div class="sx-con">市医保局市发展改革委市民政局市卫生健康委市税务局关于加强长期护理保险待遇支付管理服务有关问题的通知 </div>
+                            <div class="xl-clear"></div>
+                        </div>
+                        <div class="sx-item">
+                            <div class="sx-title">索&#8194;&#8194;&#8194;引&#8194;&#8194;号&#8194;：</div>
+                            <div class="sx-con">11120000MB17646358/2021-00034</div>
+                            <div class="xl-clear"></div>
+                        </div>
+                        <div class="sx-item">
+                            <div class="sx-title">发&#8194;布&#8194;机&#8194;构&#8194;：</div>
+                            <div class="sx-con">天津市医疗保障局</div>
+                            <div class="xl-clear"></div>
+                        </div>
+                        
+                            
+                                <div class="sx-item">
+                                    <div class="sx-title">联合发文单位：</div>
+                                    <div class="sx-con">天津市民政局;天津市人力资源和社会保障局;天津市卫生健康委员会</div>
+                                    <div class="xl-clear"></div>
+                                </div>
+                            
+                        
+                        
+                            
+                                <div class="sx-item">
+                                    <div class="sx-title">发&#8194;文&#8194;字&#8194;号&#8194;：</div>
+                                    <div class="sx-con">津医保规字〔2021〕6号</div>
+                                    <div class="xl-clear"></div>
+                                </div>
+                            
+                        
+                        <div class="sx-item">
+                            <div class="sx-title">主&#12288;&#12288;&#12288;&#8194;题&#8194;：</div>
+                            <div id="content_zt" class="sx-con">医疗保障\医保待遇保障</div>
+                            <div class="xl-clear"></div>
+                        </div>
+
+                        
+                            
+                                <div class="sx-item">
+                                    <div class="sx-title">成&#8194;文&#8194;日&#8194;期&#8194;：</div>
+                                    <div id="content_cwrq" class="sx-con"></div>
+                                    <div class="xl-clear"></div>
+                                </div>
+                            
+                        
+                        <div class="sx-item">
+                            <div class="sx-title">发&#8194;文&#8194;日&#8194;期&#8194;：</div>
+                            <div id="content_fbrq" class="sx-con"></div>
+                            <div class="xl-clear"></div>
+                        </div>
+                         
+                            
+                                <div class="sx-item">
+                                    <div class="sx-title">有&#8194;&#8194;&#8194;效&#8194;&#8194;性&#8194;：</div>
+                                    <div class="sx-con">有效</div>
+                                    <div class="xl-clear"></div>
+                                </div>
+                            
+                        
+                        
+                            
+                        
+                        <div class="xl-clear"></div>
+                    </div>
+                    <!--<ul class="xl-zwtop-sy">
+                        <li class="xl-zwtop-w100">名　　称：<p>市医保局市发展改革委市民政局市卫生健康委市税务局关于加强长期护理保险待遇支付管理服务有关问题的通知</p></li>
+                        <li class="xl-zwtop-w50">索&nbsp;&nbsp;引&nbsp;&nbsp;号：<p>11120000MB17646358/2021-00034</p></li>
+                        <li class="xl-zwtop-w50">发布机构：<p>天津市医疗保障局</p></li>
+                        <li class="xl-zwtop-w50">联合发文单位：<p>天津市民政局;天津市人力资源和社会保障局;天津市卫生健康委员会</p></li>
+                        <li class="xl-zwtop-w50">文　　号：<p>津医保规字〔2021〕6号</p></li>
+                        <li class="xl-zwtop-w50">主　　题：<p>医保待遇保障</p></li>
+                        <li class="xl-zwtop-w50">成文日期：<p>2021年06月03日</p></li>
+                        <li class="xl-zwtop-w50">发文日期：<p>2021年06月03日</p></li>
+                        <li class="xl-zwtop-w50">废止依据：<p></p></li>
+                    </ul>
+                    <div class="xl-clear"></div>-->
+                </div>
+                <!--Center中间 Cont-->
+                <div class="xl-zw-cons">
+
+                    <div id="xlrllt" class="xl-zw-cons-lf xl-w71 xl-fll xl-br-fg">
+                        <!-- <div class="xl-zw-cons-lf xl-w71 xl-fll" class="xl-zw-cons-lf xl-w100">   原来正文样式：   -->
+                        <div class="article_content xl-zw-info" style="word-break:normal!important;">
+                            <div class="view TRS_UEDITOR trs_paper_default trs_word"><p style="line-height:39px"><span style=";font-family:方正小标宋简体;font-size:29px"><span style="font-family:方正小标宋简体">市医保局</span> <span style="font-family:方正小标宋简体">市发展改革委</span> <span style="font-family:方正小标宋简体">市民政局</span> <span style="font-family:方正小标宋简体">市卫生</span></span></p><p style="line-height:39px"><span style=";font-family:方正小标宋简体;font-size:29px"><span style="font-family:方正小标宋简体">健康委</span> <span style="font-family:方正小标宋简体">市税务局关于加强长期护理保险</span></span></p><p style="line-height:39px"><span style=";font-family:方正小标宋简体;font-size:29px"><span style="font-family:方正小标宋简体">待遇支付管理服务有关问题的通知</span></span></p><p style="line-height:39px"><span style=";font-family:&#39;Times New Roman&#39;;font-size:29px"> </span></p><p style="line-height:39px"><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">各区医保局、发展改革委、民政局、卫生健康委、税务局，各有关单位</span><span style="font-family:Times New Roman">:</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">为加快推动建立与长期护理保险（以下简称长护险）相配套的制度规范，加强长护险基金使用效能，根据《天津市长期护理保险制度试点实施方案》（津政办规</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">〔</span>2020<span style="font-family:仿宋_GB2312">〕</span><span style="font-family:Times New Roman">24</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">号</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">）</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">等有关文件要求</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">，</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">结合我市实际，现就加强长护险待遇支付管理和服务有关问题通知如下：</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:黑体;font-size:21px"><span style="font-family:黑体">一、规范执行服务收费管理</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:楷体_GB2312;font-size:21px"><span style="font-family:楷体_GB2312">（一）严格执行价格规范。</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">纳入本市长护险定点护理机构管理的政府举办及由财政核拨经费的养老机构（以下简称公办养老机构）和公立医疗机构提供相关护理服务，应严格执行发展改革、医疗保障部门等规定的服务项目和价格规范。其他定点护理机构提供相关护理</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">服务</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">，</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">价格实行市场调节。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:楷体_GB2312;font-size:21px"><span style="font-family:楷体_GB2312">（二）规范执行收费项目。</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">定点护理机构提供相关护理</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">服务</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">，可以按规定收取护理费。其中，公办养老机构纳入护理费或代理陪护费等项目，公立医疗机构纳入有关医疗护理服务项目。其他机构按照本市有关规定执行。定点护理机构应当主动向社会公示本机构护理服务项目和收费标准。不得重复收取已纳入长护险基金支付的相关护理项目费用。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:黑体;font-size:21px"><span style="font-family:黑体">二、规范税务登记和相关票据管理</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">（三）按规定进行税务登记。</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">定点护理机构应依法进行税务登记。未进行税务登记的，</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px">2021<span style="font-family:仿宋_GB2312">年</span><span style="font-family:Times New Roman">5</span><span style="font-family:仿宋_GB2312">月</span><span style="font-family:Times New Roman">31</span><span style="font-family:仿宋_GB2312">日前完</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">成税务登记。定点护理机构相关护理服务收入，按照相关法律法规规定享受税收优惠政策。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">（四）按规定开具收费票据。</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">定点护理机构为重度失能人员提供长期护理服务后收取费用时，应按规定提供增值税普通发票（含电子发票，详见附件），住院（门诊）医疗收费票据或专用发票等规范票据，并明确具体收费项目和金额、长护险支付金额、个人支付金额等。相关规范票据将作为长护险支付凭证，确保长护险费用支付与票据信息对应。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:黑体;font-size:21px"><span style="font-family:黑体">三、规范长护险护理服务供给管理</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">（五）规范定点机构护理服务。</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">定点护理机构提供机构护理的应根据本市长护险服务项目内涵及标准，结合享受长护险待遇人员身体状况和实际需求，合理制定护理计划并提供护理服务；提供居家护理服务应根据本市长护险居家护理服务包进行，具体按照本市有关规定执行。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">（六）规范长护险服务手续管理。</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">长护险经办机构统一制定长护险待遇确认书。定点护理机构为重度失能人员提供机构护理或居家护理前，通过医保电子凭证或社会保障卡等方式，为其实名办理长护险待遇确认和每月待遇延续手续，作为享受长护险待遇和按月结算长护险费用的依据。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:黑体;font-size:21px"><span style="font-family:黑体">四、完善长护险待遇支付结算管理</span></span></p><p style="text-indent:43px;text-align:left;line-height:39px"><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">（七）实行最高支付标准管理。</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">长护险的</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">机构护理按日支付标准（每人每天</span>70<span style="font-family:仿宋_GB2312">元）</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">和</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">居家护理按月支付标准（每人每月</span>2100<span style="font-family:仿宋_GB2312">元）均指最高支付</span></span><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">标准</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">，</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">实际发生相关护理费用，不超过最高支付</span></span><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">标准</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">的，按照实际发生费用和报销比例支付</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">；</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">超过的，按照最高支付</span></span><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">标准</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">和报销比例支付。</span></span></p><p style="text-indent:43px;text-align:left;line-height:39px"><span style=";font-family:楷体;font-size:21px"><span style="font-family:楷体">（八）实行长护险联网结算制度</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">。重度失能人员凭医保电子凭证或社会保障卡等，按规定享受长护险相关待遇。其中，应由个人承担的费用，由个人支付给定点护理机构；应由基金支付的费用，由经办机构与定点护理机构按月结算。经办机构加快与定点护理机构建立长护险基金预付机制。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:黑体;font-size:21px"><span style="font-family:黑体">五、强化长护险待遇支付档案管理</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">定点护理机构应当加强对重度失能人员的服务计划、护理记录和财务凭证等长期护理档案管理，档案资料应真实、准确、完整，不得伪造、变造、隐匿、涂改等，并按照档案管理要求妥善保存，留档备查。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:黑体;font-size:21px"><span style="font-family:黑体">六、强化长护险待遇支付监督和管理</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">长护险经办机构应完善长护险服务协议，明确协议处理的不同情形，并加强对定点护理机构日常协议管理。定点护理机构及其工作人员、重度失能人员等存在违法违规行为，属于长护险服务协议规定内容的，按照协议规定进行处理；属于法律、法规和规章明确的行政处罚规定范畴的，依法依规给予行政处罚；构成犯罪的，依法追究刑事责任。</span></span></p><p style="text-indent:43px;line-height:39px"><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">本通知自</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">印发之日</span></span><span style=";font-family:&#39;Times New Roman&#39;;font-size:21px"><span style="font-family:仿宋_GB2312">起执行，有效期</span>2<span style="font-family:仿宋_GB2312">年。</span></span></p><p style=";text-autospace:none;text-align:left;line-height:39px"><span style=";font-family:&#39;Times New Roman&#39;;color:rgb(0,0,0);font-size:16px"> </span></p><p><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">附件：</span></span><span style=";font-family:仿宋_GB2312;font-size:21px"><span style="font-family:仿宋_GB2312">天津增值税普通发票收费票样（格式）</span></span></p></div>
+                            <link rel="stylesheet" type="text/css" href="https://jyhpt.tj.gov.cn/images/attachments.css">
+<div class="qt-attachments">
+    <table>
+        <tr>
+            <td class="first"><p class="qt-attachments-title">附件：</p></td>
+            <td>
+                <ul class="qt-attachments-list">
+                    <li><a href="./W020230309578628625779.docx">津医保规字〔2021〕6 号市医保局 市发展改革委 市民政局 市卫生健康委 市税务局关于加强长期护理保险待遇支付管理服务有关问题的通知.docx</a></li><li><a href="./W020210603523510268753.docx">天津增值税普通发票收费票样（格式）.docx</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+                        </div>
+                    </div>
+                    <!-- hide right-->
+                    <div id="xlrlrt" class="xl-zw-cons-rt xl-w29 xl-fll">
+                        <div class="xl-zw-rtpl xl-rl-zcjd">
+                            <div class="xl-zw-rttlt">
+                                | 政策解读
+                            </div>
+                            <ul class="xl-zw-rtlist">
+                                
+                                    <li>
+                                        <a href="../../../jdhy/202106/t20210630_5491352.html" title="关于加强长期护理保险待遇支付管理服务有关问题的政策问答">关于加强长期护理保险待遇支付管理服务有关问题的政策问答</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="xl-zw-rtpl xl-rl-xgzc">
+                            <div class="xl-zw-rttlt">
+                                | 相关政策
+                            </div>
+                            <ul class="xl-zw-rtlist">
+                                
+                            </ul>
+                        </div>
+                        <div class="xl-zw-rtpl xl-rl-xgbd">
+                            <div class="xl-zw-rttlt">
+                                | 相关报道
+                            </div>
+                            <ul class="xl-zw-rtlist">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End hide right-->
+                    <div class="xl-clear"></div>
+                </div>
+
+                <!--End Center中间 Cont-->
+            </div>
+        </div>
+
+    </div>
+    <!--End Center中间-->
+    <!-- 公用底部common-footer.html -->
+    <div class="pc-footer-body">
+  <div class="bottom">
+      <div class="btn">
+          <div class="left wzjc">
+             <a class="fiind-error-box"><script id="_jiucuo_" sitecode='1200000077' src='https://zfwzgl.www.gov.cn/exposure/jiucuo.js'></script></a>
+          </div>
+          <div class="left dt" style="text-align: center;">
+             
+          <p>网站主办单位：天津市医疗保障局</p>
+          <p>联系方式：天津市南开区咸阳路81号 022-12393</p>
+          <p>
+              网站标识码：1200000077 津ICP备2021007528号-8
+              <a target="_blank" href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12010402000956'
+                 style="color:#B0B0B0;">
+                  <img src="https://ylbz.tj.gov.cn/YBJSY/qdfy/mhdb/202005/P020200818674939202024.png" />
+                  津公网安备 12010402000956号
+              </a>
+          </p>
+              <p class="h-warning" style="display:none;">
+                  系统检测到您正在使用ie11以下内核的浏览器，不能实现完美体验，请更换或升级浏览器访问！
+              </p>
+          </div>
+           <div class="dzjg">
+               <a href='http://bszs.conac.cn/sitename?method=show&amp;id=8C319118D11232C1E05310291AAC4B71'
+         title='党政机关'
+         target="_blank">
+        <img class="fl" src='https://ylbz.tj.gov.cn/YBJSY/qdfy/tydb/202011/W020201123385351883674.png' alt="党政机关" />
+      </a>
+           </div>
+      </div>
+  </div>
+</div>
+<div class="m-footer-body">
+  <!-- m-bottom s -->
+  <div class="m-bottom">
+      <div class="m-btm2">
+          
+          <div class="m-btm-info">
+                
+              <div class="m-infodetail">
+                <p>网站主办单位：天津市医疗保障局</p>
+                <p>联系方式：天津市南开区咸阳路81号 022-12393</p>
+                <p>
+                    网站标识码：1200000077 津ICP备2021007528号-8
+                    <a target="_blank" href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12010402000956'
+                       style="color:#B0B0B0;">
+                        <img src="https://ylbz.tj.gov.cn/YBJSY/qdfy/mhdb/202005/P020200818674939202024.png" />
+                        津公网安备 12010402000956号
+                    </a>
+                </p>
+              <a class="fiind-error-mbox"></a>
+              <a href='http://bszs.conac.cn/sitename?method=show&amp;id=8C319118D11232C1E05310291AAC4B71'
+       title='党政机关'
+       target="_blank">
+      <img class="fl" src='https://ylbz.tj.gov.cn/YBJSY/qdfy/tydb/202011/W020201123385351883674.png' alt="党政机关" />
+    </a>
+          </div>
+      </div>
+  </div>
+  <!-- m-bottom e -->
+</div>
+<div id="alert-f">
+  <div class="footer-alert">
+      <div class="footer-alert-bd"></div>
+  </div>
+</div>
+
+<script>
+ var tpldClass=[".detail-article .view.TRS_UEDITOR",".article-detail .view.TRS_UEDITOR",".right-content-inf .view.TRS_UEDITOR",".article_content .view.TRS_UEDITOR",".xw-txt .view.TRS_UEDITOR",".zw .view.TRS_UEDITOR"];
+        $.each(tpldClass,function(n,value){
+            if($(value).length != 0){
+          window.esdArOption = {contentDom: value};
+                return true 
+            }
+        })
+</script>
+<div  id="zzmsMobileBtn"><div class="ghbClose"></div><div class="ghbBtn"></div></div>
+
+<script src="https://jyhpt.tj.gov.cn/images/ta_Info.js" async="async" defer="defer"></script>
+<script type="text/javascript" src="https://jyhpt.tj.gov.cn/images/articleReader.js"></script>
+<!--非党政机关链接跳转提示脚本-->	 
+<script type="text/javascript" src="https://jyhpt.tj.gov.cn/images/offSiteLinkRedirectionPrompt.js" charset="UTF-8" defer="defer"></script>
+<script>
+  function showTips() {
+    var dom = document.createElement("div");
+    var t = '/images/tipImg-ioswx.png';
+    dom.style.cssText = "position:fixed;z-index:100;top:0;left:0;width:100%;height:100%;background:url(" + t + ") top right no-repeat;background-size:150px 125px;background-color:rgba(0,0,0,0.7);";
+    dom.onclick = function() {
+      document.body.removeChild(dom);
+    };
+    document.body.appendChild(dom);
+  }
+  function changeHref() {
+    var agent = navigator.userAgent.match(/MicroMessenger/i);
+    if (Boolean(agent)) {
+      $('a').each(function(index,item){
+        if (/\.doc|\.docx|\.rar|\.zip|\.xls|\.xlsx|\.pdf|\.ppt|\.ppts|\.cab$/.test(item.href)) {
+          item.href='javascript:;';
+          $(item).on('click',showTips);
+        }
+      })
+    }
+  }
+
+  $(function(){
+    setTimeout(function(){
+      changeHref();
+//适老化新增s
+var zzmsword1 = getCookie('TjElderModelFlag');
+if (zzmsword1 == 2) {
+    let str = $('.fiind-error-box').html()
+    $('.fiind-error-mbox').html(str)
+    $("html").css("font-size", "100px");
+    $(".m-footer-body").css("display", "block");
+} else {
+
+}
+    },500)
+  })
+//关闭移动端按钮
+$('.ghbClose').click(function () {
+$("#zzmsMobileBtn").hide();
+})
+
+    // 长者模式设置字号
+    var TjElderModelFlag = getCookie('TjElderModelFlag');
+    if(TjElderModelFlag === "2"){
+        $('html').css('font-size','100px')
+        $('.pc-footer-body').hide()
+        $('.m-footer-body').show()
+    }else{
+        $('.pc-footer-body').show()
+        $('.m-footer-body').hide()
+    }
+// 判断是否是手机端
+function ismobile () {
+var TjElderModelFlag = getCookie('TjElderModelFlag');
+    if(TjElderModelFlag === "2"){
+return true
+}
+var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
+var ua = navigator.userAgent;
+var res = [];
+for (var i = 0; i < mobileArry.length; i++) {
+  if (mobileArry[i] && ua.indexOf(mobileArry[i]) > 0) {
+    res.push(mobileArry[i]);
+  }
+}
+return res.length > 0;
+}
+// 把纠错标签从pc端的dom移到移动端
+$(function(){
+ 
+})
+</script>
+
+
+<script type="text/javascript" src="https://ylbz.tj.gov.cn/images/RoleSetInit.js"></script>
+<script type="text/javascript" src="https://ylbz.tj.gov.cn/images/esdToolsInit.js" charset="UTF-8"></script>
+<script type="text/javascript" src="https://ylbz.tj.gov.cn/images/ElderModelTool.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="http://localhost/images/ZZMS_change.css"> -->
+<link rel="stylesheet" type="text/css" href="https://ylbz.tj.gov.cn/images/ZZMS_change.css">
+<style>
+/* 长者模式s */
+.ztzl_panel .float_card_title .card_title_view{
+width:100%;
+}
+.useOldFixed .head-top p{
+display:block;
+}
+.useOldFixed .head-top p #simplifiedLink{
+display:none;
+}
+.useOldFixed .head-top p #translateLink{
+display:none;
+}
+.useOldFixed .head-top p #toolbarSwitch{
+display:none;
+}
+.useOldFixed .head-top p #toolbarCtrl{
+display:none;
+}
+.useOldFixed .jgline{
+display:none;
+}
+.useOldFixed .head-top img{
+height:0.2rem;
+width:0.2rem
+}
+.useOldFixed #zzmsbtn{
+margin-top:10px;
+}
+#zzmsMobileBtn{
+display:none;
+/*background-color: #4a82b0c7;*/
+    height: 1.7rem;
+   
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+    z-index: 1000;
+    width: 140px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+background-image:url(https://ylbz.tj.gov.cn/images/mobile_zzms.png);
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+.ghbClose{
+height: 20px;
+    width: 20px;
+    float: right;
+    margin: 5px 5px 0 0;
+    display: none;
+    cursor: pointer;
+}
+.ghbBtn{
+height: 40px;
+    width: 140px;
+    float: right;
+    margin: 0px 5px 0 0;
+    display: none;
+    cursor: pointer;
+}
+@media screen and (max-width: 1200px){
+#zzmsbtn{
+display:none;
+}
+#zzmsMobileBtn{
+display:block;
+}
+.ghbClose, .ghbBtn{
+  display: block;
+}
+}
+
+/* 长者模式e */
+</style>
+<script>
+
+
+
+var zzmsword = getCookie('TjElderModelFlag');
+ if (zzmsword !== "2") {
+ $('#zzmsbtn span').text("长者模式");
+}else{
+ $('#zzmsbtn span').text("退出长者模式");
+ $('html').css("font-size","100px");
+ if (ismobile ()){
+     let str = $('.fiind-error-box').html()
+     $('.fiind-error-mbox').html(str)
+  } 
+}
+    $('#zzmsbtn').click(function () {
+    var zzmsword1 = getCookie('TjElderModelFlag');
+       if (zzmsword1 !== "2") {//如果当前不是长者模式，打开工具条，进入长者模式 
+         addCookie('wzalsOn', 'true', 0);
+if(typeof(EsdToolbarInit.openClickFunc)=='function'){
+       EsdToolbarInit.openClickFunc();
+}
+if(typeof(EsdToolbar)=="object"&&EsdToolbar.isOpen){
+	jq_t("#toolbar_Div").css("overflow","hidden");
+	jq_t("body").css("padding-top", "98px");
+	if(EsdToolbar.defalt.browser.mozilla){
+		jq_t("body")[0].style.setProperty("transform","unset","important");
+		jq_t("body")[0].style.setProperty("transform-origin","unset","important");
+		jq_t("#toolbar_Div").css({"-moz-transform":"scale(1.5)","-moz-transform-origin":"center -64px 0px"});
+		jq_t("#toolbarHtml").css({"-moz-transform":"scale(1)","-moz-transform-origin":"top"});
+	}
+	
+	jq_t("#toolbarHtml").show("fast",function(){
+		if(!EsdToolbar.defalt.browser.msie){
+			jq_t("#toolbarHtml").css("zoom","0.67");
+			jq_t("body").css({"max-width":"100%","min-width":"100%","padding-top":"65px"});
+		}else{
+			jq_t("#toolbarHtml").css("left","0");
+			jq_t("body").css({"max-width":"100%","padding-top":"65px"});
+		}
+		if(EsdToolbar.pageZoom.zoom>=1.3){
+			jq_t("body").css({"max-width": "170%", "min-width": "170%"});
+		}
+		jq_t("#toolbarPage2").hide();
+		jq_t("#toolbar").show();
+		//jq_t("body").css({"max-width":"100%","min-width":"100%","padding-top":"65px"});
+		jq_t("#toolbar_Div").css({"width":"750px","margin":"0 auto"});
+		setTimeout(function(){jq_t("#toolbar").show();},500);
+	});
+}
+	
+         $('html').css("font-size","100px");
+          $('body').addClass("useOldFixed");
+          $('#zzmsbtn span').text("退出长者模式");
+if (IEVersion()) {
+              $("body").css({
+                  transform: "scale(1.5)",
+                  "-moz-transform": "scale(1.5)",
+                  "-ms-filter": "scale(1.5)",
+                  "transform-origin": "center top",
+                  "-ms-transform-origin": "center top",
+              });
+              $("body").css("zoom", "1");
+              }
+
+      
+       } else {//如果当前是长者模式，关闭工具条，退出长者模式
+           addCookie('wzalsOn', 'false', 0);
+            $('body').removeClass("useOldFixed");
+            $('#zzmsbtn span').text("长者模式");
+          try{
+            EsdToolbar.close();
+           }catch(error){
+                // console.log("捕获异常");
+           }
+        }
+        ElderModeTool.changeElderMode();
+    });
+  
+
+//关怀版切换
+$("#zzmsMobileBtn  .ghbBtn").bind("click",function(){
+    if(getCookie('TjElderMobileFlag') === "2"){
+        addCookie('TjElderMobileFlag',"1",0);
+           addCookie('wzalsOn', 'false', 0);
+          try{
+            EsdToolbar.close();
+           }catch(error){
+                // console.log("捕获异常");
+           }
+
+$("#zzmsMobileBtn").css("display","block");
+    } else{
+        addCookie('TjElderMobileFlag',"2",0);
+         addCookie('wzalsOn', 'true', 0);
+if(typeof(EsdToolbarInit.openClickFunc)=='function'){
+         EsdToolbarInit.openClickFunc();
+}
+
+$("#zzmsMobileBtn").css("display","none");
+    }
+    location.reload();
+})
+// 进入关怀版
+var MzjGhbFlag = getCookie('TjElderMobileFlag');
+if(ismobile()&&zzmsword != 2){
+if(MzjGhbFlag === "2"){
+    var cssFileUrl = "https://ylbz.tj.gov.cn/images/SetMobileElder.css";
+    if (cssFileUrl) {
+        $("<link>").attr({
+            rel: "stylesheet",
+            type: "text/css",
+            href: cssFileUrl,
+        }).appendTo("head");
+    }
+$("#zzmsMobileBtn").css("display","none");
+
+
+}else{
+removejscssfile("SetMobileElder", "css");
+
+$("#zzmsMobileBtn").css("display","block");
+}
+}
+  //关闭工具条按钮
+    $('#toolbar_exit').bind("click",function(){
+        //关闭工具条，判断当前是否处于长者模式，如果是则退出长者模式
+        var zzmsword = getCookie("TjElderModelFlag");
+        if (zzmsword === "2") {
+            addCookie("TjElderModelFlag", "1", 0);
+        }
+if(getCookie('TjElderMobileFlag') === "2"){
+        addCookie('TjElderMobileFlag',"1",0);
+           addCookie('wzalsOn', 'false', 0);
+          try{
+            EsdToolbar.close();
+           }catch(error){
+                // console.log("捕获异常");
+           }
+
+
+    } 
+    });
+</script>
+
+</body>
+</html>

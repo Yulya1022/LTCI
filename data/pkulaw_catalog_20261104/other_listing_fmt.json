@@ -1,0 +1,111 @@
+{
+  "category": "法律文书",
+  "lib": "fmt",
+  "expected": 12,
+  "pages": [
+    {
+      "page": [
+        "1",
+        "1"
+      ],
+      "rows": [
+        {
+          "id": "b75472fcd3b75f2e4348a7b7864df73bbdfb",
+          "title": "海南省长期护理保险失能等级评估结论书",
+          "url": "https://www.pkulaw.com/fmt/b75472fcd3b75f2e4348a7b7864df73bbdfb.html?way=listView",
+          "raw_info": "现行有效 / 海南省医疗保障局 / 其他团体组织文书 / 2025.12.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "b75472fcd3b75f2e09506cd5b1b8c20fbdfb",
+          "title": "海南省长期护理保险复评评估结论书",
+          "url": "https://www.pkulaw.com/fmt/b75472fcd3b75f2e09506cd5b1b8c20fbdfb.html?way=listView",
+          "raw_info": "现行有效 / 海南省医疗保障局 / 其他团体组织文书 / 2025.12.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "b38ccdfe05f4a38835dcc34c323b1a72bdfb",
+          "title": "福州市长期护理保险失能评估结论书",
+          "url": "https://www.pkulaw.com/fmt/b38ccdfe05f4a38835dcc34c323b1a72bdfb.html?way=listView",
+          "raw_info": "现行有效 / 福州市医疗保障局 / 劳动和社会保障 / 2021.05.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "b38ccdfe05f4a388515310722d3aa3e2bdfb",
+          "title": "福州市长期护理保险失能复评结论书",
+          "url": "https://www.pkulaw.com/fmt/b38ccdfe05f4a388515310722d3aa3e2bdfb.html?way=listView",
+          "raw_info": "现行有效 / 福州市医疗保障局 / 劳动和社会保障 / 2021.05.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "b38ccdfe05f4a38802df99e239e5b392bdfb",
+          "title": "福州市长期护理保险失能评估申请人承诺书",
+          "url": "https://www.pkulaw.com/fmt/b38ccdfe05f4a38802df99e239e5b392bdfb.html?way=listView",
+          "raw_info": "现行有效 / 福州市医疗保障局 / 劳动和社会保障 / 2021.05.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "b38ccdfe05f4a38829bd7d563ffa72b3bdfb",
+          "title": "福州市长期护理保险失能评估公示书",
+          "url": "https://www.pkulaw.com/fmt/b38ccdfe05f4a38829bd7d563ffa72b3bdfb.html?way=listView",
+          "raw_info": "现行有效 / 福州市医疗保障局 / 劳动和社会保障 / 2021.05.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "75e101406bfb6128823dc2de37907c48bdfb",
+          "title": "福州市长期护理保险失能评估结论送达回执",
+          "url": "https://www.pkulaw.com/fmt/75e101406bfb6128823dc2de37907c48bdfb.html?way=listView",
+          "raw_info": "现行有效 / 福州市民政局 / 劳动和社会保障 / 2021.05.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "b38ccdfe05f4a388887e3aaa6df51bb2bdfb",
+          "title": "福州市长期护理保险失能评定申请表（样表）",
+          "url": "https://www.pkulaw.com/fmt/b38ccdfe05f4a388887e3aaa6df51bb2bdfb.html?way=listView",
+          "raw_info": "现行有效 / 福州市医疗保障局 / 劳动和社会保障 / 2021.05.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "b38ccdfe05f4a38885eafe4272477eaebdfb",
+          "title": "福州市长期护理保险失能评估材料收讫补正告知书",
+          "url": "https://www.pkulaw.com/fmt/b38ccdfe05f4a38885eafe4272477eaebdfb.html?way=listView",
+          "raw_info": "现行有效 / 福州市医疗保障局 / 劳动和社会保障 / 2021.05.19 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "529b9f7e6386deeee0cbae6c790fb20abdfb",
+          "title": "南宁市长期护理保险协议定点护理服务机构申请表",
+          "url": "https://www.pkulaw.com/fmt/529b9f7e6386deeee0cbae6c790fb20abdfb.html?way=listView",
+          "raw_info": "现行有效 / 南宁市医疗保障事业管理中心 / 卫生 / 2021.03.15 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "529b9f7e6386deeee6e7c6e5b7d5e5eabdfb",
+          "title": "南宁市长期护理保险协议定点护理服务机构承诺书",
+          "url": "https://www.pkulaw.com/fmt/529b9f7e6386deeee6e7c6e5b7d5e5eabdfb.html?way=listView",
+          "raw_info": "现行有效 / 南宁市医疗保障事业管理中心 / 卫生 / 2021.03.15 发布",
+          "info": [],
+          "departments": []
+        },
+        {
+          "id": "7127e51269eff9cbec62f142d6416db1bdfb",
+          "title": "青岛市长期护理保险定点护理服务机构诚信承诺书",
+          "url": "https://www.pkulaw.com/fmt/7127e51269eff9cbec62f142d6416db1bdfb.html?way=listView",
+          "raw_info": "现行有效 / 青岛市卫生健康委员会 / 劳动和社会保障 / 2019.11.29 发布",
+          "info": [],
+          "departments": []
+        }
+      ]
+    }
+  ]
+}
